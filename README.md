@@ -1,6 +1,6 @@
 # GSAPP CDP Colloquium 2 Course Site
 
-This repository hosts the source code and site content for the 2023
+This repository hosts the source code and site content for the 2024
 [Computational Design Practices](https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices) 
 Colloquium 2 course website.
 
