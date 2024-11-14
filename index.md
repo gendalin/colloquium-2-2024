@@ -1,6 +1,6 @@
 ---
 layout: home.html
-title: GSAPP CDP 2023-4 Colloquium II
+title: GSAPP CDP 2024 Colloquium II
 ---
 
 # Colloquium 2 &ndash; Explore, Explain, Propose
@@ -14,6 +14,6 @@ title: GSAPP CDP 2023-4 Colloquium II
 
 ## The Course
 
-- **Syllabus**
+- **[Syllabus](https://docs.google.com/document/d/1zqpkpY83ocZjk80WcFp01m-08IcmAOchRvEHBaHmFmg/edit?tab=t.0)**
 - **[All Student Work](work)**
 
