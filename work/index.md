@@ -1,6 +1,6 @@
 ---
 layout: course
-title: GSAPP CDP 2023-4 Colloquium II
+title: GSAPP CDP 2024 Colloquium II
 ---
 
 {% for student in collections.students %}
