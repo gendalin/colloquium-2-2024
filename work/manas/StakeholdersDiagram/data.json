@@ -1,0 +1,36 @@
+{
+    "nodes": [
+      { "id": "Government", "group": "Stakeholder" },
+      { "id": "Developers", "group": "Stakeholder" },
+      { "id": "Architects", "group": "Stakeholder" },
+      { "id": "Community", "group": "Stakeholder" },
+      { "id": "Site", "group": "Scale" },
+      { "id": "Street", "group": "Scale" },
+      { "id": "Neighbourhood", "group": "Scale" },
+      { "id": "City", "group": "Scale" },
+      { "id": "Conflicts", "group": "Central" }
+    ],
+    "links": [
+      { "source": "Government", "target": "Site" },
+      { "source": "Government", "target": "Street" },
+      { "source": "Government", "target": "Neighbourhood" },
+      { "source": "Government", "target": "City" },
+      { "source": "Developers", "target": "Site" },
+      { "source": "Developers", "target": "Street" },
+      { "source": "Developers", "target": "Neighbourhood" },
+      { "source": "Developers", "target": "City" },
+      { "source": "Architects", "target": "Site" },
+      { "source": "Architects", "target": "Street" },
+      { "source": "Architects", "target": "Neighbourhood" },
+      { "source": "Architects", "target": "City" },
+      { "source": "Community", "target": "Site" },
+      { "source": "Community", "target": "Street" },
+      { "source": "Community", "target": "Neighbourhood" },
+      { "source": "Community", "target": "City" },
+      { "source": "Site", "target": "Conflicts" },
+      { "source": "Street", "target": "Conflicts" },
+      { "source": "Neighbourhood", "target": "Conflicts" },
+      { "source": "City", "target": "Conflicts" }
+    ]
+  }
+  
