@@ -1,21 +1,108 @@
----
-student: Name
-layout: blank.liquid
-tags:
-- students
----
-
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    
-    <title>Student name</title>
-
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Multi-Page Layout</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#main" class="menu">main</a>
+      <a href="#section-a" class="menu">A</a>
+      <a href="#section-b" class="menu">B</a>
+      <a href="#section-c" class="menu">C</a>
+    </nav>
+  </header>
 
-<body></body>
+  <!-- Main Section -->
+  <section id="main" class="page">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="parts.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <p class="symbiosis-text">a system that fosters symbiosis with nature</p>
+    </div>
+  </section>
+  
+
+  <!-- Second Page -->
+  <section id="second-page" class="page">
+    <div class="box-container">
+      <div class="box-wrapper">
+        <div class="box"></div>
+        <p class="box-label"><a href="#section-a">Part One</a></p>
+      </div>
+      <div class="box-wrapper">
+        <div class="box"></div>
+        <p class="box-label"><a href="#section-b">Part Two</a></p>
+      </div>
+      <div class="box-wrapper">
+        <div class="box"></div>
+        <p class="box-label"><a href="#section-c">Part Three</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section A -->
+  <section id="section-a" class="page">
+    <div class="content-container">
+      <video controls autoplay muted loop class="video">
+        <source src="acousticpanel.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="text-content">
+        <h2>About Part One</h2>
+        <p>
+          This section provides an overview of the content presented in the video. 
+          Explore the details about how this concept creates symbiosis with nature.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B -->
+  <section id="section-b" class="page">
+    <div class="content-container">
+      <video controls autoplay muted loop class="video">
+        <source src="00_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="text-content">
+        <h2>About Part Two</h2>
+        <p>
+          This section provides an overview of the content presented in the video. 
+          Explore the details about how this concept is applied in practice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C -->
+  <section id="section-c" class="page">
+    <div class="content-container">
+      <video controls autoplay muted loop class="video">
+        <source src="MyceliumBW.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="text-content">
+        <h2>About Part Three</h2>
+        <p>
+          This section provides an overview of the content presented in the video. 
+          Learn how this concept fosters innovation and collaboration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Footer content</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
