@@ -1,21 +1,219 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Sebastian Schloesser
+tags: students
+image: static/title.svg
 ---
 
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    
-    <title>Student name</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-</head>
+    <title>Sebastian Schloesser</title>
 
-<body></body>
+    <meta
+      name="keywords"
+      content="computational, design, gsapp, hci, interaction, ui, ux, tangible, media, spatial"
+    />
+    <meta
+      name="description"
+      content="Work realized during Colloquium II of CDP Fall 2024"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./static/css/reset.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="vertical-section intro">
+        <img src="./static/title.svg" style="position: relative; left: 30px;" />
+      </section>
+
+      <section class="vertical-section portfolio-overview">
+        <h2>Provocation</h2>
+        <p>
+          “Indeed, it [the cell phone] has taken over much of what used to be
+          defined as the responsibility of shelter in terms of sense of
+          security, space, orientation, and representation.” [1] Both at home
+          and in public, we are often absorbed by our devices, dissociated from
+          physical reality and algorithmically siloed off to our assigned echo
+          chambers. How can we feel safer and more comfortable in the world, so
+          as to not require constant shielding and distraction from it? How can
+          we consume digital content together and avoid polarization? What role
+          can the built environment play in the pursuit of these goals?
+        </p>
+      </section>
+
+      <section class="vertical-section philosophy">
+        <h2>The Project</h2>
+
+        <p>The technology to display information at a variety of sites is readily available: projectors, TVs, monitors, speakers… but pairing them to a person’s unique digital world can be a cumbersome process. The challenge here is securely providing these displays and interfaces access to a person’s information in a fully consensual way.</p>
+        <br></br>
+        <p>I propose the development of a system for such device pairing and information sharing. It will be employed by a mobile application that allows users to create a profile, as they would at a social media platform, and selectively expose data to authorized peripherals. These peripherals will broadcast BLE beacon signals, alerting the application of their proximity and their capabilities, at which point the application can broker data exchange over cloud infrastructure. The peripherals are now able to activate context-aware experiences based on the people present.</p>
+
+        <br></br>
+        <p>On the other hand, these technologies are routinely exploited to surveil consumers. Most people are unaware of this phenomenon, due to a lack of transparency in privacy policies and the prevalence of advertising software that finds its way into popular app SDKs. Much like cookies track people through the web, BLE beacons can be used to uniquely and precisely track people's location indoors (where GPS usually fails). My proposal is to develop a process for identifying such beacons and which apps they are communicating with. Then I will conduct a survey of retail locations throughout Manhattan to build a dataset of spatial data collection practices.</p>
+
+        <br></br>
+        <p>The project will be presented as an interactive experience, where people will have previously downloaded the app and created a profile. The space will curate and display media experiences based on those present and the data they have shared. Data visualizations about my research in unethical use of this technology will be displayed throughout the room in juxtaposition. In this way, people will experience a frictionless, context-aware and embodied social media interaction, while learning about the dangers of these technologies and how to guard themselves against its misuse.</p>
+
+      </section>
+
+      <!-- Diagonal Section -->
+      <section class="diagonal-section">
+        <div class="diagonal-content">
+          <div class="diagonal-item">
+            <img src="./static/the_stakes.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/r1_icebreaker.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/r2_downlow.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/r3_linkex.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/the_system.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/the_app.svg" />
+          </div>
+
+          <div class="diagonal-item">
+            <img src="./static/the_precedents.svg" />
+        </div>
+        </div>
+        <div class="diagonal-line"></div>
+      </section>
+
+      <section class="vertical-section awards">
+        <div class="column-layout">
+          <div class="column list-container">
+            <h2 class="list-title">Computational Methods</h2>
+            <ol class="numbered-list">
+              <li>
+                <strong>Spatial UX / Installation</strong>
+                <p>The entire space will be designed to afford collaborative interactions, rather than individual consumption of media on a phone. A combination of screens with classic UIs, as well as sensors and projectors will come together to enable gestural interaction with the system.</p>
+              </li>
+              <li>
+                <strong>Algorithmic governance</strong>
+                <p>Studying and crafting the interaction between algorithms and social dynamics will be a crucial method for creating the experience. In order for the right content to be surfaced as users approach Resonators, curation will be required. On resonators where interaction is possible, the rules of the system and its feedback mechanisms will define the resulting experience.</p>
+              </li>
+              <li>
+                <strong>Embedded Systems and Sensors</strong>
+                <p>In order to make the experience possible, I will make use of sensors and radio signals for devices to locate and communicate with each other. I will be using microcontrollers such as ESP32 or Raspberry Pi to give life to the Resonators.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="column">
+            <h2>Design Methods</h2>
+            <p>I am inspired by research on spatial, tangible, and collaborative interfaces, and wish to push this inquiry further by applying ideas and practices developed for communal living to a newly imagined communal digital space. In communal living, people have varying preferences of where their boundary of privacy lies, such as being comfortable sharing a kitchen, but not a bathroom. This work is speculative and participatory in nature, as it aims to expand the boundary of digital privacy people are comfortable with through a co-lived experience. The effects of such an experience might be restorative and lead to strengthened social connection [2] and pave the way for people to more deeply engage with each other in public.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="vertical-section">
+        <h2>Proof of Concept</h2>
+        <div class="proof-of-concept-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <img src="./static/Assignment7_SSchloesser.png" width="30%" style="display: inline-block;"/>
+          <div class="video-container" style="flex-grow: 1; margin-left: 20px;">
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/bS5pCx5V8x4?si=_5PPt9baOJUA5PIT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="vertical-section">
+          <h2 style="text-align: left;">Audience</h2>
+          <p>The project is aimed for the General public, but people will differ in their willingness to engage with others in public space. People have varying levels of comfort sharing media online as well. Designing the UX of the application, as well as the experiences themselves, will be a crucial point to iterate and perfect so that no personality types or groups are left out of the experience. Because the system is novel and has few precedents, it will be important to adapt as the system is tested, since predicting all possible outcomes would be impossible.</p>
+          <br></br>
+      <div class="column-layout">
+        <div class="column">
+          <h2>Data</h2>
+            <ol>
+            <li>
+                <strong>Ethnographies</strong>
+                <p>I will organize volunteer sessions to study how people interact in public space. In particular, aiming to answer the questions: How do people use their phones while in a public space? How much do they interfere with otherwise IRL socializing?</p>
+            </li>
+            <li>
+                <strong>Feedback from user sessions</strong>
+                <p>I will create prototypes as early as possible to start getting people to interact with them and provide feedback. This will be instrumental to the success of the project.</p>
+            </li>
+            <li>
+                <strong>BLE beacon usage in retail stores</strong>
+                <p>For my critical work, I will have to develop a data collection mechanism and conduct surveys throughout the city’s more prominent retail areas.</p>
+            </li>
+            </ol>
+
+        </div>
+        <div class="column">
+          <h2>Materials/Sensors</h2>
+          <ol>
+            <li>Bluetooth beacon</li>
+            <li>Mobile phone (iPhone): bluetooth, wifi</li>
+            <li>Camera</li>
+            <li>Light</li>
+            <li>Water</li>
+            <li>Projection</li>
+          </ol>
+        </div>
+      </div>
+      </section>
+
+
+      <section class="vertical-section outro" style="padding-left: 10%; padding-right: 10%;">
+        <h2>References</h2>
+        <ol>
+            <li>
+                <strong>Colomina, Beatriz, and Mark Wigley. <em>Are We Human? Notes on an Archaeology of Design</em>. Zürich, Switzerland: Lars Müller Publishers, 2016.</strong>
+                <p>Provided inspiration to reimage the world breaking free from our phone as our shelter.</p>
+            </li>
+            <li>
+                <strong>Cheong, Jin Hyun, Zainab Molani, Sushmita Sadhukha, and Luke J. Chang. “Synchronized Affect in Shared Experiences Strengthens Social Connection.” <em>Communications Biology</em> 6, no. 1 (October 28, 2023): 1099. <a href="https://doi.org/10.1038/s42003-023-05461-2">https://doi.org/10.1038/s42003-023-05461-2</a></strong>
+                <p>Provided some proof that communal consumption of media leads to better human relationships and bonding.</p>
+            </li>
+            <li>
+                <strong>Getting Started with iBeacon. (2014). Apple</strong>
+                <p>A reference document which allowed me to understand Apple’s iBeacon technology and how to work with it.</p>
+            </li>
+            <li>
+                <strong>Kwet, M. (2019, June 14). Opinion | In Stores, Secret Bluetooth Surveillance Tracks Your Every Move. The New York Times. <a href="https://www.nytimes.com/interactive/2019/06/14/opinion/bluetooth-wireless-tracking-privacy.html">https://www.nytimes.com/interactive/2019/06/14/opinion/bluetooth-wireless-tracking-privacy.html</a></strong>
+                <p>Showed me that people are looking into the use of this technology and its adverse effects, and what has been done about it up to this point.</p>
+            </li>
+            <li>
+                <strong>Kearns, M., & Roth, A. (2020). The ethical algorithm: The science of socially aware algorithm design. Oxford University Press.</strong>
+                <p>Thoughts on how to craft ethical algorithms and consider how they affect different people.</p>
+            </li>
+            <li>
+                <strong>Schimanski, C.-E. (2018, March 6). Location Awareness in IoT with Beacon Technology. Medium. <a href="https://medium.com/@cayeric/location-awareness-in-iot-with-beacon-technology-2803f48a4e8c">https://medium.com/@cayeric/location-awareness-in-iot-with-beacon-technology-2803f48a4e8c</a></strong>
+                <p>Useful technical and implementation information.</p>
+            </li>
+            <li>
+                <strong>Pouw, W. T. J. L., Van Gog, T., & Paas, F. (2014). An Embedded and Embodied Cognition Review of Instructional Manipulatives. Educational Psychology Review, 26(1), 51–72. <a href="https://doi.org/10.1007/s10648-014-9255-5">https://doi.org/10.1007/s10648-014-9255-5</a></strong>
+                <p>Review of what HCI work has been done, in particular with focus on cognition benefits of tangible interfaces.</p>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <br>
+        <a href="./static/ss3339_SpatialResonance_Heavyweightbond_24x36_LauraKurgan.pdf" target="_blank">Download Project Poster</a>
+        <br>
+        <a href="https://docs.google.com/presentation/d/1i3UJXkrYc-2JmyDMfjruAiYSddmd7_1A3ixnjLhO16E/edit?usp=sharing" target="_blank">View Semester's Progress Slides</a>
+      </section>
+    </main>
+    <script src="./static/js/main.js"></script>
+  </body>
 </html>
