@@ -43,6 +43,14 @@ body {
     text-align: center;
 }
 
+.line.name {
+    margin-top: 2rem;
+    font-weight: 200;
+    text-align: center;
+    font-style: italic;
+}
+
+
 /* Compass Link */
 .compass-link {
     display: flex;
