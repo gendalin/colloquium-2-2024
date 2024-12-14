@@ -1,21 +1,220 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Zihe Wang
+tags: students
+image: Cover.png
 ---
 
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    
-    <title>Student name</title>
+<html lang="en">
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta name="description"
+  content="Student work from Colloquium 2 of the Columbia GSAPP CDP Program in 2024." />
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-2023/favicon.ico" sizes="any">
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-2023/favicon.svg" type="image/svg+xml">
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2023/base.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2023/main.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2023/colloquium1.css" rel="stylesheet" />
+
+  <title>Zihe Wang</title>
 </head>
 
-<body></body>
+<body>
+  <header class="container">
+    <div class="header-context">
+      <div class="h2">
+        <a class="fade" href="https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices"
+          target="_blank">Columbia GSAPP</a>
+      </div>
+    </div>
+
+    <div class="header-title">
+      <div class="h1">
+        <a class="fade" href="/">Computational Design Practices</a>
+      </div>
+      <div class="h2">GSAPP CDP 2024-5 Colloquium II</div>
+    </div>
+
+    <div class="header-nav">
+      <div class="h2">
+        <a class="fade" href="/about">About</a>
+      </div>
+    </div>
+  </header>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Interaction App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- 第一部分：封面 -->
+    <section class="cover">
+        <img src="images/Cover.png" alt="Cover Image" class="cover-image">
+    </section>
+
+    <!-- 第二部分：滚动图片 -->
+    <section class="scrolling-images">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="images/Issues.png" alt="Issues">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Why.png" alt="Why">
+            </div>
+            <div class="carousel-item">
+                <img src="images/Precedents.png" alt="Precedents">
+            </div>
+        </div>
+        <!-- 圆点导航 -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+
+
+    <section class="app-features">
+        <!-- 背景 -->
+        <div class="background">
+            <img src="images/main-background-3.png" alt="Background Image" class="background-image">
+        </div>
+
+        <!-- 标题内容 -->
+        <div class="hero-content">
+            <h1>FeelFur APP</h1>
+            <p>Capture the Moments, Understand the Feelings</p>
+        </div>
+
+        <!-- 自由布局 UI -->
+        <div class="ui-section">
+            <div class="ui-item ui-1" style="top: 17%; left: 10%;">
+                <img src="images/ui1.png" alt="UI 1">
+            </div>
+            <div class="ui-item ui-2" style="top: 42%; left: 20%;">
+                <img src="images/ui3.png" alt="UI 2">
+            </div>
+            <div class="ui-item ui-3" style="top: 30%; left: 70%;">
+                <img src="images/ui2.png" alt="UI 3">
+            </div>
+            <div class="ui-item ui-4" style="top: 58%; left: 60%;">
+                <img src="images/ui4.png" alt="UI 4">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="app-section">
+        <!-- 背景图片 -->
+        <div class="background">
+            <img src="images/main-background-4.png" alt="Background Image" class="background-image">
+        </div>
+
+        <!-- 手机UI展示 -->
+        <div class="ui-container">
+            <div class="nav-button left"></div> <!-- 左侧透明按钮 -->
+            <div class="nav-button right"></div> <!-- 右侧透明按钮 -->
+            <div class="ui-image active">
+                <img src="images/UI-1.png" alt="UI 1">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-2.png" alt="UI 2">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-3.png" alt="UI 3">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-4.png" alt="UI 4">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-5.png" alt="UI 5">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-6.png" alt="UI 6">
+            </div>
+            <div class="ui-image">
+                <img src="images/UI-7.png" alt="UI 7">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 第五部分 -->
+    <section class="interactive-scene">
+        <div class="scene-container">
+            <h2 class="usage-title">Usage scenarios and components</h2>
+            <img src="images/devices.png" alt="Home Scene" class="scene-background">
+            <!-- 区域 1：手机 -->
+            <div class="hotspot" id="phone">
+                <img src="images/Function-phone.png" alt="Phone Function" class="hotspot-image">
+            </div>
+            <!-- 区域 2：摄像头 -->
+            <div class="hotspot" id="camera">
+                <img src="images/Function-camera.png" alt="Camera Function" class="hotspot-image">
+            </div>
+            <!-- 区域 3：狗狗 -->
+            <div class="hotspot" id="dog">
+                <img src="images/Function-dog.png" alt="Dog Function" class="hotspot-image">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="emotional-graph">
+        <h2 class="overlay-text">"Generative"</h2>
+        <iframe src="https://a167-173-68-65-178.ngrok-free.app/" class="emotion-iframe"></iframe>
+    </section>
+    
+    <section class="customization">
+        <h2>"Customizable"</h2>
+        <div class="customization-container">
+            <!-- 左侧 GIF -->
+            <div class="customization-left">
+                <img src="images/MyVideo.gif" alt="Pet Movement GIF" />
+            </div>
+            <!-- 右侧 UI 图片 -->
+            <div class="customization-right">
+                <img src="images/Health.png" alt="UI Screens" />
+            </div>
+        </div>
+    </section>
+   
+   
+    <section class="voice-demo">
+        <h2>“Interactive“</h2>
+        <div class="map-container">
+            <img src="images/Voice-background.png" alt="Map" class="background-map">
+            <div class="hotspot" data-audio="audios/Come here.mp3" style="top: 36%; left: 26%;"></div>
+            <div class="hotspot" data-audio="audios/Hurry up.mp3" style="top: 36%; left: 40%;"></div>
+            <div class="hotspot" data-audio="audios/Let's play.mp3" style="top: 64%; left: 26%;"></div>
+            <div class="hotspot" data-audio="audios/So excited.mp3" style="top: 64%; left: 40%;"></div>
+            <div class="hotspot" data-audio="audios/Come with me.mp3" style="top: 36%; left: 59%;"></div>
+            <div class="hotspot" data-audio="audios/Leave me alone.mp3" style="top: 36%; left: 73%;"></div>
+            <div class="hotspot" data-audio="audios/Stop.mp3" style="top: 64%; left: 59%;"></div>
+            <div class="hotspot" data-audio="audios/Give me a hug.mp3" style="top: 64%; left: 73%;"></div>
+        </div>
+    </section>
+    
+
+    
+    <section class="scrollable-image-section">
+        <div class="horizontal-gallery">
+            <div class="gallery-container">
+                <img src="images/long.png" alt="Scrollable Image">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
 </html>

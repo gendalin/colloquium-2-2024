@@ -1,8 +1,7 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Hao Lee
+tags: students
+image: img/title.png
 ---
 
 <!DOCTYPE html>
@@ -10,12 +9,67 @@ tags:
 <head lang="en">
     <meta charset="UTF-8">
     
-    <title>Student name</title>
+    <title>Hao Lee</title>
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta  
+        name="keywords"
+        content="building material, machine learning, web platform, data estimation"
+    />
+    <meta
+        name="description"
+        content="A storytelling platform that uses material data to illuminate NYC’s urban identity, offering insights into the role materials play in shaping the bulit environment."
+    />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+        }
+        h1 {
+            margin-left: 30px;
+            color: #000;
+            text-decoration: none;
+            font-family: Poppins, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        #descr {
+            position: absolute;
+            width: 30vw;
+            margin: 80px;
+            margin-left: 50px;
+        }
+        #logo {
+            width: 100%;
+        }
+        #background {
+            width: 100vw;
+            height: auto;
+            margin: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body></body>
+<body>
+    <div id="descr">
+        <img src="img/logo.svg" alt="Logo" id="logo">
+        <h1>
+            a storytelling platform that uses material data to illuminate nyc’s urban identity, offering insights into the role materials play in shaping the bulit environment.
+        </h1>
+        <br>
+        <h1 id="link">
+            <a href="https://halfward.github.io/UrbanVein/" target="_blank">
+                <u>click here to access urban vein</u>
+            </a>
+        </h1>
+        
+    </div>
+    <img src="img/background.png" alt="Background Image" id="background">
+</body>
 </html>
