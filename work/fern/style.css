@@ -48,6 +48,12 @@
     text-align: left;
     }
 
+    h6{
+      font-size: 4rem;
+      font-weight: 100px;
+      margin: 20px 0;
+      }
+
     p {
     font-size: 16px;
     }
@@ -60,7 +66,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 200px;
+      width: 150px;
       height: 100vh;
       background-color: #fff;
       border-right: 1px solid #ccc;
@@ -68,33 +74,43 @@
       flex-direction: column;
       padding: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo img {
-      max-width: 100%;
+    }
+    
+    .logo {
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo img {
+      max-width: 120px;
       height: auto;
-  }
-  
-  .nav-links {
+    }
+    
+    .nav-links {
       list-style: none;
       margin-top: 20px;
       padding: 0;
-  }
-  
-  .nav-links li {
+    }
+    
+    .nav-links li {
       margin: 10px 0;
-  }
-  
-  .nav-links a {
+    }
+    
+    .nav-links a {
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
       color: #333;
-  }
-  
-  .nav-links a.active {
-      color: #007BFF;
-  }
+      padding: 10px 15px;
+      display: block; /* Makes the link clickable across its width */
+      border-radius: 4px; /* For rounded corners */
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .nav-links a.active {
+      border: 2px solid black;
+    }
+    
   .content {
     margin-left: 260px;
     padding: 20px;
@@ -103,6 +119,21 @@
     section{
     width: 100vw;
     height: 100vh;
+    }
+
+    #section15{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #section16{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     /* Base Styles */
@@ -216,34 +247,34 @@
 
     #section6{
       display: flex;
-      flex-direction:column;
+      flex-direction:row;
       align-items: center;
       justify-content: center;
       }
 
     #section7{
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
     }
     #section8{
         display: flex;
-        flex-direction:column;
+        flex-direction:row;
         align-items: center;
         justify-content: center;  
     }
 
     #section9{
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
     }
 
     #section10 {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
       }
@@ -258,10 +289,17 @@
 
     #section12{
         display: flex;
-        flex-direction:row;
+        flex-direction:column;
         align-items: center;
         justify-content: center;
     }
+
+    #section13{
+      display: flex;
+      flex-direction:row;
+      align-items: center;
+      justify-content: center;
+  }
 
     #concept{
     width: 100vw;
@@ -320,7 +358,9 @@
     align-items: center;
     position: relative;
     }
-
+.placeholder1 h5{
+  margin-bottom: -1.5em;
+}
     .placeholder1 img {
     width:800px;
     height: auto;
@@ -416,6 +456,9 @@
 margin-bottom: 40px;
 text-align: center;
 }
+#computation{
+  width: 600px;
+}
   
   /* Flexbox for Items in Row */
 .placeholder8 {
@@ -498,15 +541,15 @@ margin-top: 10px;
   flex-direction: column; /* Stack image and text */
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   text-align: center;
   }
     
     /* Image Styling */
   #bump img, #fall img, #swallow img {
   width: auto;
-  height: 400px;
+  height: 300px;
   max-width: 100%;
   border-radius: 10px; /* Optional: Add rounded corners */
   }
@@ -515,7 +558,6 @@ margin-top: 10px;
   #bump p, #fall p, #swallow p {
   font-size: 1rem;
   font-weight: normal;
-  margin-top: 10px;
   }
 
 
@@ -559,7 +601,7 @@ height: auto;
     align-items: center;
     justify-content: center;
     width: 400px;
-    height: 600px;
+    height: 480px;
     text-align: center;  
 }
 
@@ -594,8 +636,16 @@ height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
+  .content-item h5{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
   #p-text {
     width: 100%; /* Adjust to the parent container's width */
+    height: 400px;
     text-align: left; /* Align the text to the left */
     overflow-wrap: anywhere; /* Allow breaking text at any point */
     word-wrap: break-word; /* Support for legacy browsers */
@@ -655,7 +705,7 @@ height: auto;
     display: flex;
     flex-direction: row;
     gap: 10px;
-
+    margin: 0px 20px 0px 20px;
   }
   /* Research Item Styling */
   .research-item {
@@ -718,76 +768,72 @@ height: auto;
   color: #007BFF; 
   margin-bottom: 40px;
 } */
-
-/* Placeholder Container */
+/* Placeholder Styling for Prototype Items */
 .placeholder12 {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  width: 100%;
+  max-width: 1200px; /* Center container */
 }
 
-/* Prototype Item Layout */
+/* Prototype Card Styling */
+.prototype-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid #000; /* Black border */
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
 .prototype{
   margin: 40px;
 }
-.prototype-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #ddd; /* Optional border */
-  border-radius: 8px;
-  padding: 20px;
-  gap: 20px;
+
+.prototype-item .content{
+ margin: 0;
 }
-
-/* Content Styling */
-.prototype-item .content {
-  flex-grow: 1; /* Allow content to grow and fill space if needed */
-  display: flex;
-  flex-direction: column; /* Stack the text elements */
-  justify-content: space-between; /* Distribute text evenly */
-  text-align: left;
-  margin: 0;
-}
-
-/* Text Content Area */
-/* .content {
-  flex: 1;
-} */
-
-.content h5 {
-  font-size: 1.5rem;
+/* Text Styling */
+.prototype-item h3 {
+  font-size: 4rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  opacity: 0.1;
+  z-index: 1;
+  text-align: left;
 }
 
-.content p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-/* Media Area */
-.media {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.media video {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-  
-  .text h4 {
-    font-size: 2.5rem;
+.prototype-item h5 {
+  font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    text-align: left;
   }
+
+.prototype-item p {
+  font-size: 1rem;
+  color: #555; /* Gray text */
+  line-height: 1.5;
+}
+
+/* Video Styling */
+.prototype-item .media video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .placeholder12 {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
   
 /* Grid Container */
 .grid-container2 {
