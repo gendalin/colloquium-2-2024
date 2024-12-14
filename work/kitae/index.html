@@ -1,21 +1,222 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Kitae Kim
+tags: students
+image: img/title.png
 ---
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     
-    <title>Student name</title>
+    <title>Kitae Kim</title>
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="Delivery Service, Mapping, Analysis, Human Centered, Accessibility">
+    <meta name="description" content=" This project examines the accessibility and equity of delivery services across urban and suburban regions in the United States, with a particular focus on their human-centered implications. Despite the ubiquity of delivery services in modern life, significant inequities remain, especially in <strong>underserved areas</strong> and <strong>among economically disadvantaged populations</strong>. The research highlights systemic challenges, including delivery deserts, prohibitive costs, and situational barriers faced by individuals with mobility limitations, disabilities, or inflexible work schedules. To address these disparities, the project proposes augmenting existing systems with human-centered interventions, such as shared delivery networks and customizable delivery schedules, to promote inclusivity and equitable access for all.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body></body>
+<body>
+    
+    <div class="background-image">
+        <h1>Delivery for Everyone?</h1>
+        <h2>Delivery Service Accessibility and Human-Centeredness</h2>
+        <h3>Kitae Kim</h3>
+        <h4>CDP, GSAPP, Columbia Univ.</h4>
+    </div>
+    <div class="middle-part">
+        <div class="overview_p">Overview</div>
+        <div class="small-box"></div>
+        <div class="overview_p2">
+            This project examines the accessibility and equity of delivery services across <strong>urban and suburban regions</strong> in the United States, with a particular focus on their human-centered implications. Despite the ubiquity of delivery services in modern life, significant inequities remain, especially in <strong>underserved areas</strong> and <strong>among economically disadvantaged populations</strong>. The research highlights systemic challenges, including delivery deserts, prohibitive costs, and situational barriers faced by individuals with mobility limitations, disabilities, or inflexible work schedules. To address these disparities, the project proposes augmenting existing systems with human-centered interventions, such as shared delivery networks and customizable delivery schedules, to promote inclusivity and equitable access for all.
+        </div>
+        
+        <div class="description-container">
+            <h6><strong>Computational Methods</strong>
+                <button class="toggle-btn toggle-btn-method" onclick="toggleDescription('method')">+</button>
+            </h6>
+            <div class="description" id="method" style="display: none;">
+                <p>The project employs geospatial analysis and demographic data integration to identify delivery service gaps and assess their impacts. GIS tools are used to map service coverage, highlighting disparities between urban and suburban regions. Additionally, socioeconomic data is analyzed to evaluate the financial burden on low-income groups. Affordances of these workflows include uncovering overlooked service deserts, quantifying inequities, and enabling predictive modeling of service expansion. By combining quantitative methods with qualitative analysis of user experiences, the computational approach facilitates a nuanced understanding of accessibility issues, offering actionable insights for human-centered improvements in delivery service systems.</p>
+            </div>
+        </div>
+    
+        <div class="description-container2">
+            <h6><strong>Design Approach</strong>
+                <button class="toggle-btn2 toggle-btn-design" onclick="toggleDescription('design')">+</button>
+            </h6>
+            <div class="description" id="design" style="display: none;">
+                <p>The design approach of this project is analytic and speculative, aiming to critically assess the current delivery system while proposing innovative solutions. By bridging data-driven insights with user-centered design, the work not only identifies inequities but also speculates on scalable interventions like shared delivery models and time-flexible scheduling. The participatory aspect is emphasized by integrating user feedback from vulnerable populations. This approach highlights accessibility as a fundamental right and reframes delivery services as a critical urban infrastructure. Ultimately, the project fosters dialogue between communities and service providers to inspire systemic changes rooted in equity and inclusivity.</p>
+            </div>
+        </div>
+        
+        <button class="project-button" onclick="scrollToSection()">Discover More</button>
+    </div>
+
+<div class="dark-gray2">
+    <h6><strong>Precedent</strong>
+    <button id="toggle-button" class="toggle-button">+</button>
+    </h6>
+    <div id="content" class="hidden-content">
+        <img src="Pic/Precedent.png" alt="Example Image" />
+        <p>
+        <strong>Why This Precedent is Relevant</strong>
+        The precedent is crucial because it shows the disparity between corporate goals and community needs. 
+        By studying Amazon's distribution network, my project builds on this critique to propose a more inclusive model for delivery systems.
+    
+        My project critiques the present condition of food access inequality, especially in underserved areas, by examining the role of digital delivery systems. 
+        The study on Amazon's warehouse network and subsidies provides a critical precedent, highlighting how large corporations shape delivery infrastructure. 
+        While Amazon’s fulfillment centers have improved efficiency, their location choices often prioritize profit over equitable service distribution. 
+        My project proposes an alternative by analyzing how digital delivery zones could better align with underserved communities' needs, ensuring equitable 
+        food access through targeted infrastructure and policy changes.
+        </p>
+    </div>
+</div>
+
+<div class="Dark_Blue">
+    <h5 id="Dark_Blue">Necessity and Growth of Delivery Services</h5>
+    <div class="iframe-container">
+        <iframe src="Graph/index.html" title="Graph" style="overflow: hidden; pointer-events: auto;"  sandbox="allow-scripts allow-same-origin"></iframe>></iframe>
+    </div>
+    <div= class="graph_p">
+        The COVID-19 pandemic transformed delivery services from a convenient option into an essential pillar of daily life.
+        
+        Today, delivery services cater to a wide range of needs, including groceries, medication, household essentials, and even meals. Since 2013, demand for delivery services has shown a consistent upward trend. The volume of package deliveries, which stood at 3.6 billion in 2013, increased nearly fivefold to 16.2 billion in 2023. On average, individuals now receive approximately 65 packages annually, making delivery services an integral part of everyday life. Additionally, meal and grocery delivery orders have surged by more than threefold since the pre-pandemic era, reaching 2,100 and 1,500 orders, respectively. During the COVID-19 pandemic, the U.S. government designated delivery services as one of 16 critical infrastructures, underscoring their vital role in modern society.
+        
+        However, are these <strong>indispensable services accessible to everyone equally</strong>?
+        Do delivery systems truly embody <strong>"people-centered"</strong> approaches that benefit all individuals?
+        This project seeks to address these questions by analyzing the accessibility of delivery services in both urban and suburban areas.
+    </div>
+</div>
+
+
+    <h5 id="None">Identifying Nationwide Delivery Desert</h5>
+    <div class="iframe-container1">
+        <iframe src="w1/w1.html" title="Website 1"></iframe>
+    </div>
+    <div class="website1_p">
+        
+Throughout the United States, various delivery services are in operation.Major package delivery stations such as UPS, USPS, and FedEx are evenly distributed across most areas, excluding mountainous regions. However, Amazon’s distribution differs significantly between urban and suburban areas. For grocery delivery services, the service radius is typically limited to approximately 15 miles from the market’s location. Beyond this range, accessibility decreases significantly. Notably, most markets, except Walmart, tend to be concentrated in urban areas. Meal delivery services like Uber Eats, Grubhub, and DoorDash primarily operate around restaurant locations, which are predominantly situated in urban centers. As a result, suburban and low-density areas experience substantial limitations in accessing these services.Regions facing challenges in delivery service accessibility can overlap with food deserts, compounding the problem. Food deserts are areas without grocery stores within a 10-mile radius, where obtaining groceries is difficult without private transportation. If delivery services are also inaccessible in these regions, residents face significant difficulties in meeting their essential needs. In areas where food deserts and delivery deserts coincide, individuals who cannot drive or experience mobility challenges are at a heightened risk of being unable to acquire necessary goods.
+
+<strong>These overlapping regions often share certain characteristics:</strong>
+
+• They are home to a substantial population but are disconnected from nearby metropolitan areas.
+• Development patterns reveal isolated contexts, such as residential areas surrounded by agricultural lands or dispersed settlements over a broader range rather than concentrated living spaces.
+    </div>
+
+<div class="dark-gray">
+    <h5 id="dark-gray">Delivery Service Challenges in Urban Areas</h5>
+    <div class="iframe-container2">
+        <iframe src="w2/w2.html" title="Website 2"></iframe>
+    </div>
+    <div class="website2_p">
+        While urban areas generally have access to delivery services, certain individuals may face challenges in using them due to specific circumstances
+       
+        • <Strong>Low-Income Individuals</Strong>
+        People with lower incomes often perceive delivery fees as a significant financial burden, making them reluctant to rely on delivery services even when necessary.
+        More than 30% of individuals in lower-income brackets face delivery costs that are over five times more burdensome compared to the highest income earners. This disparity is evident in the varying levels of delivery service usage across boroughs. For instance, areas with lower income levels, such as the outskirts of Queens, the Bronx, and Brooklyn, show a delivery service usage index of approximately 0.65, lower than wealthier downtown areas.
+        
+        • <Strong>Challenges in Receiving Deliveries Directly</Strong>
+        In the U.S., 44% of people have experienced package theft, leading many to prefer receiving deliveries in person. However, elderly or disabled individuals may only be able to receive deliveries when a caregiver is present, and working professionals may only be available after work hours. The uncertainty in current delivery systems regarding exact delivery times can create significant inconveniences for these groups, limiting their ability to utilize delivery services effectively.
+    </div>
+   </div>
+
+   <div class="Dark_Blue2">
+    <h5 id="Dark_Blue2">Challenges in Accessing a Fair and Inclusive Delivery System</h5>
+    
+    <div class="threeP">
+        <img src="Pic/Problem1_US_2.png" alt="Delivery Desert Icon" class="icon">
+        <div class="icon-row">
+            <span>Delivery coverage gaps in suburban areas create delivery deserts, limiting access to essential goods.</span>
+        </div>
+            <div class="centered-icon">
+            <img src="Pic/Problem2_NYC_2.png" alt="Shared Icon" class="icon">
+            </div>
+            <div class="icon-row2">
+                <span>Urban delivery faces challenges like situational barriers and restricted access, disrupting reliability</span>
+            </div>
+            <div class="icon-row3">
+            <span>High delivery fees put low-income households at a disadvantage, deepening inequalities</span>
+        </div>
+    </div>
+        
+        <div= class="graph_p">
+            Delivery services, despite their integral role in modern society, exhibit significant disparities in accessibility and functionality, particularly when comparing suburban and urban areas. Suburban regions frequently experience limited delivery coverage, a consequence of low population density and widespread geographical dispersion. This inadequacy compounds the issue of food deserts, leaving residents—especially those from low-income communities—struggling to obtain fresh groceries and essential goods.
+
+            Conversely, urban areas are not exempt from challenges. Delivery operations in these regions are often hindered by situational constraints, such as the inability of elderly residents or those with disabilities to receive packages without the assistance of a caregiver. Additionally, individuals who work late into the night may miss their delivery windows, resulting in delayed or undelivered items. These barriers compromise the reliability and efficiency of urban delivery services, leaving even densely populated areas inadequately served.
+            
+            Additionally, delivery fees represent a substantial economic burden for low-income households. This financial strain discourages the use of delivery services, further exacerbating inequalities in accessibility and convenience. The interplay of these challenges highlights a systemic issue, wherein delivery services fail to equitably meet the needs of diverse socio-economic and geographical groups.
+        
+    </div>
+    </div>
+    
+</div>
+   
+<div class="System">
+    <h5 id="System">Next Step: System</h5>
+    <div class="Proposal"> 
+    </div>
+    <div class="proposal_t">A promising approach to addressing the gaps in delivery service coverage, particularly in underserved areas, could be the implementation of a shared delivery system. This system would involve multiple individuals in the same region sharing delivery routes, which could lower overall delivery costs. By redistributing delivery services, such a model may alleviate the financial burden of delivery fees for people in areas with limited service coverage. This approach has the potential to particularly benefit those in low-income communities or areas with poor delivery infrastructure. Moreover, it could lead to the emergence of a delivery community, where local residents collaborate to streamline the delivery process. This community could foster mutual support and cooperation, creating a localized network that improves overall access to delivery services.
+
+        In addition to the shared delivery system, the introduction of flexible delivery time options could significantly improve the convenience and security of receiving packages. Many individuals, particularly those with demanding work schedules or mobility limitations, may find it difficult to receive deliveries during standard hours. By offering more flexible delivery windows, it would become possible to better accommodate the needs of these individuals, ensuring they can receive their packages safely and at a time that works for them. This flexibility would not only enhance convenience but also promote greater inclusivity, allowing a wider range of individuals to benefit from the service.
+        
+        The combination of a shared delivery system and flexible time slots presents a compelling framework for enhancing delivery accessibility and efficiency. Through the reduction of costs and the creation of delivery communities, these solutions could contribute to a more equitable and efficient delivery network. While these solutions remain conceptual at this stage, they hold the potential to transform the delivery landscape by addressing both logistical challenges and social inequalities.
+    </div>
+</div>
+<div class="end-part">
+    <hr class="divider">
+    <div class="footer-content">
+        <p>Columbia University, GSAPP
+M.S. Computational Design Practices
+        </p>
+        <div class="Name">Kitae Kim
+            kk3775@columbia.edu</div>
+        
+    </div>
+    <div class="citation">
+        <div class="Name_c">Research/Bibliography</div>
+        <p>
+• Angela, C B Trude., et al. (2022). An equity-oriented systematic review of online grocery shopping among low-income populations: implications for policy and research.Nutrition Reviews. 
+  Volume 80, Issue 5, Pages 1294–1310
+  <strong>This study explores the barriers and facilitators for low-income populations using online grocery services. 
+  It connects to my project by addressing how digital food systems might reduce disparities, particularly in food deserts, through enhanced accessibility and policy adaptations.</strong>
+• Nakayama, S., & Yan, W. (2019). The package redelivery problem, convenience store solution, and the delivery desert: Case study in Aoba Ward, Yokohama, Journal of Urban Management. 
+  Volume 8, Issue 3, Pages 355-363
+  <strong>This research highlights accessibility issues in delivery services, emphasizing the concept of "delivery deserts." 
+  My project parallels this study by examining similar barriers in digital delivery zones and how physical and digital infrastructure impact underserved areas.</strong>
+• Good Jobs First. (2021). Mapping Amazon. Esri
+  <strong>This study's focus on the geographical and financial expansion of Amazon's distribution network links to my project by providing insights into corporate roles in digital delivery systems 
+  and their impact on food access equity. It informs how economic incentives might influence service distribution.</strong>
+• Billy Roberts. (2023). How Delivery Innovation Can Reduce Hunger in the Heartland, CoBank
+  <strong>The discussion on rural food insecurity and technological innovations like drones aligns with my project's exploration of digital solutions to access challenges. 
+  The role of digital infrastructure in underserved rural areas provides a comparative framework for my analysis.</strong>
+• George, C., & Adie Tomer. (2022). Delivering to deserts: New data reveals the geography of digital access to food in the U.S. Brookings
+  <strong>This research focuses on the rapid shift to digital food delivery services, which has reshaped traditional food access models. 
+  My project builds on this foundation, assessing whether these new delivery systems meet the needs of vulnerable populations and areas traditionally overlooked.</strong>
+        </p>
+    
+    <div class="Name_d">Data Sources</div>
+        <p>
+• Piteny Bowes Parcel Shipping Index(https://www.pitneybowes.com/us/shipping-index.html)
+• Statista, Grocery,Meal Delivery-United States(https://www.statista.com/outlook/emo/online-food-delivery/grocery-delivery/united-states)
+• Amaerica's Cyber Defense Agency(https://www.cisa.gov/topics/risk-management/coronavirus/identifying-critical-infrastructure-during-covid-19)
+• Food Access Research Atlas(https://www.ers.usda.gov/data-products/food-access-research-atlas/)
+• Porch Pirates 2023: Over a Third of Americans Report Having A Package Stolen(https://lombardohomes.com/porch-pirates-stealing-americans-packages/)
+        </p>
+    </div>
+    </div>
+
+
+    
+
+    <div class="step-indicator">
+        <div class="step-circle" id="circle-1"></div>
+        <div class="step-circle" id="circle-2"></div>
+        <div class="step-circle" id="circle-3"></div>
+        <div class="step-circle" id="circle-4"></div>
+        <div class="step-circle" id="circle-5"></div>
+        <div class="step-circle" id="circle-6"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
