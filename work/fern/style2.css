@@ -1,0 +1,695 @@
+/* Navigation */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px; /* Fixed width for navigation */
+  height: 100vh; /* Full height for the sidebar */
+  background-color: #fff; /* White background */
+  border-right: 1px solid #ccc; /* Add a border to separate nav and content */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Logo Styling */
+.logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 10px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #007BFF; /* Active or hover color */
+}
+
+/* Content Area */
+.content {
+  margin-left: 280px; /* Offset to match navigation width */
+  padding: 20px;
+  max-width: calc(100% - 280px); /* Dynamically adjust content width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 40px; /* Add spacing between sections */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: medium;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .navigation {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      box-shadow: none;
+  }
+
+  .content {
+      margin-left: 0;
+      max-width: 100%;
+  }
+
+  .nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px 0;
+  }
+
+  .nav-links li {
+      margin: 0 5px;
+  }
+
+  .nav-links a {
+      font-size: 12px;
+  }
+}
+#section2{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section3{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section4{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section5{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section7{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  }
+  #section8{
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;  
+  }
+
+  #section9{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section10 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  
+  #section11{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #section12{
+      display: flex;
+      flex-direction:row;
+      align-items: center;
+      justify-content: center;
+      }
+
+  #concept{
+  width: 100vw;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #question{
+  width: 960px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #thinking{
+  width: 600px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #design{
+  width: 600px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #technological{
+  width: 600px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  }
+  .placeholder1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+
+  .placeholder1 img {
+  width:800px;
+  height: auto;
+  }
+  .text{
+  padding: 40px;
+  width: 400px;
+  }
+
+  .placeholder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+
+  .placeholder img {
+  width:600px;
+  height: auto;
+  }
+
+  .placeholder3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+
+  .placeholder3 img {
+  width:400px;
+  height: auto;
+  }
+
+  .placeholder4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+
+  .placeholder4 img {
+  width:800px;
+  height: auto;
+  }
+  .placeholder5 img{
+  width:600px;
+  }
+
+  .placeholder6{
+      display: flex;
+      flex-direction: row; /* Align elements in a row */
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Space between items */
+      width: 100%; /* Make container full width */
+      max-width: 1200px; /* Optional max width for better layout */
+    }
+    
+    /* Individual Box Styling */
+    #hci, #nav, #feedback {
+      display: flex;
+      flex-direction: column; /* Stack image and text */
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 600px;
+      text-align: center;
+    }
+    
+    /* Image Styling */
+    #hci img, #nav img, #feedback img {
+      width: auto;
+      height: 300px;
+      max-width: 100%;
+      border-radius: 10px; /* Optional: Add rounded corners */
+    }
+    
+    /* Text Styling */
+    #hci p, #nav p, #feedback p {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #4c2e2e; /* Match text color */
+    }
+
+  .placeholder7 img{
+      width:400px;
+      }
+
+  /* Section Styling */
+
+#computation h4 {
+margin-bottom: 40px;
+text-align: center;
+}
+
+/* Flexbox for Items in Row */
+.placeholder8 {
+display: flex;
+flex-direction: row; /* Align elements in a row */
+justify-content: center;
+align-items: center;
+gap: 20px; /* Space between items */
+width: 100%; /* Make container full width */
+max-width: 1200px; /* Optional max width for better layout */
+}
+
+/* Individual Box Styling */
+#cv, #ml, #api, #sensor {
+display: flex;
+flex-direction: column; /* Stack image and text */
+align-items: center;
+justify-content: center;
+width: 400px;
+height: 600px;
+text-align: center;
+}
+
+/* Image Styling */
+#cv img, #ml img, #api img, #sensor img {
+width: auto;
+height: 400px;
+max-width: 100%;
+border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Text Styling */
+#cv p, #ml p, #api p, #sensor p {
+font-size: 1rem;
+font-weight: bold;
+margin-top: 10px;
+color: #4c2e2e; /* Match text color */
+}
+
+.placeholder9{
+display: flex;
+flex-direction: row; /* Align elements in a row */
+justify-content: center;
+align-items: center;
+gap: 20px; /* Space between items */
+width: 100%; /* Make container full width */
+max-width: 1200px; /* Optional max width for better layout */
+}
+
+/* Individual Box Styling */
+#ei, #av, #ui{
+display: flex;
+flex-direction: column; /* Stack image and text */
+align-items: center;
+justify-content: center;
+width: 400px;
+height: 600px;
+text-align: center;
+}
+
+/* Image Styling */
+#ei img, #av img, #ui img {
+width: auto;
+height: 400px;
+max-width: 100%;
+border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Text Styling */
+#ei p, #av p, #ui p {
+font-size: 1rem;
+font-weight: normal;
+margin-top: 10px;
+}
+
+.placeholder10 img{
+width: 300px;
+height: auto;
+}
+
+/* Horizontal Scroll Container */
+.strength-item{
+  display: flex;
+  flex-direction: column; /* Stack image and text */
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 600px;
+  text-align: center;  
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  width: 60%;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin-top: 20px;
+  background-color: #fff; /* White background for scrolling area */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.content-item {
+  display: flex; /* Use flexbox for better alignment of content */
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Add space between elements */
+  width: 400px; /* Fixed width for content items */
+  height: 600px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px; /* Increased padding for better spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#p-text {
+  width: 100%; /* Adjust to the parent container's width */
+  text-align: left; /* Align the text to the left */
+  overflow-wrap: anywhere; /* Allow breaking text at any point */
+  word-wrap: break-word; /* Support for legacy browsers */
+  word-break: break-word; /* Force breaking long words/URLs */
+  line-height: 1.5; /* Improve readability */
+}
+
+#p-text p {
+  font-size: 1rem; /* Set a readable font size */
+  color: #555; /* Optional: Text color */
+  margin: 0; /* Optional: Remove default margin */
+  word-break: break-all; /* Force breaking for URLs/long words */
+  overflow-wrap: anywhere; /* Ensure text wraps appropriately */
+}
+
+
+.content-item img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Add spacing below the image */
+}
+
+.content-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5; /* Improve text readability */
+  padding: 0 10px; /* Add horizontal padding to the text */
+}
+
+.placeholder11 img {
+  width: 300px;
+  height: auto;
+  display: block; /* Ensure the image does not overflow */
+  margin: 0 auto; /* Center the image */
+}
+
+
+/* General Section Styling */
+
+.text h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Grid Container for 2 Rows */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 columns */
+  grid-auto-rows: auto; /* Adjust row heights automatically */
+  border: black;
+}
+
+/* Research Item Styling */
+.research-item {
+  color: black;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.research-item h3 {
+  font-size: 4rem;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.research-item .content {
+  z-index: 2;
+  position: relative;
+  padding-top: 60px; /* Add padding to avoid overlap with h3 */
+}
+
+.research-item h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.research-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.research-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+}
+
+
+/* General Section Styling */
+.section {
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1200px; /* Ensure content does not stretch beyond a manageable width */
+  margin: 0 auto; /* Center content */
+  box-sizing: border-box;
+}
+
+/* .text h4 {
+font-size: 2.5rem;
+font-weight: bold;
+text-align: center;
+color: #007BFF; 
+margin-bottom: 40px;
+} */
+
+/* Placeholder Container */
+.placeholder12 {
+display: flex;
+flex-direction: column;
+gap: 40px;
+}
+
+/* Prototype Item Layout */
+.prototype-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 1px solid #ddd; /* Optional border */
+border-radius: 8px;
+padding: 20px;
+gap: 20px;
+}
+
+/* Text Content Area */
+.content {
+flex: 1;
+}
+
+.content h5 {
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.content p {
+font-size: 1rem;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+/* Media Area */
+.media {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.media video {
+max-width: 100%;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.text h4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #007BFF; /* Blue color */
+  margin-bottom: 40px;
+}
+
+/* Grid Container */
+/* Grid Container */
+.grid-container2 {
+display: flex;
+flex-direction: row; /* Stack cards vertically */
+gap: 20px; /* Space between cards */
+width: 100%;
+max-width: 400px; /* Optional: Limit maximum width */
+margin: 0 auto; /* Center the container */
+}
+
+/* Grid Container */
+.grid-container2 {
+display: flex;
+justify-content: center; /* Center the cards horizontally */
+gap: 20px; /* Space between cards */
+width: 100%;
+max-width: 1400px; /* Optional: Limit grid width */
+margin: 0 auto; /* Center the grid container */
+}
+
+/* Reading Card */
+.reading-card {
+display: flex;
+flex-direction: column; /* Stack image and text vertically */
+align-items: center; /* Center align content horizontally */
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 600px;; /* Fixed width for each card */
+height: auto; /* Let the height adjust dynamically based on content */
+text-align: center; /* Center align text */
+}
+
+/* Image Styling */
+.reading-card .image-container img {
+width: 100%;
+max-width: 350px; /* Optional: Keep the image smaller than the card width */
+height: auto;
+margin-bottom: 15px;
+border-radius: 8px;
+height: 300px;
+}
+
+/* Content Styling */
+.reading-card .content {
+flex-grow: 1; /* Allow content to grow and fill space if needed */
+display: flex;
+flex-direction: column; /* Stack the text elements */
+justify-content: space-between; /* Distribute text evenly */
+text-align: center;
+margin: 0;
+}
+
+.reading-card .content h5 {
+font-size: 1.2rem;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.reading-card .content p {
+font-size: 1rem;
+line-height: 1.5;
+color: #555;
+margin: 0;
+text-align: justify; /* Justify the text for better alignment */
+}
