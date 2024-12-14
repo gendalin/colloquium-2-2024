@@ -1,21 +1,121 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Yuchao Ma
+tags: students
+image: images/Poster main.png
 ---
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    
-    <title>Student name</title>
-
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>Yuchao Ma</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <h1 class="student-name">All in One</h1>
 
-<body></body>
+    <div class="project-intro">
+        <p>With the help of LLM AI and the RAG system, we can enable city residents to jointly collect spatial data and construct a shared spatial intelligence that is dynamically updated and precise and detailed. This will ultimately enable complex spatial functions such as indoor spatial navigation, spatial memory, and retrieval of target objects. The entire process will be completed through humanized and barrier-free semantic interaction.</p>
+    </div>
+
+    <img src="PointCloudCit.gif" alt="spatial AI" class="section-image">
+
+    <div class="content-section">
+        <h2 class="section-title">Background</h2>
+        <img src="images/Poster main.png" alt="spatial AI" class="section-image">
+        <h3 class="section-subtitle">Next-generation spatial applications - Spatial AI Agent</h3>
+        <p class="section-description">
+            In the complex city, we often need to shuttle between different spaces to complete tasks, meet people and visit things. Mobile navigation, life services and social media have become indispensable applications in urban life, even though they often fail to meet some user needs, such as accurate indoor navigation and spatial guidance.
+However, with the implementation of LLM artificial intelligence, we have new possibilities...
+        </p>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Semantic interaction</h2>
+        <img src="metro.gif" class="section-image">
+        <p class="section-description">
+            The multimodal LLM provides an intelligent foundation and interaction path for semantic interaction. Programmatic interaction between users and applications is transformed into anthropomorphic interaction with AI, that is, natural interaction including chat, images and even gestures.
+This interaction method will make the process of using spatial intelligence very smooth and effortless, and users will gradually transform computer applications into a kind of life partner.
+        </p>
+        <img src="images/Semantic in.png" class="section-image">
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">AI Agent System</h2>
+        <img src="images/System.png" alt="Mobile App Design Project" class="section-image">
+        <p class="section-description">
+            A Spatial AI Agent application is built by integrating RAG, LLM and spatial data collection systems, so that users can get solutions to complex spatial problems through the simplest semantic interaction.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">User Scenarios</h2>
+        <img src="Chongqing.gif" alt="Mobile App Design Project" class="section-image">
+        <p class="section-description">
+            It is difficult for delivers to find the exact location of a customer's home in an unfamiliar residential area, and this process wastes a lot of time. They need accurate navigation of the interior spaces of residential areas and key location prompts.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <img src="ParkingLidar.gif" alt="Mobile App Design Project" class="section-image">
+        <p class="section-description">
+            Users forget the location of important objects in complex spaces, such as parking lots, and cannot find their vehicles.Based on the point cloud map and key spatial elements, the user's activity path can be recorded in real time, and the memory can be called to generate navigation when the user makes a request.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <img src="RobotCase.gif" alt="Mobile App Design Project" class="section-image">
+        <p class="section-description">
+            Robots lack understanding and memory of the real world. Through letting the robots access massive amounts of real-world spatial data with time information, we can build an embodied intelligence knowledge base.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Data Collection and Processing</h2>
+        <img src="Polycam.gif" alt="Mobile App Design Project" class="section-image">
+        <p class="section-description">
+            Users can directly collect spatial data through the phone's camera and LiDAR sensor, and then upload it to the cloud after pre-processing it through a local program to build a RAG database.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <img src="images/pcdp00.png" alt="Mobile App Design Project" class="section-image">
+        <img src="images/pcdp01.png" alt="Mobile App Design Project" class="section-image">
+        <img src="images/pcdp02.png" alt="Mobile App Design Project" class="section-image">
+        <img src="CSV.gif" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">The pre-processing and vectorization of point cloud data will be processed using Open 3D for large amounts of point cloud data.</h3>
+    </div>
+
+    <div class="content-section">
+        <img src="images/RGB Data.png" alt="Mobile App Design Project" class="section-image">
+        <img src="images02/Semantic Processing.png" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">The system will extract a key frame every 3 seconds to form RGB data, and then use multimodal LLM to establish semantic labels for each data frame.</h3>
+    </div>
+
+    <div class="content-section">
+        <img src="images02/World Cordinate.png" alt="Mobile App Design Project" class="section-image">
+        <img src="Mulit-SLAM.gif" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">In order to ensure that different users can collaborate on data collection for the same space, we need reason SLAM technology to coordinate the different device coordinate systems in a world coordinate system.</h3>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Point Cloud Data + Image Data + Timestamp + Semantic Labels = Spatial Memories</h2>
+        <img src="images02/Spatial memories.png" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">The final completion of spatial memory can realize complex and long-link spatial tasks such as precise and complex spatial navigation, searching for target objects, and recalling spatial records, which are currently impossible with all existing applications.</h3>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">User Flow and Interface</h2>
+        <img src="images02/UF01.png" alt="Mobile App Design Project" class="section-image">
+        <img src="images02/UI01.png" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">Interactive process of spatial data collection</h3>
+        <img src="images02/UF02.png" alt="Mobile App Design Project" class="section-image">
+        <img src="images02/UI02.png" alt="Mobile App Design Project" class="section-image">
+        <h3 class="section-subtitle">Target object retrieval interaction process</h3>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">The combination of LLM and RAG dynamically constructs a spatial intelligence system to provide users with precise navigation and activity memory functions.</h2>
+    </div>
+
+</body>
 </html>
