@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.text {
+    position: absolute;
+    top: 60vh;
+    right: 1%;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 10px;
+    display: none;
+    
+}
+
+.text h2 {
+    font-size: 4vh;
+    margin-bottom: 10px;
+    white-space: pre;
+    text-align: right;
+}
+
+.text p {
+    font-size: 2vh;
+    white-space: pre;
+    text-align: right;
+    
+
+}
+
+#map1 {
+    opacity: 1;
+}
+
+#text1 {
+    display: block;
+}
+
+.map-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none; 
+}
+
+#gm-slider {
+    -webkit-appearance: none; 
+    position: absolute;
+    appearance: none;
+    top: 30px;
+    right: 30px;
+    width: 200%; 
+    height: 15px; 
+    background: linear-gradient(to right, #fffff0, #f7941d); 
+    border-radius: 5px; 
+    outline: none;
+    transition: background 0.3s ease-in-out; 
+    cursor: pointer;
+}
+
+
+#gm-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; 
+    height: 20px;
+    background: #fffff0; 
+    border-radius: 50%; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: background 0.3s ease-in-out; 
+}
+
+#gm-slider::-webkit-slider-thumb:hover {
+    background: #FF5722; 
+}
+
+#gm-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #FF5722;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#gm-slider::-moz-range-thumb:hover {
+    background: #FF7043;
+}
+
+#gm-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #FF5722;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#gm-slider::-ms-thumb:hover {
+    background: #FF7043;
+}
+
+#slider-background {
+    position: absolute;
+    top: 10px; 
+    Right: 20px; 
+    width: 220%; 
+    height: 280%; 
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+    z-index: -1; 
+}
+
+#gm-slider-label {
+    position: relative;
+    top: 10px; 
+    right: 30px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333333; 
+    font-family: Arial, sans-serif; 
+    z-index: 1; 
+    background: none; 
+}
+
+.slider-label-left {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    top: 50px; 
+    right: 300px;
+}
+.slider-label-middle {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    top: 50px; 
+    right: 175px;
+}
+
+.slider-label-right {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    top: 50px; 
+    right: 30px;
+}
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fffff0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transition: background-color 0.3s ease; 
+}
+
+#toggleAmazon:hover {
+    background-color: #cc0000; 
+}
+
+#toggleUPS:hover {
+    background-color: #FFD800;
+}
+
+#toggleTarget:hover {
+    background-color: #cc0000;
+}
+
+#toggleTrader:hover {
+    background-color: #ff69b4; 
+}
+
+#toggleWalmart:hover {
+    background-color: #ffc220;
+}
+
+#toggleWhole:hover {
+    background-color: #00674b; 
+}
+
+#toggleDoorDash:hover {
+    background-color: #EB1700; 
+}
+
+#toggleGrubHub:hover {
+    background-color: #FFA943; 
+}
+
+#toggleUberEats:hover {
+    background-color: #4CFFB4; 
+}
+
+#toggleD_GM:hover {
+    background-color: #EB1700; 
+}
+
+#toggleF_D_GM:hover {
+    background-color: #f7941d; 
+}
+
+#toggleF_D_GM_P:hover {
+    background-color: #ffff88; 
+}
+
+mi {
+    position: absolute;
+    color: #fffff0;
+    bottom: 22.5vh;
+    right: 55.5vw;
+    font-weight: bold;
+}
+
+#map8 {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.map-half {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+#map8Left {
+    left: 0;
+    width: 100%; 
+}
+
+#map8Right {
+    right: 0;
+    width: 100%; 
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+#map8-slider {
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    width: 100%; 
+    z-index: 10; 
+    transform: translateY(-50%); 
+    pointer-events: auto; 
+    -webkit-appearance: none; 
+    appearance: none; 
+    background: transparent; 
+}
+
+#map8-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 30px; 
+    height: 5px; 
+    background-color: #fffff0; 
+    border: circle;
+    border-radius: 1; 
+    cursor: ew-resize; 
+    position: relative;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 3vh;
+    right: 1.5vw;
+    width: 22%; 
+    height: 5%;
+    object-fit: contain; 
+    pointer-events: none; 
+    z-index: 3; 
+}
+
+#map-buttons {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+}
+
+#map-buttons button {
+    all: unset; 
+    width: 20px; 
+    height: 20px; 
+    background-color: transparent; 
+    border: 2px solid rgba(255, 255, 255, 0.7); 
+    border-radius: 50%; 
+    cursor: pointer;
+    position: relative; 
+    transition: border-color 0.3s;
+}
+
+#map-buttons button:hover {
+    border-color: rgba(255, 255, 255, 0.8); 
+}
+
+#map-buttons button + button::after {
+    content: '';
+    position: absolute;
+    top: -13px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; 
+    height: 12px; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: -1; 
+}
+
