@@ -1,21 +1,2306 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Vaibhav Jain
+tags: students
+image: Cover_VJ.png
 ---
-
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    
-    <title>Student name</title>
+<html lang="en">
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta name="description"
+  content="Student work from Colloquium 2 of the Columbia GSAPP CDP Program in 2024." />
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-2024/favicon.ico" sizes="any">
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-2024/favicon.svg" type="image/svg+xml">
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/base.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/main.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/colloquium1.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+
+    body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh; /* Ensure it takes up the viewport height */
+                box-sizing: border-box;
+            }
+
+
+    h1, h2 {
+      font-family: 'Impact', sans-serif;
+    }
+
+    p {
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .your-container {
+      display: flex;
+      align-items: flex-center;
+    }
+
+    .image-ribbon {
+      width: 100%;
+      height: 150px;
+      background-color: black;
+      overflow: hidden;
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .ribbon-track {
+      display: flex;
+      gap: 10px;
+      animation: scroll-ribbon 20s linear infinite;
+    }
+
+    .ribbon-track img {
+      height: 300px;
+      width: auto;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    @keyframes scroll-ribbon {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .gaze-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      clear: both;
+    }
+
+    .gaze-grid-cell {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+
+    .gaze-grid-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gaze-grid-cell:hover img {
+      transform: scale(1.05);
+    }
+
+    .gaze-hover-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gaze-grid-cell:hover .gaze-hover-text {
+      opacity: 1;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-family: 'Impact', sans-serif;
+      font-size: 28px;
+    }
+
+    .learn-more-rectangle {
+      width: 700px;
+      background-color: rgb(30,30,30);
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 1.3em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 40px auto;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      font-weight: 500;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      clear: both;
+    }
+
+    .learn-more-rectangle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: all 0.6s ease;
+    }
+
+    .learn-more-rectangle:hover::before {
+      left: 100%;
+    }
+
+    .learn-more-rectangle:hover {
+      background-color: rgb(40,40,40);
+      transform: translateY(-2px);
+      box-shadow: 0 -5px 8px rgba(0,0,0,0.2);
+    }
+
+    .learn-more-rectangle:active {
+      transform: translateY(1px);
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    }
+
+    .learn-more-rectangle span {
+      font-size: 0.6em;
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .scroll-container-wrapper {
+        position: relative;
+        overflow-x: hidden; /* Hide horizontal scrollbars */
+        overflow-y: auto; /* Allow vertical scrolling if needed */
+        width: 100%; /* Ensure it takes full width */
+        height: 100vh; /* Full viewport height */
+    }
+
+    .scroll-container {
+        display: flex;
+        flex-direction: column; /* Change to column if vertical scrolling is needed */
+        overflow-y: auto; /* Enable vertical scrolling */
+        scroll-snap-type: y mandatory; /* Enable snap-to-section behavior vertically */
+        gap: 20px; /* Add spacing between sections */
+        padding: 20px;
+        scroll-behavior: smooth; /* Smooth scrolling */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+    }
+
+    section {
+        flex: 0 0 auto; /* Allow sections to take their natural height */
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height based on content */
+        scroll-snap-align: start; /* Align sections to the start */
+        display: flex; /* Arrange child elements inside the section */
+        gap: 20px; /* Add spacing between the halves */
+        padding: 20px;
+        border: 1px solid #ddd; /* Optional: For visual distinction */
+        background-color: #f9f9f9; /* Optional: Light background */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        box-sizing: border-box; /* Include padding and border in dimensions */
+    }
+  </style>
+
+  <title>Vaibhav Jain</title>
 </head>
 
-<body></body>
+<body>
+  <header class="container">
+    <div class="header-context">
+      <div class="h2">
+        <a class="fade" href="https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices"
+          target="_blank">Columbia GSAPP</a>
+      </div>
+    </div>
+
+    <div class="header-title">
+      <div class="h1">
+        <a class="fade" href="/">Computational Design Practices</a>
+      </div>
+      <div class="h2">GSAPP CDP 2024-5 Colloquium I</div>
+    </div>
+
+    <div class="header-nav">
+      <div class="h2">
+        <a class="fade" href="/about">About</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="post">
+        <div class="post-header">
+          <div class="post-title">
+            <h1>Vaibhav Jain</h1>
+            <a href="https://drive.google.com/file/d/1W5jfaDtWC6qvVB7Y6f_fc73ueeXEWdfb/view?usp=sharing" target="_blank" style="display: inline-block; margin-bottom: 10px;">
+                <p style="text-align: center;">Click to view the project poster</p>
+              <a href="https://docs.google.com/presentation/d/1JJlUMRy99qMbwaVwGc5mFq1cVu7_aM-qOqUPoa89DT0/edit?usp=sharing" target="_blank" style="display: inline-block; margin-top: 10px;">
+                <p style="text-align: center;">Click to view the slide deck</p>
+              </a>
+              </a>
+          </div>
+        </div>
+
+        <div class="post-body project content">
+          <!-- ALL WORK SHOULD BE CONTAINED HERE. -->
+
+          <div class="full">
+            <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+              <img src="./Images/Video1-thumbnail.png" alt="Video 1 Thumbnail" style="width:100%; height:100%;">
+              <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+              </div>
+              <iframe src="https://www.youtube.com/embed/55MUhbUgNd8?si=PnhZVGMISwYiJbe6&autoplay=1" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <div class="overlay-text">
+                <strong><em>Fragments of a Commute:<br>Lost in Transition</em></strong>
+                <p style="font-size:16px; font-style:italic; margin-top:10px;"><span style="font-weight:300; font-style:italic;">To reveal the disconnect problem through fragmented memories,<br>leaving viewers with a cliffhanger.</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="full">
+            <p style="text-align:center; font-family: 'Rajdhani', sans-serif; font-weight:300; font-size:16px; font-style:italic; line-height:1.5; margin:30px 0; color: grey;">
+                Engulfed in tasks,<br>
+                drowned by the mundane.<br>
+                The city rushes past,<br>
+                lost in <span style="font-family: 'Impact', sans-serif; font-style:normal; color: black;">OBLIVION</span>.<br><br>
+                Steps are taken,<br>
+                but the journey fades.<br>
+                Moments scatter like dust—<br>
+                unseen, unheld, unremembered.<br><br>
+                Home is reached,<br>
+                yet the path is a void.<br>
+                A commute,<br>
+                disjointed, disconnected, lost.
+              </p>
+            </div>
+            <div class="full" style="background-color: black; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                <p style="font-family: 'Impact', sans-serif; font-size: 48px; color: #646464; line-height: 1.5; margin: 0;">
+                  Have you ever started a journey,<br>
+                  reached your destination,<br>
+                  but couldn't remember how you got there?<br><br>
+                  The city felt like a blur,<br>
+                  lost in <span style="color: rgb(255, 255, 255);">OBLIVIAN</span>,<br>
+                  and the experience was disconnected,<br>
+                  as if the journey never really happened.
+                </p>
+              </div>
+              
+              
+           
+
+            <div class="half">
+              <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Problem Statement for Oblivion</h2>
+              <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                In today's technologically driven world, our relationship with urban environments has drastically changed. Modern commutes have become monotonous and disconnected, defined by passive interactions with the city. Once moments of observation and exploration, commutes are now dominated by screens, reshaping attentional habits and muscle memory. Gaze patterns, once directed outward toward the environment, now predominantly focus downward, reducing the city to a mere backdrop. This detachment diminishes meaningful engagement with urban spaces, eroding their historical, cultural, and emotional significance.
+              </p>
+            </div>
+            <div class="half" style="display: flex; align-items: flex-end;">
+              <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: black;">
+                "An observational study on the disconnect between people and the city, exploring gaze patterns, physical interactions, and the relationship between time, location, and activity during urban commutes."
+              </p>
+            </div>
+
+            <div class="full" style="display: flex; justify-content: space-between; flex-wrap: wrap; margin: 40px 0;">
+              <div style="
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-family: 'Impact', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                position: relative;">
+                <i class="fas fa-walking" style="position: absolute; top: 10px; left: 10px; font-size: 32px;"></i>
+                BODY PATTERN
+              </div>
+
+              <div style="
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-family: 'Impact', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                position: relative;">
+                <i class="fas fa-eye" style="position: absolute; top: 10px; left: 10px; font-size: 32px;"></i>
+                GAZE
+              </div>
+
+              <div style="
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-family: 'Impact', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                position: relative;">
+                <i class="fas fa-clock" style="position: absolute; top: 10px; left: 10px; font-size: 32px;"></i>
+                TIME
+              </div>
+
+              <div style="
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-family: 'Impact', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                position: relative;">
+                <i class="fas fa-map-marker-alt" style="position: absolute; top: 10px; left: 10px; font-size: 32px;"></i>
+                LOCATION
+              </div>
+
+              <div style="
+                width: 200px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                font-family: 'Impact', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                position: relative;">
+                <i class="fas fa-running" style="position: absolute; top: 10px; left: 10px; font-size: 32px;"></i>
+                ACTIVITY
+              </div>
+            </div>
+
+<hr> 
+
+            <div class="half" style="display: flex; align-items: flex-end;">
+                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; text-align: justify; color: black;">
+                    "The ways our bodies move during commutes reflect habits shaped by technology, limiting physical engagement with the city."
+                </p>
+              </div>
+            
+              <div class="half">
+                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">1. BODY PATTERN</h2>
+                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                    Modern commutes reveal how technology has reshaped physical behaviors. Once fluid and responsive to the environment, body patterns now reflect routine and detachment, with individuals walking with heads down or minimally interacting with their surroundings. This shift highlights how urban engagement has become increasingly passive and disconnected.
+                </p>
+              </div>
+
+              <div class="full">
+                <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                  <img src="./Images/body pattern/Video-thumbnail.jpg" alt="Video 2 Thumbnail" style="width:100%; height:100%; object-fit: cover;">
+                  <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                    <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                  </div>
+                  <iframe src="https://www.youtube.com/embed/kPU4v2-iT-0?si=B7xe3sS21l9_ebAw&autoplay=1" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div class="overlay-text">
+                    <strong><em>Through My Eyes:<br>A Commute Disconnected</em></strong>
+                    <p style="font-size:16px; font-style:italic; margin-top:10px;"><span style="font-weight:300; font-style:italic;">Exploring the problem statement by showcasing the protagonist's POV and their physical interaction with the city.</span></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="full">
+                <div class="image-ribbon">
+                  <div class="ribbon-track">
+                    <img src="Images/body pattern/1 (1).jpg" alt="Image 1">
+                    <img src="Images/body pattern/1 (2).jpg" alt="Image 2">
+                    <img src="Images/body pattern/1 (3).jpg" alt="Image 3">
+                    <img src="Images/body pattern/1 (4).jpg" alt="Image 4">
+                    <img src="Images/body pattern/1 (5).jpg" alt="Image 5">
+                    <img src="Images/body pattern/1 (6).jpg" alt="Image 6">    
+                    <img src="Images/body pattern/1 (7).jpg" alt="Image 7"> 
+                    <img src="Images/body pattern/1 (8).jpg" alt="Image 8"> 
+                    <img src="Images/body pattern/1 (9).jpg" alt="Image 9">
+                  </div>
+                </div>
+              </div>
+  
+              <style>
+              .image-ribbon {
+                  width: 100vw;
+                  height: 300px;
+                  overflow: hidden;
+                  background-color: black;
+                  position: relative;
+                  margin: 20px 0;
+              }
+
+              .ribbon-track {
+                  display: flex;
+                  gap: 10px;
+                  animation: scroll-ribbon 20s linear infinite;
+                  will-change: transform;
+              }
+
+              .ribbon-track img {
+                  height: 300px;
+                  width: auto;
+                  flex-shrink: 0;
+                  object-fit: contain;
+              }
+
+              /* Animation for seamless scrolling */
+              @keyframes scroll-ribbon {
+                  0% {
+                      transform: translateX(0);
+                  }
+                  100% {
+                      transform: translateX(-100%);
+                  }
+              }
+              </style>
+ 
+
+<hr>             
+
+              <div class="half" style="display: flex; align-items: flex-end;">
+                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; text-align: justify; color: black;">
+                    "Commutes fostered outward gaze and exploration, but screens have shifted focus downward, reshaping attentional habits and reducing engagement with the environment."
+                </p>
+            </div>
+            
+            <div class="half">
+                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">2. GAZE</h2>
+                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                    In the past, commutes were opportunities for observation and exploration, with gaze patterns naturally directed outward toward the environment. This outward focus encouraged a dynamic relationship with urban spaces, fostering awareness and connection. Over time, however, the proliferation of screens has reshaped attentional habits and muscle memory. Today, gaze patterns are predominantly downward, fixed on devices, which has significantly diminished meaningful engagement with the surrounding environment and blurred our connection with the city.
+                </p>
+            </div>
+            
+            <div class="full">
+                <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                  <img src="./Images/gaze/Video-thumbnail.png" alt="Video 2 Thumbnail" style="width:100%; height:100%; object-fit: cover;">
+                  <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                    <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                  </div>
+                  <iframe src="https://www.youtube.com/embed/A5vTY8isB84?si=a0YwdwjCvPS_sPI2" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div class="overlay-text">
+                    <strong><em>Through My Eyes:<br>A Commute Disconnected</em></strong>
+                    <p style="font-size:16px; font-style:italic; margin-top:10px;"><span style="font-weight:300; font-style:italic;">Exploring the problem statement by showcasing the protagonist's POV and their physical interaction with the city.</span></p>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="full">
+                <div class="image-ribbon">
+                    <div class="ribbon-track">
+                        <img src="Images/gaze/1 (1).jpg" alt="Image 1">
+                        <img src="Images/gaze/1 (2).jpg" alt="Image 2">
+                        <img src="Images/gaze/1 (3).jpg" alt="Image 3">
+                        <img src="Images/gaze/1 (4).jpg" alt="Image 4">
+                        <img src="Images/gaze/1 (5).jpg" alt="Image 5">
+                        <img src="Images/gaze/1 (6).jpg" alt="Image 6">
+                        <img src="Images/gaze/1 (7).jpg" alt="Image 7">
+                        <img src="Images/gaze/1 (8).jpg" alt="Image 8">
+                        <img src="Images/gaze/1 (9).jpg" alt="Image 9">
+                        <img src="Images/gaze/1 (10).jpg" alt="Image 10">
+                        <img src="Images/gaze/1 (11).jpg" alt="Image 11">
+                        <img src="Images/gaze/1 (12).jpg" alt="Image 12">
+                        <img src="Images/gaze/1 (13).jpg" alt="Image 13">
+                        <img src="Images/gaze/1 (14).jpg" alt="Image 14">
+                        <img src="Images/gaze/1 (15).jpg" alt="Image 15">
+                        <img src="Images/gaze/1 (16).jpg" alt="Image 16">
+                        <img src="Images/gaze/1 (17).jpg" alt="Image 17">
+                        <img src="Images/gaze/1 (18).jpg" alt="Image 18">
+                        <img src="Images/gaze/1 (19).jpg" alt="Image 19">
+                        <img src="Images/gaze/1 (20).jpg" alt="Image 20">
+                        <img src="Images/gaze/1 (21).jpg" alt="Image 21">
+                        <img src="Images/gaze/1 (22).jpg" alt="Image 22">
+                        <img src="Images/gaze/1 (23).jpg" alt="Image 23">
+                        <img src="Images/gaze/1 (24).jpg" alt="Image 24">
+                        <img src="Images/gaze/1 (25).jpg" alt="Image 25">
+                        <img src="Images/gaze/1 (26).jpg" alt="Image 26">
+                        <img src="Images/gaze/1 (27).jpg" alt="Image 27">
+                        <img src="Images/gaze/1 (28).jpg" alt="Image 28">
+                        <img src="Images/gaze/1 (29).jpg" alt="Image 29">
+                        <img src="Images/gaze/1 (30).jpg" alt="Image 30">
+                        <img src="Images/gaze/1 (31).jpg" alt="Image 31">
+                        <img src="Images/gaze/1 (32).jpg" alt="Image 32">
+                        <img src="Images/gaze/1 (33).jpg" alt="Image 33">
+                        <img src="Images/gaze/1 (34).jpg" alt="Image 34">
+                        <img src="Images/gaze/1 (35).jpg" alt="Image 35">
+                        <img src="Images/gaze/1 (36).jpg" alt="Image 36">
+                        <img src="Images/gaze/1 (37).jpg" alt="Image 37">
+                        <img src="Images/gaze/1 (38).jpg" alt="Image 38">
+                        <img src="Images/gaze/1 (39).jpg" alt="Image 39">
+                        <img src="Images/gaze/1 (40).jpg" alt="Image 40">
+                        <img src="Images/gaze/1 (41).jpg" alt="Image 41">
+                        <img src="Images/gaze/1 (42).jpg" alt="Image 42">
+                        <img src="Images/gaze/1 (43).jpg" alt="Image 43">
+                        <img src="Images/gaze/1 (44).jpg" alt="Image 44">
+                        <img src="Images/gaze/1 (45).jpg" alt="Image 45">
+                        <img src="Images/gaze/1 (46).jpg" alt="Image 46">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="full">
+                <div class="gaze-grid-container">
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/TOP LEFT.png" alt="Top Left">
+                        <div class="gaze-hover-text">Top Left</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/TOP CENTER.png" alt="Top Center">
+                        <div class="gaze-hover-text">Top Center</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/TOP RIGHT.png" alt="Top Right">
+                        <div class="gaze-hover-text">Top Right</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/MIDDLE LEFT.png" alt="Middle Left">
+                        <div class="gaze-hover-text">Middle Left</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/MIDDLE CENTER.png" alt="Middle Center">
+                        <div class="gaze-hover-text">Middle Center</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/MIDDLE RIGHT.png" alt="Middle Right">
+                        <div class="gaze-hover-text">Middle Right</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/BOTTOM LEFT.png" alt="Bottom Left">
+                        <div class="gaze-hover-text">Bottom Left</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/BOTTOM CENTER.png" alt="Bottom Center">
+                        <div class="gaze-hover-text">Bottom Center</div>
+                    </div>
+                    <div class="gaze-grid-cell">
+                        <img src="./Images/gaze/BOTTOM RIGHT.png" alt="Bottom Right">
+                        <div class="gaze-hover-text">Bottom Right</div>
+                    </div>
+                </div>
+                               
+                <div class="learn-more-rectangle" onclick="window.location.href='https://vuj2000.github.io/Meta-Tool_INTERNAL/WEBSITE/Gaze%20Tracker%20Website/index.html'">
+                    CLICK TO LEARN MORE ABOUT
+                    <br>
+                    <span>GAZE TRACKER - Mapping and Shaping Attention during OBLIVIAN</span>
+                </div>
+            </div>
+
+            <style>
+            /* Styles for Image Ribbon */
+            .image-ribbon {
+                width: 100vw;
+                margin: 20px 0;
+                height: 300px;
+                background-color: black;
+                overflow: hidden; /* Ensures content doesn't overflow the container */
+                position: relative;
+            }
+
+            .ribbon-track {
+                display: flex;
+                gap: 10px;
+                will-change: transform; /* Optimizes animation performance */
+                animation: scroll-ribbon linear infinite;
+            }
+
+            .ribbon-track img {
+                height: 300px;
+                width: auto;
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+
+            /* Animation for Scrolling Images */
+            @keyframes scroll-ribbon {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-1 * var(--total-width))); }
+            }
+
+            
+            /* Styles for Gaze Grid */
+            .gaze-grid-container {
+                width: 1200px;
+                height: 1200px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                margin: 20px auto;
+            }
+            
+            .gaze-grid-cell {
+                border: 1px solid rgba(0,0,0,0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gaze-grid-cell img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.1;
+                transition: all 0.3s ease;
+            }
+            
+            .gaze-hover-text {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .gaze-grid-cell:hover img {
+                opacity: 1;
+            }
+            
+            .gaze-grid-cell:hover .gaze-hover-text {
+                opacity: 1;
+            }
+            .learn-more-rectangle {
+                width: 700px;  /* Keep these at the previous width */
+                background-color: rgb(30,30,30);
+                color: white;
+                text-align: center;
+                padding: 25px 0;
+                font-size: 1.3em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 30px;
+                line-height: 1.5;
+                letter-spacing: 1px;
+                font-weight: 500;
+                box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                margin: 0 auto;
+            }
+
+            .learn-more-rectangle::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+                transition: all 0.6s ease;
+            }
+
+            .learn-more-rectangle:hover::before {
+                left: 100%;
+            }
+
+            .learn-more-rectangle:hover {
+                background-color: rgb(40,40,40);
+                transform: translateY(-2px);
+                box-shadow: 0 -5px 8px rgba(0,0,0,0.2);
+            }
+
+            .learn-more-rectangle:active {
+                transform: translateY(1px);
+                box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            }
+
+            .learn-more-rectangle span {
+                font-size: 0.6em;
+                font-style: italic;
+                opacity: 0.8;
+            }           
+            
+            </style>
+            
+<hr>
+
+
+              <div class="half" style="display: flex; align-items: flex-end;">
+                  <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">
+                    "In the past, looking around was instinctive, while in the present, a downward gaze has become the default."
+                  </p>
+                </div>
+              
+                <div class="half">
+                  <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">3. TIME</h2>
+                  <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                    The contrast between the old and new city highlights a significant shift in default commuting behaviors. In the past, people's natural actions during commutes involved looking around, straight ahead, or upward, engaging with their surroundings and making visionary connections with the environment. These behaviors were instinctive, fostering an active relationship with the urban context. In the present, the default action has shifted to looking downward, regardless of whether a device is in hand. This change reflects how technology and habitual screen use have reprogrammed attentional habits, altering the innate ways people interact with their urban environments over time.
+                  </p>
+                </div>
+             
+                <div class="full">
+                  <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                    <img src="./Images//time/Video-thumbnail.jpg" alt="Video 2 Thumbnail" style="width:100%; height:100%; object-fit: cover;">
+                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                      <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/6Xmno1QbSzA?si=uR-xIGMWSKdZQQO1" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="overlay-text">
+                      <strong><em>Gaze Through Time:<br>Then and Now</em></strong>
+                      <p style="font-size:16px; font-style:italic; margin-top:10px;"><span style="font-weight:300; font-style:italic;">Comparing historical and contemporary gaze patterns to reveal shifts in urban interaction over time.</span></p>
+                    </div>
+                  </div>
+                </div>
+                
+                
+              <div class="full">
+                <div class="image-ribbon">
+                  <div class="ribbon-track">
+                    <img src="Images/time/1 (1).png" alt="Image 1">
+                    <img src="Images/time/1 (2).png" alt="Image 2">
+                    <img src="Images/time/1 (3).png" alt="Image 3">
+                    <img src="Images/time/1 (4).png" alt="Image 4">
+                    <img src="Images/time/1 (5).png" alt="Image 5">
+                    <img src="Images/time/1 (6).png" alt="Image 6">
+                    <img src="Images/time/1 (7).png" alt="Image 7">
+                    <img src="Images/time/1 (8).png" alt="Image 8">
+                    <img src="Images/time/1 (9).png" alt="Image 9">
+                    <img src="Images/time/1 (10).png" alt="Image 10">
+  
+                  </div>
+                </div>
+              </div>
+
+              <style>
+                  .image-ribbon {
+                    width: 100vw;
+                    position: relative; 
+                    left: 50%; 
+                    transform: translateX(-50%);
+                    height: 300px;
+                    background-color: black;
+                    overflow: hidden;
+                    position: relative;
+                    margin: 20px 0;
+                  }
+                
+                  .ribbon-track {
+                    display: flex;
+                    gap: 10px;
+                    animation: scroll-ribbon 20s linear infinite;
+                  }
+                
+                  .ribbon-track img {
+                    height: 300px;
+                    width: auto;
+                    flex-shrink: 0;
+                    object-fit: contain;
+                  }
+                
+                  @keyframes scroll-ribbon {
+                    0% {
+                      transform: translateX(0);
+                    }
+                    100% {
+                      transform: translateX(-100%);
+                    }
+                  }
+                </style>
+                
+<hr>
+
+                <div class="half" style="display: flex; align-items: flex-end;">
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">
+                        "Location and context hold the power to shape activity, gaze, and body patterns, influencing how people engage and interact with the city."
+                    </p>
+                  </div>
+                
+                  <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">4. LOCATION</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The power of a location lies in its ability to shape human activity and interaction by influencing where and how people direct their gaze. On streets, individuals often look down at devices, disengaged from their surroundings. In contrast, locations like Times Square or public plazas actively invite people to look up and around, offering opportunities to discover, interact, and engage with the environment. A campus fosters quiet observation and focus, while public seating encourages social interaction or moments of rest. These differences highlight the strong relationship between place and behavior, proving that location holds the power to create and enhance opportunities for engagement and discovery.
+                    </p>
+                  </div>
+                  
+                  <div class="full">
+                    <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                      <img src="./Images/location/Video-thumbnail.jpg" alt="Video 2 Thumbnail" style="width:100%; height:100%; object-fit: cover;">
+                      <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                      </div>
+                      <iframe src="https://www.youtube.com/embed/JpNnVAryVZg?si=KmNRWCxjn292LUX0" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                  </div>         
+    
+                <div class="full">
+                  <div class="image-ribbon">
+                    <div class="ribbon-track">
+                      <img src="Images/location/1 (1).png" alt="Image 1">
+                      <img src="Images/location/1 (2).png" alt="Image 2">
+                      <img src="Images/location/1 (3).png" alt="Image 3">
+                      <img src="Images/location/1 (4).png" alt="Image 4">
+                      <img src="Images/location/1 (5).png" alt="Image 5">
+                      <img src="Images/location/1 (6).png" alt="Image 6">    
+                      <img src="Images/location/1 (7).png" alt="Image 7"> 
+                      <img src="Images/location/1 (8).png" alt="Image 8"> 
+                      <img src="Images/location/1 (9).png" alt="Image 9"> 
+                    </div>
+                  </div>
+                </div>
+    
+                <style>
+                .image-ribbon {
+                    width: 100vw;
+                    height: 300px;
+                    overflow: hidden;
+                    background-color: black;
+                    position: relative;
+                    margin: 20px 0;
+                }
+
+                .ribbon-track {
+                    display: flex;
+                    gap: 10px;
+                    animation: scroll-ribbon 20s linear infinite;
+                    will-change: transform;
+                }
+
+                .ribbon-track img {
+                    height: 300px;
+                    width: auto;
+                    flex-shrink: 0;
+                    object-fit: contain;
+                }
+
+                /* Animation for seamless scrolling */
+                @keyframes scroll-ribbon {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-50%));
+                    }
+                }
+                </style>
+
+
+                  <style>.learn-more-rectangle {
+                    width: 700px;  /* Keep these at the previous width */
+                    background-color: rgb(30,30,30);
+                    color: white;
+                    text-align: center;
+                    padding: 25px 0;
+                    font-size: 1.3em;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    margin-top: 30px;
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 15px;
+                    margin: 0 auto;
+                }
+                
+                .learn-more-rectangle::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+                    transition: all 0.6s ease;
+                }
+                
+                .learn-more-rectangle:hover::before {
+                    left: 100%;
+                }
+                
+                .learn-more-rectangle:hover {
+                    background-color: rgb(40,40,40);
+                    transform: translateY(-2px);
+                    box-shadow: 0 -5px 8px rgba(0,0,0,0.2);
+                }
+                
+                .learn-more-rectangle:active {
+                    transform: translateY(1px);
+                    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                }
+                
+                .learn-more-rectangle span {
+                    font-size: 0.6em;
+                    font-style: italic;
+                    opacity: 0.8;
+                }</style>
+                  
+<hr>
+
+                  <div class="half" style="display: flex; align-items: flex-end;">
+                      <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">
+                          "Activity transforms commutes into personal journeys, creating unique relationships between people and the city."
+                      </p>
+                    </div>
+                  
+                    <div class="half">
+                      <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">5. ACTIVITY</h2>
+                      <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        Activity is a pivotal factor that can transform a person's journey from an Oblivion to an Odyssey. Even within the same location and time, activity becomes a deeply personal experience, shaping how individuals interact with the city and develop a unique relationship with it. Activities can vary widely: something a person plans to do, something spontaneous sparked by what they encounter, an opportunity intentionally offered by the city, or something they actively seek and enjoy. These diverse permutations make activity a user-centric element, turning the journey into a meaningful exploration and fostering a personal connection with the urban environment.
+                      </p>
+                    </div>
+                    
+                    <div class="full">
+                      <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                        <img src="./Images/activity/Video-thumbnail.jpg" alt="Video 2 Thumbnail" style="width:100%; height:100%; object-fit: cover;">
+                        <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                          <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/WdDJ5c6oZB8?si=i0Lxpeh7Th43Q76_" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      </div>
+                    </div>         
+      
+                  <div class="full">
+                    <div class="image-ribbon">
+                      <div class="ribbon-track">
+                        <img src="Images/activity/1 (1).png" alt="Image 1">
+                        <img src="Images/activity/1 (2).png" alt="Image 2">
+                        <img src="Images/activity/1 (3).png" alt="Image 3">
+                        <img src="Images/activity/1 (4).png" alt="Image 4">
+                        <img src="Images/activity/1 (5).png" alt="Image 5">
+                        <img src="Images/activity/1 (6).png" alt="Image 6">    
+                        <img src="Images/activity/1 (7).png" alt="Image 7"> 
+                        <img src="Images/activity/1 (8).png" alt="Image 8"> 
+                        <img src="Images/activity/1 (9).png" alt="Image 9"> 
+                      </div>
+                    </div>
+                  </div>
+      
+                  <style>
+                  .image-ribbon {
+                      width: 100vw;
+                      height: 300px;
+                      overflow: hidden;
+                      background-color: black;
+                      position: relative;
+                      margin: 20px 0;
+                  }
+  
+                  .ribbon-track {
+                      display: flex;
+                      gap: 10px;
+                      animation: scroll-ribbon 20s linear infinite;
+                      will-change: transform;
+                  }
+  
+                  .ribbon-track img {
+                      height: 300px;
+                      width: auto;
+                      flex-shrink: 0;
+                      object-fit: contain;
+                  }
+  
+                  /* Animation for seamless scrolling */
+                  @keyframes scroll-ribbon {
+                      0% {
+                          transform: translateX(0);
+                      }
+                      100% {
+                          transform: translateX(calc(-50%));
+                      }
+                  }
+                  </style>
+  
+  
+                    <style>.learn-more-rectangle {
+                      width: 700px;  /* Keep these at the previous width */
+                      background-color: rgb(30,30,30);
+                      color: white;
+                      text-align: center;
+                      padding: 25px 0;
+                      font-size: 1.3em;
+                      cursor: pointer;
+                      transition: all 0.3s ease;
+                      margin-top: 30px;
+                      line-height: 1.5;
+                      letter-spacing: 1px;
+                      font-weight: 500;
+                      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+                      position: relative;
+                      overflow: hidden;
+                      border-radius: 15px;
+                      margin: 0 auto;
+                  }
+                  
+                  .learn-more-rectangle::before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      left: -100%;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+                      transition: all 0.6s ease;
+                  }
+                  
+                  .learn-more-rectangle:hover::before {
+                      left: 100%;
+                  }
+                  
+                  .learn-more-rectangle:hover {
+                      background-color: rgb(40,40,40);
+                      transform: translateY(-2px);
+                      box-shadow: 0 -5px 8px rgba(0,0,0,0.2);
+                  }
+                  
+                  .learn-more-rectangle:active {
+                      transform: translateY(1px);
+                      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+                  }
+                  
+                  .learn-more-rectangle span {
+                      font-size: 0.6em;
+                      font-style: italic;
+                      opacity: 0.8;
+                  }</style>
+                    
+<hr>
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">CONCLUSION FROM THE STUDY - OBLIVIAN</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The exploration of body patterns, gaze, and time highlights how modern commuting behaviors have transformed our relationship with urban environments. Technology has reshaped physical habits, with body patterns reflecting detachment and routine, while gaze has shifted from outward exploration to a default downward focus. Similarly, time, which once fostered instinctive engagement with surroundings, is now compressed and hurried, leaving little space for meaningful connections. These shifts reveal the growing disconnection between people and the city.<br><br>
+                        Location and activity, however, offer pathways to reclaim this lost engagement. Location holds the power to shape interactions, encouraging discovery and connection, while activity remains a deeply personal factor that transforms commutes into unique journeys. Whether planned, spontaneous, or city-driven, activities allow individuals to build relationships with their surroundings, turning mundane routines into opportunities for exploration. Together, these factors present the potential to reconnect individuals with urban environments, transforming disconnected commutes into meaningful urban experiences.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "The Intersection, Interaction, Interplay of body patterns, gaze, time, location, and activity defines urban engagement, creating opportunities to reimagine and transform our journeys."
+                    </p>
+                </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">-</h2>
+                    <img src="./Images/Odyssey/3.MESSAGE.png" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                
+
+
+  
+            
+            <div class="full">
+                <div style="position:relative; width:1200px; height:800px; margin:0 auto;">
+                  <img src="./Images/OBLIVIAN to ODYSSEY/Video-thumbnail.jpg" alt="Video 1 Thumbnail" style="width:100%; height:100%;">
+                  <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none'; this.parentNode.querySelector('iframe').style.display='block';">
+                    <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play Button" style="width:80px; height:80px;">
+                  </div>
+                  <iframe src="https://www.youtube.com/embed/Ru-mGZKYmqg?si=DFcfmzCGSI8VpNN6" style="display:none; width:100%; height:100%; position:absolute; top:0; left:0; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div class="overlay-text">
+                    <strong><em>OBLIVIAN to ODYSSEY</em></strong>
+                    <p style="font-size:16px; font-style:italic; margin-top:10px;"><span style="font-weight:300; font-style:italic;">Climb the steps of Odyssey, leaving behind the monotony and disconnection of Oblivion to rediscover the city through meaningful engagement and exploration.</span></p>
+                  </div>
+                </div>
+              </div>
+
+            <div class="full" style="background-color: black; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #646464; line-height: 1.5; margin: 0;">
+                  from disconnected <span style="color: rgb(255, 255, 255);">OBLIVIAN</span>,<br>
+                  to an engaging <span style="color: #ff0077;">ODYSSEY</span>,<br> 
+                </p>
+              </div>
+
+              <hr>
+                <div class="full">
+                    <img src="./Images/OBLIVIAN to ODYSSEY/Oblivian to Odyssey.png" alt="Oblivian to Odyssey" style="width: 100%; height: auto;">
+                </div>
+
+<hr>
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/Odyssey/4.ODYSSEY HOME SCREEN.png" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">STEPPING INTO THE WORLD OF ODYSSEY</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        Odyssey reimagines urban commutes as opportunities for active engagement and exploration. Designed for individuals seeking more than routine travel, the project leverages user profile generation, real-time location-based activity mapping, and gamification to transform the city into an interactive playground. By combining spatial computing and AI-driven personalization, Odyssey enables users to rediscover their urban surroundings through curated activities tailored to their preferences and behaviors.<br><br>
+                        The project investigates scales ranging from personal gaze patterns to city-wide interactions, bridging the gap between virtual and physical experiences. At stake is the growing disconnection between people and the city—Odyssey fosters mindful observation, participatory discovery, and deeper engagement with urban environments, turning passive routines into opportunities for exploration and connection.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "Odyssey transforms urban commutes into interactive journeys, bridging the gap between people and the city through personalized discovery and engagement."
+                    </p>
+                </div>
+
+<hr>
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">WHAT?</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        ODYSSEY is an app that reimagines city commutes as interactive, discovery-filled journeys. By blending gamification with knowledge-sharing and meaningful interactions, it turns the urban landscape into an engaging playground for exploration.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "ODYSSEY transforms routine commutes into interactive, discovery-filled journeys, blending playfulness with meaningful urban interactions."
+                    </p>
+                </div>
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <img src="./Images/questions/what.svg">
+                </div>
+
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <img src="./Images/questions/Oblivian-all.png">
+                    </div>
+
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">WHOM?</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The primary audience for Odyssey includes urban commuters seeking a deeper connection with their city. These individuals are curious, reflective, and open to transforming their daily routines into meaningful journeys. They may be professionals, students, or residents navigating urban environments who feel disconnected from their surroundings and are eager to engage in exploration and discovery.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "Designed for those who want more than a commute,ODYSSEY is for people seeking to connect, engage, interact, and rediscover the city."
+                    </p> 
+                </div>
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">HOW?</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        ODYSSEY uses advanced tools like user profiles, location-based services, gamification, spatial computing, AI-driven personalization, and activity generation. These methods personalize the urban experience, creating dynamic activity nodes and turning the city into an interactive and engaging playground for exploration.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "ODYSSEY leverages AI, gamification, and spatial computing to transform commutes into dynamic, personalized urban journeys."
+                    </p>
+                </div>
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <img src="./Images/questions/how.svg">
+                </div>
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <img src="./Images/questions/why.svg">
+                </div>
+
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">WHY?</h2>
+                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                    ODYSSEY addresses the monotony of routine commutes, encouraging users to deepen their connection with the city. By fostering curiosity, belonging, interactivity, and playfulness, it transforms daily travel into engaging experiences that inspire a renewed sense of exploration and discovery in urban spaces.
+                </p>
+
+                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                    "ODYSSEY fosters curiosity and interactivity, breaking the monotony of commutes and reconnecting people with their city."
+                </p> 
+            </div>
+
+<hr>               
+                <div class="full">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/workflow.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+
+
+<hr>
+
+                <div class="full" style="background-color: #00DBFF; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                    <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                    EXPLORER PROFILE TAB 
+                    </p>
+                </div>                             
+
+                        
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/0.BASE.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">EXPLORER PROFILE TAB</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The Explorer Profile Tab is designed to help users uncover their unique relationship with the city. Through reflective activities like capturing photos, studying objects, and documenting sensory experiences, users gain a deeper understanding of their commutes and interactions with urban spaces. This tab serves as a foundation for personalized exploration, encouraging mindfulness and connection with the environment.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "Discover your city through reflection—uncover patterns, senses, and stories that shape your urban experience."
+                    </p>
+                </div>
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA USED</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        User-generated data such as photos, textual reflections, mood tracking, and sensory observations (e.g., sounds and smells).
+                    </p>      
+                </div>
+                
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA ANALYSIS</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        NLP techniques analyze text to detect moods and themes, while image recognition identifies patterns or objects. This data creates Observation and Aspirational Pattern Lists, personalizing future activities.
+                    </p>      
+                </div> 
+
+                
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">COMPUTATIONAL TOOLS</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The Explorer Profile Tab employs computational methods to extract meaningful insights from user inputs. Natural Language Processing (NLP) analyzes text reflections to identify moods, themes, and preferences, while image recognition detects patterns and objects in uploaded photos. These techniques build a personalized glossary of observation and wishlist patterns. The system incorporates machine learning to adapt and refine insights as users provide new data, ensuring a dynamic, evolving profile. By addressing the disconnection between individuals and their urban environments, these workflows make it possible to tailor activities and interactions, fostering a deeper relationship with the city.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "Using NLP, image recognition, and machine learning, this Tab transforms user reflections into personalized insights, developing commute map data."
+                    </p>
+
+                    <br>                  
+                    
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">AI & ML</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Processes user inputs to create personalized patterns.</span>
+                    </p>
+                    
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">NLP</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Analyzes text for mood and preferences.</span>
+                    </p>
+
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">DATA ENTRY TOOLS</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Supports text, image, and icon inputs.</span>
+                    </p>            
+                </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DESIGN METHODS</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        The Explorer Profile Tab integrates participatory, analytic, and reflective design practices. Participatory methods invite users to reflect on their commutes through sensory-focused activities like photo capture and journaling. Analytic approaches process these reflections to identify behavioral and sensory patterns, revealing how users interact with the city. Speculative design reimagines commutes as opportunities for discovery, connecting individuals with urban spaces in new, meaningful ways. These practices make it possible to explore the built environment at multiple scales offering a framework for fostering engagement and connection in increasingly disconnected routines.
+                    </p>
+
+                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                        "Participatory, analytic, and reflective practices reimagine commutes as opportunities for discovery, fostering deeper connections with the city."
+                    </p>
+
+                    <br>                  
+                    
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">ANALYTIC</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Gathers data to identify user patterns.</span>
+                    </p>
+                    
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">PARTICIPATORY</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Engages users in documenting experiences.</span>
+                    </p>
+
+                    <p style="line-height:1.6; text-align: justify;">
+                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">REFLECTIVE</span>
+                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Promotes critical thinking about commutes.</span>
+                    </p>               
+                </div>
+                
+
+
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/1.PATH DISCOVERY.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                
+                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 1 : PATH DISCOVERY</h2>
+                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                        Users log the start and end points of their journey, the mode of transport, the purpose, and duration of their commute. This activity helps users reflect on their travel routines and uncover any unnoticed elements along the way​.
+                    </p>
+                </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/1.PATH DISCOVERY.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 2 : PHOTO CAPTURE</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            Participants take photos of objects, places, or scenes that catch their attention during their commute. This activity encourages visual exploration and prompts users to reflect on what they find visually intriguing.
+                        </p>
+                    </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/3.OBJECT STUDY.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 3 : OBJECT STUDY</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            Users select a specific object from their commute and describe its characteristics, such as color, texture, and purpose. They also share what drew their attention to the object and any imaginative stories it inspired
+                        </p>
+                    </div>
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/4.SMELL CAPTURE.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 4 : SMELL CAPTURE</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            This activity focuses on sensory engagement by having users describe two or three distinct scents encountered during their commute. Users reflect on how these smells contribute to their journey's sensory palette.
+                        </p>
+                    </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/5.SOUNDS CAPTURE.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 5 : SOUNDS CAPTURE</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            Participants are encouraged to listen closely to the sounds around them, noting two or three distinct noises and reflecting on how they felt. This activity highlights the auditory dimension of urban commutes.
+                        </p>
+                    </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/6.GAZE PATTERM.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 6 : GAZE PATTERN</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            Users track where their gaze focuses during the commute and record the areas or elements they notice most often. This activity promotes awareness of attentional habits and how external factors influence gaze shifts​.
+                        </p>
+                    </div>
+
+
+                <div class="half">
+                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                    <img src="./Images/interface/explorer profile/7.MOOD AND PLACE.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                </div>
+                    
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY 7 : MOOD AND PLACE</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            Users choose a location from their commute that influenced their mood and describe the connection between the place, their feelings, and specific details they remember. This activity connects emotional responses to spatial experiences​.
+                        </p>
+                    </div>
+
+<hr>
+
+                    <div class="full" style="background-color: #FFBC00; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                        <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                        REFLECTIONS DASHBOARD TAB 
+                        </p>
+                    </div>
+
+                    <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">COMMUTE MAP : REFLECTIONS DASHBOARD TAB</h2>
+                        <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                            The Reflections Dashboard serves as an analytical and reflective interface, synthesizing data from the Explorer Profile Tab into an engaging visualization. By integrating maps, locations, symbols, icons, photos, and sensory markers like sounds and smells, the dashboard captures the user's commute experience in its entirety. It offers a platform for users to reflect on their interactions with the city, uncover patterns, and identify overlooked or underexplored elements, transforming raw commute data into meaningful insights​.
+                        </p>
+                    </div>
+                    <div class="half">
+                        <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                        <img src="./Images/interface/reflections dashboard/Reflections Dashboard.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                    </div>
+
+                        
+                        <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">PATTERN GLOSSARIES : OBSERVATION AND ASPIRATION</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                The dashboard generates two critical lists that dynamically evolve over time:Observation Pattern List: Identifies categories and elements the user has actively engaged with, revealing recurring behaviors and sensory preferences.
+                                Aspirational Pattern List: Highlights activities or interactions the user aspires to engage with, whether they are missed opportunities or emerging interests uncovered during commutes.
+                                These lists offer a deeper understanding of user behavior and aspirations, serving as the foundation for the application's activity generation system. By bridging past actions with future possibilities, the glossary transforms passive documentation into actionable pathways for richer urban engagement​.
+                            </p>
+                        </div>
+                        <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                            <img src="./Images/interface/reflections dashboard/Patterns.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                        </div>
+
+                        <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA USED</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                Aggregated data from the Explorer Profile Tab, including commute maps, sensory data, and user reflections.
+                            </p>      
+                        </div>
+                        
+        
+                        <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA ANALYSIS</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                Data is synthesized to update Observation and Aspirational Pattern Lists, providing insights into the user’s evolving interactions with the city.
+                            </p>      
+                        </div> 
+
+                        <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">COMPUTATIONAL METHODS</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                The Reflections Dashboard integrates analytic, reflective, and narrative design methods to transform commute data into meaningful insights. Analytic methods process user inputs, uncovering behavioral patterns and sensory interactions. Reflective practices encourage users to revisit their urban experiences, fostering self-awareness and deeper engagement. Narrative design constructs a personalized story of each journey, linking observations with aspirations. Speculative practices envision data as a tool for future exploration, while participatory design empowers users to influence their experience by dynamically updating Observation and Aspirational Pattern Lists.
+                            </p>
+        
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                "The Reflections Dashboard uses analytic, reflective, and narrative practices to transform commute data into a story of engagement and aspirations."
+                            </p>
+        
+                            <br>                  
+                            
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">DATA VISUALIZATION</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Displays progress and insights.</span>
+                            </p>
+                            
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">UI DESIGN</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Intuitive dashboards for user interaction</span>
+                            </p>
+        
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">FEEDBACK LOOPS</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Updates profiles with reflection data.</span>
+                            </p>        
+                        </div>  
+
+                        <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DESIGN METHODS</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                The dashboard employs advanced computational tools to process, analyze, and visualize data. Data Aggregation integrates inputs like maps, photos, and sensory elements, while data visualization tools like D3.js or Chart.js create interactive and intuitive visuals. Machine learning algorithms dynamically update Observation and Aspirational Pattern Lists, reflecting evolving user preferences. Backend systems process commute data, ensuring seamless integration with activity generation workflows. The interface, built using design tools like Figma or Adobe XD, ensures a user-friendly experience, blending technology with urban storytelling.
+                            </p>
+        
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                "By leveraging machine learning, data visualization, and dynamic updates, the Reflections Dashboard transforms commute data into actionable urban insights."
+                            </p>
+        
+                            <br>                  
+                            
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">ANALYTIC</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Displays trends and insights from user data.</span>
+                            </p>
+                            
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">NARRATIVE</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Tells a personalized story of the user's journey.</span>
+                            </p>
+        
+                            <p style="line-height:1.6; text-align: justify;">
+                                <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">SPECULATIVE</span>
+                                <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Dashboards as identity-building tools.</span>
+                            </p>        
+            
+                        </div>
+
+
+                     
+
+
+
+
+<hr>
+
+                        <div class="full" style="background-color: #00FF12; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                            <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                            DISCOVERY MAP TAB 
+                            </p>
+                        </div>
+
+                            <div class="half">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                            <img src="./Images/interface/discovery map/DISCOVERY MAP.gif" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                        </div>
+                            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DISCOVERY MAP TAB</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    The Discovery Map transforms real-time location data into an interactive urban exploration tool. It visualizes the user's current location and allows them to set a radius of interaction, revealing curated activity nodes within that range. Each activity node is tailored to the user's profile, combining past observations and aspirations to create meaningful opportunities for engagement. The map bridges the gap between physical spaces and virtual interactions, encouraging users to rediscover their city through dynamic, personalized exploration. By turning live location data into actionable activities, the Discovery Map redefines how users interact with their urban environment.
+                                </p>
+                            </div>
+
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA USED</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    Real-time location data combined with user profiles and urban context (e.g., landmarks, place types).
+                                </p>                                                           
+                            </div>
+                            
+            
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA ANALYSIS</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    Dynamic mapping tools like Mapbox process live location data, overlaying personalized activity nodes that are contextually relevant.
+                                </p>      
+                            </div> 
+
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">COMPUTATIONAL METHODS</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    The Discovery Map integrates advanced computational tools to deliver a personalized urban exploration experience. Real-Time Mapping APIs like Mapbox process user location data to display activity nodes within a set radius. Machine Learning Algorithms analyze user profiles, combining observation and aspiration patterns to generate tailored activities. Geospatial Analysis Tools contextualize nodes within the physical environment, ensuring relevance to the user's location. Dynamic Backend Systems process live data inputs, enabling seamless updates and personalized interactions.These  methods ensure a responsive, data-driven framework that bridges virtual and physical urban spaces.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "Real-time mapping, machine learning, and geospatial tools power the Discovery Map, creating a dynamic, personalized exploration experience."
+                                </p>
+            
+                                <br>                  
+                                
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">REAL TIME MAPPING</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Tracks location and activity nodes.</span>
+                                </p>
+                                
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">SPATIAL COMPUTING</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Defines radius of interaction.</span>
+                                </p>
+            
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">ACTIVITY GENERATION</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Uses AI, rules, and randomization to create tasks.</span>
+                                </p>            
+           
+                            </div>
+
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DESIGN METHODS</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    The Discovery Map employs speculative, participatory, and spatial design methods to redefine urban exploration. Speculative design envisions the city as an interactive playground, blending physical and virtual engagement. Participatory practices allow users to actively shape their exploration by setting interaction radii and selecting activity nodes. Spatial design leverages real-time mapping to contextualize user interactions within their immediate environment, fostering a dynamic relationship between users and the city. These methods create a framework for personalized urban discovery, transforming commutes into immersive and interactive journeys.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "The Discovery Map uses speculative and spatial design to turn the city into an interactive playground for personalized exploration."
+                                </p>
+            
+                                <br>                  
+                                
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">GAMIFIED</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Adds playfulness to urban discovery.</span>
+                                </p>
+                                
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">SPATIAL COMPUTING</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Maps real-time activities within set radii.</span>
+                                </p>
+            
+                                <p style="line-height:1.6; text-align: justify;">
+                                    <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">PARTICIPATORY</span>
+                                    <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Enables user-defined exploration.</span>
+                                </p>            
+            
+                            </div>
+
+
+<hr>
+
+                            <div class="full" style="background-color: #8F00FF; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                                <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                                ACTIVITY HUB TAB 
+                                </p>
+                            </div>
+                                
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY HUB TAB</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Activity Hub is where exploration evolves into meaningful action. Each activity node on the Discovery Map is generated through the Activity Generation Method, derived from the reflections and patterns collected in the Explorer Profile Tab. These curated activities are personalized to the user, offering a mix of physical and virtual interactions that align with their preferences and aspirations. By transforming user-specific data into actionable tasks, the Activity Hub bridges passive observation and active engagement, encouraging deeper and more personalized interaction with the city.
+                                    </p>
+                                </div>
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                                    <img src="./Images/interface/activity hub/Activity Hub-Base.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                                </div>
+
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA USED</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        Observation and Aspirational Pattern Lists, behavioral insights, and a library of preset activities.
+                                    </p>                                                           
+                                </div>
+                                
+                
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DATA ANALYSIS</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        Machine learning personalizes preset activities, blending user-specific data with interactive tasks. Behavioral patterns refine task generation over time.
+                                    </p>      
+                                </div> 
+
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">COMPUTATIONAL METHODS</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Activity Hub integrates computational tools to create seamless and personalized user experiences. Activity Generation Algorithms dynamically create tasks using observation and aspiration patterns derived from the Explorer Profile Tab. Real-Time Data Processing ensures activity nodes are relevant to the user's current location and preferences. Machine Learning Models adapt activities based on evolving user interactions, refining future recommendations. Interactive Mapping APIs visualize activity nodes on the Discovery Map, bridging virtual prompts with physical spaces. These tools enable a responsive, data-driven system that transforms reflections into meaningful, actionable tasks.
+                                    </p>
+
+                                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                        "The Activity Hub uses machine learning and real-time mapping to generate dynamic, personalized activities that connect users to their city."
+                                    </p>
+
+                                    <br>                  
+                                    
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">GAMIFICATION</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Engages users through interactive tasks.</span>
+                                    </p>
+                                    
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">SPATIAL COMPUTING</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Weaves natural and virtual worlds.</span>
+                                    </p>
+
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">REFLECTIONS</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Updates user data through feedback.</span>
+                                    </p>
+ 
+                                </div>  
+
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">DESIGN METHODS</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Activity Hub employs participatory, speculative, and narrative design methods to create engaging and personalized user experiences. Participatory design ensures that tasks are tailored to individual reflections and aspirations, encouraging users to actively shape their interaction with the city. Speculative methods reimagine urban spaces as interactive playgrounds, blending physical exploration with virtual engagement. Narrative design connects each activity to the user's journey, creating a cohesive and meaningful experience. Together, these methods transform commutes into opportunities for discovery, fostering deeper relationships between users and their urban environments.
+                                    </p>
+
+                                    <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                        "The Activity Hub blends participatory and speculative design to transform commutes into personalized, interactive urban experiences."
+                                    </p>
+
+                                    <br>                  
+                                    
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">GAMIFIED</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Offers engaging, task-based activities.</span>
+                                    </p>
+                                    
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">PARTICIPATORY</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Engages users in documenting experiences.</span>
+                                    </p>
+
+                                    <p style="line-height:1.6; text-align: justify;">
+                                        <span style="font-family: 'Impact', sans-serif; font-size:24px; font-style:normal; color: black;">EXPERIMENTAL</span>
+                                        <span style="font-family: 'Rajdhani', sans-serif; font-size:20px;">: Explores how tasks shape city interaction while imagining innovative approaches to urban engagement.</span>
+                                    </p>
+                                </div>
+
+
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY HUB : DESCRIPTION MODE</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Description Mode provides an insightful overview of each activity, explaining its purpose and relevance to the user's reflections and aspirations. It bridges the connection between the user's past observations and the present task, giving context to how the activity relates to their journey. This mode helps users approach the activity with clarity and intention, fostering a deeper sense of engagement.
+                                    </p>
+                                </div>
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                                    <img src="./Images/interface/activity hub/Activity Hub-Description.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                                </div>
+
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY HUB : INSTRUCTIONS MODE</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Instructions Mode offers clear, step-by-step guidance to help users complete the activity effortlessly. It ensures that every task is easy to follow, blending both virtual prompts and physical interactions. This mode keeps users focused and confident, ensuring their experience is smooth, intuitive, and fulfilling.
+                                    </p>
+                                </div>
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                                    <img src="./Images/interface/activity hub/Activity Hub-Instructions.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                                </div>
+
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">ACTIVITY HUB : PLAY MODE</h2>
+                                    <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                        The Play Mode is where the activity comes to life. Users immerse themselves in personalized tasks that blend creativity, exploration, and interaction. This mode turns their urban environment into an engaging playground, encouraging meaningful connections with their surroundings while discovering new perspectives​.
+                                    </p>
+                                </div>
+                                <div class="half">
+                                    <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;"></h2>
+                                    <img src="./Images/interface/activity hub/Activity Hub-Play.svg" alt="Conclusion Diagram" style="width: 100%; height: auto;">
+                                </div>
+                
+<hr>
+
+                                <!-- Centering Container -->
+                                <div class="center-container">
+                                    <div class="comparison-wrapper">
+                                        <!-- Text for Image 1 -->
+                                        <div class="comparison-text-container upper-text">
+                                            <h2>Disconnected Commuting</h2>
+                                            <p>The city feels like a static backdrop, offering little interaction or meaningful engagement.</p>
+                                        </div>
+
+                                        <!-- Comparison Slider -->
+                                        <div class="comparison-container">
+                                            <!-- Top Image -->
+                                            <img src="./Images/before and after narratives/oblivian-1.jpg" alt="Top Image" class="comparison-image left">
+                                            <!-- Bottom Image -->
+                                            <img src="./Images/before and after narratives/odyssey-1.png" alt="Bottom Image" class="comparison-image">
+                                            <!-- Slider -->
+                                            <div class="comparison-slider"></div>
+                                            <div class="slider-handle"></div>
+                                        </div>
+
+                                        <!-- Text for Image 2 -->
+                                        <div class="comparison-text-container lower-text">
+                                            <h2>Purposeful Connection</h2>
+                                            <p>The city transforms into an interactive space, enriching journeys with active engagement.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-wrapper">
+                                        <!-- Text for Image 1 -->
+                                        <div class="comparison-text-container upper-text">
+                                            <h2>Passive Viewing</h2>
+                                            <p>Users move through the city with downward gaze, paying little attention to their surroundings.</p>
+                                        </div>
+
+                                        <!-- Comparison Slider -->
+                                        <div class="comparison-container">
+                                            <!-- Top Image -->
+                                            <img src="./Images/before and after narratives/oblivian-2.JPG" alt="Top Image" class="comparison-image left">
+                                            <!-- Bottom Image -->
+                                            <img src="./Images/before and after narratives/odyssey-2.JPG" alt="Bottom Image" class="comparison-image">
+                                            <!-- Slider -->
+                                            <div class="comparison-slider"></div>
+                                            <div class="slider-handle"></div>
+                                        </div>
+
+                                        <!-- Text for Image 2 -->
+                                        <div class="comparison-text-container lower-text">
+                                            <h2>Active Participation</h2>
+                                            <p>Users engage with the city, noticing hidden details, objects, and interactions around them.</p>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-wrapper">
+                                        <!-- Text for Image 1 -->
+                                        <div class="comparison-text-container upper-text">
+                                            <h2>Limited Awareness</h2>
+                                            <p>Users often overlook the city's elements, objects, and sounds, missing details during commutes.</p>
+                                        </div>
+
+                                        <!-- Comparison Slider -->
+                                        <div class="comparison-container">
+                                            <!-- Top Image -->
+                                            <img src="./Images/before and after narratives/oblivian-3.jpg" alt="Top Image" class="comparison-image left">
+                                            <!-- Bottom Image -->
+                                            <img src="./Images/before and after narratives/odyssey-3.jpg" alt="Bottom Image" class="comparison-image">
+                                            <!-- Slider -->
+                                            <div class="comparison-slider"></div>
+                                            <div class="slider-handle"></div>
+                                        </div>
+
+                                        <!-- Text for Image 2 -->
+                                        <div class="comparison-text-container lower-text">
+                                            <h2>Increased Curiosity</h2>
+                                            <p>Users notice the city's elements, objects, and sounds, appreciating details they once ignored.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <style>
+                                /* General Styling */
+                                body {
+                                font-family: 'Rajdhani', sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                background-color: #ffffff;
+                                }
+
+                                /* Centering Container */
+                                .center-container {
+                                display: flex; /* Use Flexbox for alignment */
+                                flex-direction: row; /* Set to row for horizontal layout */
+                                justify-content: center; /* Center horizontally */
+                                align-items: flex-start; /* Align items at the top */
+                                gap: 20px; /* Add spacing between containers */
+                                padding: 20px;
+                                margin: 0 auto;
+                                background-color: #ffffff; /* Optional: match your design background */
+                                box-sizing: border-box; /* Include padding and border in dimensions */
+                                }
+
+
+                                /* Comparison Wrapper */
+                                .comparison-wrapper {
+                                margin: 0 auto;
+                                border: 2px solid black; /* Single border */
+                                padding: 20px;
+                                box-sizing: border-box;
+                                border-radius: 5px; /* Optional: Add rounded corners */
+                                background-color: #ffffff;
+                                position: relative;
+                                left: -7.5%; /* Adjusted to move to center */
+                                }
+
+                                /* Text Container */
+                                .comparison-text-container {
+                                text-align: center;
+                                margin: 20px auto;
+                                max-width: 400px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                }
+
+                                .comparison-text-container p {
+                                font-family: 'Rajdhani', sans-serif;
+                                font-size: 20px;
+                                line-height: 1.6;
+                                text-align: justify;
+                                margin: 0;
+                                }
+
+                                .comparison-text-container h2 {
+                                font-family: 'Rajdhani', sans-serif;
+                                font-weight: 600;
+                                font-size: 24px;
+                                margin-bottom: 20px;
+                                }
+
+                                /* Hide text by default */
+                                .comparison-text-container {
+                                opacity: 1;
+                                transition: opacity 0.3s ease-in-out;
+                                }
+
+                                .comparison-text-container.hidden {
+                                opacity: 0; /* Fade out the hidden text */
+                                pointer-events: none; /* Ensure it doesn't interact */
+                                }
+
+                                .comparison-container {
+                                position: relative;
+                                width: 400px;
+                                height: 400px;
+                                overflow: hidden;
+                                margin: 20px auto;
+                                vertical-align: middle;
+                                }
+
+                                /* Images */
+                                .comparison-image {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                }
+
+                                .comparison-image.left {
+                                z-index: 1;
+                                clip-path: inset(0% 0 0 0);
+                                }
+
+                                /* Slider Bar */
+                                .comparison-slider {
+                                position: absolute;
+                                top: 0%;
+                                left: 0;
+                                width: 100%;
+                                height: 6px;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                z-index: 2;
+                                }
+
+                                /* Slider Handle */
+                                .slider-handle {
+                                position: absolute;
+                                top: calc(0% - 10px);
+                                left: 50%;
+                                transform: translate(-50%, 0);
+                                width: 20px;
+                                height: 20px;
+                                background-color: white;
+                                border: 3px solid rgba(0, 0, 0, 0.5);
+                                border-radius: 50%;
+                                z-index: 3;
+                                }
+
+                                /* Responsive Design */
+                                @media (max-width: 768px) {
+                                .comparison-container {
+                                width: 300px;
+                                height: 300px;
+                                }
+
+                                .comparison-text-container h2 {
+                                font-size: 20px;
+                                }
+
+                                .comparison-text-container p {
+                                font-size: 16px;
+                                }
+
+                                .slider-handle {
+                                width: 15px;
+                                height: 15px;
+                                }
+                                }
+                                </style>
+
+                                <script>
+                                // Select all comparison containers
+                                const comparisonContainers = document.querySelectorAll('.comparison-container');
+
+                                comparisonContainers.forEach((container) => {
+                                const slider = container.querySelector('.comparison-slider');
+                                const handle = container.querySelector('.slider-handle');
+                                const leftImage = container.querySelector('.comparison-image.left');
+                                const upperText = container.closest('.comparison-wrapper').querySelector('.upper-text');
+                                const lowerText = container.closest('.comparison-wrapper').querySelector('.lower-text');
+
+                                // Function to adjust the slider position
+                                const adjustSlider = (event) => {
+                                const rect = container.getBoundingClientRect();
+                                const offsetY = event.clientY
+                                ? event.clientY - rect.top
+                                : event.touches[0].clientY - rect.top;
+
+                                // Restrict movement within bounds
+                                const clampedY = Math.max(0, Math.min(offsetY, rect.height));
+
+                                // Calculate percentage and adjust slider, handle, and clipping
+                                const percentage = (clampedY / rect.height) * 100;
+                                slider.style.top = `${percentage}%`;
+                                handle.style.top = `calc(${percentage}% - 10px)`; // Center handle on the bar
+                                leftImage.style.clipPath = `inset(${percentage}% 0 0 0)`;
+
+                                // Show or hide text based on slider position
+                                if (percentage < 50) {
+                                upperText.classList.remove('hidden');
+                                lowerText.classList.add('hidden');
+                                } else {
+                                upperText.classList.add('hidden');
+                                lowerText.classList.remove('hidden');
+                                }
+                                };
+
+                                // Event Listeners for mouse and touch events
+                                container.addEventListener('mousemove', adjustSlider);
+                                container.addEventListener('touchmove', adjustSlider);
+                                });
+                                </script>
+<hr>
+
+                            <div class="full" style="background-color: #d8d8d8; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                                <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                                    Foundation of ODYSSEY:<br> 
+                                    Archived experiments  
+                                </p>
+                            </div>
+
+                            <div class="full" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <img src="./Images/data/Data1.jpg">
+                            </div>
+
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">EXPERIMENTAL EXERCISES</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    This visual represents one of the commute archives conducted as an experiment to collect user data for the Explorer Profile. Through tasks like path discovery, photo capture, object study, and sensory observations, data such as geolocations, images, sounds, and reflections were gathered. This archive laid the foundation for identifying Observation Patterns (engaged elements) and Aspirational Patterns (desired elements). These insights informed the development of computational tools, activity generation methods, and interfaces, enabling the creation of commute maps, dashboards, and personalized activities for urban exploration.
+                                </p>
+                            </div>
+
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "This commute archive experiment gathered foundational data to map patterns and shape personalized urban experiences."
+                                </p>
+                            </div>
+
+                    <div class="full" style="background-color: #d8d8d8; padding: 40px 0; text-align: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+                                <p style="font-family: 'Impact', sans-serif; font-size: 96px; color: #ffffff; line-height: 1.5; margin: 0;">
+                                    Insights, Readings, and Precedents  
+                                </p>
+                    </div>
+
+                    <div class="full" style="text-align: center;">    
+                        <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: #ff0080;">                    
+                            "Primary project inspiration"
+                        </p>
+                    </div>
+                           
+
+                            <div class="half">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">A Walk in the City</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    A Walk in the City explores psychogeography, emphasizing walking as a reflective tool for observing and emotionally connecting with urban spaces beyond functional movement.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY reintroduces psychogeographic exploration into commutes, encouraging users to rediscover their city through observation and engagement."
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                <a href="https://www.amazon.com/Walk-City-Rosemary-Dawson/dp/0670749109" target="_blank"><img src="./Images/Precedents/A Walk in the City.jpeg" style="max-width: 100%; max-height: 100%;"></a>
+                            </div>
+
+
+
+<hr>            
+
+
+
+                            <div class="full" style="text-align: center;">    
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: #ff0080;">                    
+                                    "Gamification and Interactive Exploration"
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://pokemongolive.com/" target="_blank"><img src="./Images/Precedents/Pokémon GO.png"></a>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Pokémon GO</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    Pokémon GO uses augmented reality (AR) and location-based services to gamify urban exploration, encouraging users to explore real-world spaces to discover virtual elements and complete interactive tasks.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY balances immersive digital interaction with physical exploration, offering an alternative to overstimulation by fostering deliberate, meaningful engagement."
+                                </p> 
+                            </div>
+
+
+
+
+
+
+
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Gouda Tour & Loquiz</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    These gamified tours engage users through interactive challenges, puzzles, and exploration, encouraging playful interactions with city spaces.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY evolves gamified tours by dynamically generating tasks based on user inputs, ensuring unique and evolving urban experiences."
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://www.peek.com/gouda-south-holland-netherlands/r084xw9/gouda-gamified-tour-solve-puzzles-and-explore-hidden-spots/a03r397" target="_blank"><img src="./Images/Precedents/Gouda Tour & Loquiz.png"></a>
+                            </div>
+
+
+
+
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://www.storytourist.com/about-page/" target="_blank"><img src="./Images/Precedents/StoryTourist.png"></a>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">StoryTourist</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                StoryTourist gamifies city tours by combining storytelling with urban exploration, guiding users through locations to discover immersive narratives.
+                            </p>
+            
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                "ODYSSEY builds on story-driven exploration, tailoring tasks and narratives to user data for a uniquely personal urban journey."
+                            </p> 
+                        </div>
+
+
+
+
+
+                        <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Kresna : A Game and Cultural Tourism System</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                Kresna combines gamification and cultural tourism, offering tasks that connect users with heritage, cultural landmarks, and city spaces in an engaging way.
+                            </p>
+        
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                "ODYSSEY expands cultural exploration into everyday commutes, transforming routines into curated, reflective experiences."
+                            </p>
+                        </div>
+        
+                        <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                            <a href="https://firaahda.medium.com/kresna-a-game-and-cultural-tourism-information-system-with-the-gamification-concept-smart-city-d19e243554d0" target="_blank"><img src="./Images/Precedents/Kresna- A Game and Cultural Tourism System.png"></a>
+                        </div>          
+                            
+            
+<hr>            
+
+
+
+                        <div class="full" style="text-align: center;">    
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: #ff0080;">                    
+                                "Data-Driven Urban Insights and Mapping"
+                            </p>
+                        </div>
+        
+                        <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://senseable.mit.edu/" target="_blank"><img src="./Images/Precedents/MIT Senseable City Lab.png"></a>
+                            </div>
+        
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                            <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">MIT Senseable City Lab</h2>
+                            <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                The Senseable City Lab explores how data and technology reveal hidden urban dynamics, transforming how cities are understood and engaged.
+                            </p>
+        
+                            <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                "ODYSSEY uses data to create a participatory, human-centered framework that turns urban commutes into dynamic explorations."
+                        </div>
+
+            
+                                
+<hr>                           
+   
+
+
+
+                            <div class="full" style="text-align: center;">    
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: #ff0080;">                    
+                                    "Gamification in Institutional and Cultural Contexts"
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <a href="https://amt-lab.org/blog/2021/5/gamification-in-museums" target="_blank"><img src="./Images/Precedents/Gamification in Museums.png"></a>
+                                </div>
+            
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Gamification in Museums</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    This approach enhances engagement and learning in museum spaces through gamification, encouraging deeper, interactive connections with exhibits.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY applies gamification principles to urban spaces, transforming commutes into interactive, living explorations of the city."
+                                </p> 
+                            </div>
+
+
+
+
+
+
+
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Amplifai Gamification Statistics</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    This research demonstrates how gamification increases engagement, motivation, and productivity by introducing interactive and goal-oriented systems. It highlights the power of gamified techniques to transform routine tasks into enjoyable, rewarding experiences.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY leverages gamification to transform mundane commutes into interactive, engaging journeys, fostering curiosity and deeper city connections."
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://www.amplifai.com/blog/gamification-statistics#:~:text=Latest%20Statistics%20on%20Gamification's%20Benefit,them%20more%20productive%20at%20work.&text=(3)%20With%20the%20correct%20gamification,60%25%20increase%20in%20employee%20engagement." target="_blank"><img src="./Images/Precedents/Amplifai Gamification Statistics.png"></a>
+                            </div>          
+         
+                            
+            
+<hr>                            
+   
+
+
+
+                            <div class="full" style="text-align: center;">    
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal; color: #ff0080;">                    
+                                    "Speculative and Immersive Urban Futures"
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <a href="http://km.cx/projects/domestic-robocop" target="_blank"><img src="./Images/Precedents/Hyper-Reality by Keiichi Matsuda.png"></a>
+                                </div>
+            
+                                <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">                            
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Hyper-Reality by Keiichi Matsuda</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    This speculative project envisions a hyper-immersive urban experience where virtual and physical realities merge seamlessly, saturating urban spaces with interactive digital overlays.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY balances immersive digital interaction with physical exploration, fostering meaningful engagement without overwhelming the user."
+                                </p> 
+                            </div>
+
+
+
+
+
+
+
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <h2 style="font-family: 'Rajdhani', sans-serif; font-weight:600; font-size:24px; margin-bottom:20px;">Augmented City 3D</h2>
+                                <p style="font-family: 'Rajdhani', sans-serif; font-size:20px; line-height:1.6; text-align: justify;">
+                                    This video project imagines urban spaces transformed through augmented technology, blending virtual elements with real-world interactions to reshape how we navigate and perceive cities.
+                                </p>
+            
+                                <p style="font-family: 'Impact', sans-serif; font-size:24px; line-height:1.6; font-style:normal;text-align: justify; color: black;">                    
+                                    "ODYSSEY integrates augmented interactions subtly, using reflective and gamified tasks to reconnect users with their physical surroundings."
+                                </p>
+                            </div>
+            
+                            <div class="half" style="width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                <a href="https://vimeo.com/14294054" target="_blank"><img src="./Images/Precedents/Augmented City 3D.png"></a>
+                            </div>          
+         
+                            
+            
+<hr>   
+                                               
+
+                
+
+
+
+</body>
 </html>
