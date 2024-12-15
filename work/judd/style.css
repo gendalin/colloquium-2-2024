@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Suissebook';
+    src: url('Fonts/suisseintl-book-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Outer container to control the maximum width and centering */
+.container-xl {
+    max-width: 1440px;
+    margin: 0 auto; /* Centers the container */
+    position: relative; /* Allows positioning of elements inside */
+    overflow: hidden; /* Prevents elements from overflowing the container */
+}
+
+/* Hero section full width and responsive */
+.hero {
+    width: 80%; /* Full browser width */
+    height: 70vh; /* Adjust height dynamically based on viewport */
+    display: flex; /* Flexbox for content alignment, if needed */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Ensures content stays within bounds */
+}
+
+/* Hero image styling */
+.hero-img {
+    width: 100%; /* Ensures the image scales to container width */
+    height: 100%; /* Ensures the image scales to container height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    object-position: center; /* Centers the image content */
+}
+
+body {
+    font-family: 'Suissebook', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #6B6E78;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: .9;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p,
+span {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #6B6E78;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 5%;
+    gap: 1rem;
+}
+
+.image-container {
+    flex: 1;
+    /* Allow image container to take up equal space */
+    max-width: 50%;
+    /* Limit the container width to half */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    /* Prevent image from exceeding container width */
+    max-height: 400px;
+    /* Constrain the height */
+    object-fit: contain;
+    /* Ensure the entire image is visible */
+    border-radius: 8px;
+    /* Optional: Add rounded corners */
+}
+
+section .image-container {
+    flex: 1;
+    max-width: 50%;
+    /* Restrict the image container to half the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section.alt {
+    flex-direction: row-reverse;
+    /* Flip text and image on alternating sections */
+}
+
+.text {
+    width: 50%;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container img,
+.peer2peer img {
+    max-width: 100%;
+    /* Prevent images from exceeding their container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Crop if necessary */
+    border-radius: 8px;
+    /* Rounded corners for consistency */
+    max-height: 400px;
+    /* Optional: Constrain the height if images are too large */
+}
+
+.peer2peer {
+    display: flex;
+    flex-direction: column;
+    /* Ensure items stack vertically */
+    gap: 2rem;
+    /* Add space between each content block */
+    padding: 2rem 5%;
+}
+
+.peer2peer .heading {
+    text-align: left;
+    /* Aligns text to the left */
+    margin-bottom: 2rem;
+    /* Add spacing below the heading */
+    display: flex;
+    /* Ensure alignment control */
+    flex-direction: column;
+    /* Stack heading elements */
+    align-items: flex-start;
+    /* Align to the left */
+}
+
+
+.peer2peer .content {
+    display: flex;
+    flex-direction: row;
+    /* Align text and image side by side */
+    align-items: flex-start;
+    gap: 2rem;
+    /* Space between text and image */
+}
+
+.peer2peer .text {
+    width: 40%;
+    flex: 1;
+    /* Allow text to grow naturally */
+}
+
+.peer2peer .image {
+    flex: 1;
+    /* Allow image to grow naturally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.peer2peer img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Full-width hero image */
+.hero {
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .text,
+    .image-container {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .peer2peer .content {
+        flex-direction: column;
+        /* Stack text and image */
+        gap: 1rem;
+    }
+
+    .peer2peer .text,
+    .peer2peer .image {
+        width: 100%;
+        /* Full width on small screens */
+    }
+}

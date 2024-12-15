@@ -1,108 +1,101 @@
+---
+student: julia kwon
+tags: students
+image: image/title.png
+---
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Multi-Page Layout</title>
-  <link rel="stylesheet" href="style.css">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    
+    <title>Julia Kwon</title>
+
+    <meta  
+    name="keywords"
+    content="sustainable materials, modular acoustical system, bio-based composites, eco-friendly design"
+/>
+<meta
+    name="description"
+    content="Illustrated in three parts, this project redesigns a modular acoustical system using bio-based wood-mycelium composites. It introduces eco-friendly, scalable, and glue-free methods to tackle resource depletion and waste while improving building performance."
+/>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no"
+/>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+            background-color: ivory;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #000;
+            font-family: Poppins, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: justify; /* Left-justify the text */
+            margin-left: 0; /* Keep text aligned to the left */
+        }
+        #descr {
+            position: absolute;
+            width: 20vw; /* Ensure the description fits within the red box */
+            margin-top: 160px; /* Position below the transport button */
+            margin-left: 50px; /* Align the description left with the transport button */
+            z-index: 2;
+        }
+        .redirect-container {
+            width: 100px;
+            height: 100px;
+            background-color: #c9df49;
+            color: #434343;
+            font-family: Poppins, sans-serif; /* Match description font */
+            font-weight: 500; /* Match description font weight */
+            font-size: 1rem; /* Match description font size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(43, 43, 43, 0.1);
+            position: absolute;
+            left: 50px; /* Align the button with the description */
+            top: 50px; /* Maintain spacing from the top */
+        }
+        .redirect-container:hover {
+            background-color: ivory;
+            color: #c9df49;
+        }
+        #background {
+            width: 80vw; /* Reduce the size of the background image */
+            height: auto;
+            margin: auto;
+            position: absolute;
+            z-index: -1;
+            left: 15%; /* Center the background */
+            top: 5%; /* Adjust top spacing */
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="#main" class="menu">main</a>
-      <a href="#section-a" class="menu">A</a>
-      <a href="#section-b" class="menu">B</a>
-      <a href="#section-c" class="menu">C</a>
-    </nav>
-  </header>
-
-  <!-- Main Section -->
-  <section id="main" class="page">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="parts.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="content">
-      <p class="symbiosis-text">a system that fosters symbiosis with nature</p>
+    <div class="redirect-container" onclick="window.location.href='https://jjk2256.github.io/Colloquium-II/'">
+        transport
     </div>
-  </section>
-  
-
-  <!-- Second Page -->
-  <section id="second-page" class="page">
-    <div class="box-container">
-      <div class="box-wrapper">
-        <div class="box"></div>
-        <p class="box-label"><a href="#section-a">Part One</a></p>
-      </div>
-      <div class="box-wrapper">
-        <div class="box"></div>
-        <p class="box-label"><a href="#section-b">Part Two</a></p>
-      </div>
-      <div class="box-wrapper">
-        <div class="box"></div>
-        <p class="box-label"><a href="#section-c">Part Three</a></p>
-      </div>
+    <div id="descr">
+        <h1>
+            Illustrated in three parts, this project redesigns a modular acoustical system using bio-based wood-mycelium composites. It introduces eco-friendly, scalable, and glue-free methods to tackle resource depletion and waste while improving building performance.
+        </h1>
     </div>
-  </section>
-
-  <!-- Section A -->
-  <section id="section-a" class="page">
-    <div class="content-container">
-      <video controls autoplay muted loop class="video">
-        <source src="acousticpanel.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="text-content">
-        <h2>About Part One</h2>
-        <p>
-          This section provides an overview of the content presented in the video. 
-          Explore the details about how this concept creates symbiosis with nature.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section B -->
-  <section id="section-b" class="page">
-    <div class="content-container">
-      <video controls autoplay muted loop class="video">
-        <source src="00_1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="text-content">
-        <h2>About Part Two</h2>
-        <p>
-          This section provides an overview of the content presented in the video. 
-          Explore the details about how this concept is applied in practice.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section C -->
-  <section id="section-c" class="page">
-    <div class="content-container">
-      <video controls autoplay muted loop class="video">
-        <source src="MyceliumBW.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="text-content">
-        <h2>About Part Three</h2>
-        <p>
-          This section provides an overview of the content presented in the video. 
-          Learn how this concept fosters innovation and collaboration.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Footer content</p>
-  </footer>
-
-  <script src="main.js"></script>
+    <img src="image/background.png" alt="Background Image" id="background">
 </body>
 </html>

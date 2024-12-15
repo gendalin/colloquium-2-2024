@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 1536px;  /* 增加到1.28倍 */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.student-name {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 40px 0 20px;
+    color: #2c3e50;
+}
+
+.project-intro {
+    text-align: center;
+    max-width: 1536px;  /* 增加到1.28倍 */
+    margin: 0 auto 60px;
+    font-size: 1.6em;
+    color: #555;
+}
+
+.content-section {
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+}
+
+.section-image {
+    width: 100%;
+    height: calc((9/16) * 100vw);
+    max-height: calc((9/16) * 1536px);  /* 增加到1.28倍 */
+    object-fit: cover;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.section-subtitle {
+    font-size: 1.4em;
+    margin: 15px 0;
+    color: #666;
+}
+
+.section-description {
+    line-height: 1.8;
+    font-size: 1.2em;
+    color: #444;
+}

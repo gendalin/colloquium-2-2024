@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mapbox 曼哈顿回收站点优化路径 (5 组)</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { width: 100%; height: 100vh; }
+        .info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-family: Arial, sans-serif;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="info" id="route-info"></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbmZlbmc5MjkiLCJhIjoiY20yYXBld2FmMGl5ZDJzcHk3ZHF4bjQ2NiJ9.Gr_AF5ANKXy62O-h1iiNjg';
+
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [-73.975242, 40.7706], // 地图中心点
+        zoom: 11.3
+    });
+
+    function loadCSVAndPlanRoutes(url) {
+        Papa.parse(url, {
+            download: true,
+            header: true,
+            complete: function(results) {
+                const data = results.data;
+                const coordinates = [];
+                data.forEach(row => {
+                    if (row.Borough === "Manhattan" && row.point) {
+                        const matches = row.point.match(/POINT \(([^ ]+) ([^)]+)\)/);
+                        if (matches && matches.length === 3) {
+                            const lng = parseFloat(matches[1]);
+                            const lat = parseFloat(matches[2]);
+                            coordinates.push([lat, lng]);
+                        }
+                    }
+                });
+
+                const groupedCoordinates = createClusters(coordinates, 5).map(cluster => {
+                    const startEndPoint = [-73.9936, 40.7701];
+                    return [startEndPoint, ...cluster.map(([lat, lng]) => [lng, lat]), startEndPoint];
+                });
+
+                const colors = ['#3b9ddd', '#dd3b3b', '#3bdd76', '#ddcc3b', '#7e3bdd'];
+
+                groupedCoordinates.forEach((group, index) => {
+                    if (group.length > 2) {
+                        getDirections(group, `route${index + 1}`, colors[index]);
+                    }
+                });
+            }
+        });
+    }
+
+    function getDirections(coordinates, routeId, lineColor) {
+        const waypoints = coordinates.map(coord => coord.join(',')).join(';');
+        const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${waypoints}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP 错误! 状态: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (!data.routes || data.routes.length === 0) {
+                    console.error('未能找到有效的路线，请检查坐标数据。');
+                    return;
+                }
+
+                const route = data.routes[0];
+                const routeDistance = route.distance / 1609.34; // 转换为英里
+                const speedMph = 5; // 假设速度为 5 英里/小时
+                const routeDuration = (route.distance / (speedMph * 1609.34)) * 60; // 计算分钟
+                const dropOffPoints = coordinates.length - 2; // 中间站点数
+
+                const routeLine = {
+                    type: 'geojson',
+                    data: {
+                        type: 'Feature',
+                        geometry: route.geometry
+                    }
+                };
+
+                // 在地图上绘制路线
+                map.addLayer({
+                    id: routeId,
+                    type: 'line',
+                    source: routeLine,
+                    layout: {
+                        'line-join': 'round',
+                        'line-cap': 'round'
+                    },
+                    paint: {
+                        'line-color': lineColor,
+                        'line-width': 2,
+                        'line-opacity': 0.6
+                    }
+                });
+
+                // 为每个点添加标记
+                coordinates.forEach((coord, idx) => {
+                    const marker = document.createElement('div');
+                    marker.innerHTML = `<span style="color:${lineColor}; font-weight:bold;">${idx + 1}</span>`;
+                    marker.style.fontSize = '14px';
+                    marker.style.textShadow = '1px 1px 2px rgba(0,0,0,0.5)';
+                    new mapboxgl.Marker(marker)
+                        .setLngLat(coord)
+                        .addTo(map);
+                });
+
+                // 显示带颜色的标题和黑色文字的路线信息
+                document.getElementById('route-info').innerHTML += 
+                    `<div>
+                        <span style="color:${lineColor}; font-weight:bold;">
+                            Route ${routeId.replace('route', '')}
+                        </span> - 
+                        <span style="color:black;">
+                            Number of Drop-off Points: ${dropOffPoints}<br>
+                            Total Distance: ${routeDistance.toFixed(2)} miles<br>
+                            Total Duration: ${Math.floor(routeDuration / 60)} hours ${Math.floor(routeDuration % 60)} minutes
+                        </span>
+                    </div><br>`;
+            })
+            .catch(error => {
+                console.error('错误:', error);
+                document.getElementById('route-info').innerText = '无法获取路线，请检查网络和请求参数。';
+            });
+    }
+
+    function createClusters(coordinates, numGroups) {
+        const clusters = Array.from({ length: numGroups }, () => []);
+        const used = new Array(coordinates.length).fill(false);
+        let groupIndex = 0;
+
+        while (coordinates.some((_, i) => !used[i])) {
+            let start = coordinates.findIndex((_, i) => !used[i]);
+            clusters[groupIndex].push(coordinates[start]);
+            used[start] = true;
+
+            while (clusters[groupIndex].length < Math.ceil(coordinates.length / numGroups)) {
+                let lastPoint = clusters[groupIndex][clusters[groupIndex].length - 1];
+                let closest = -1;
+                let closestDistance = Infinity;
+
+                coordinates.forEach((point, idx) => {
+                    if (!used[idx]) {
+                        const d = distance(lastPoint, point);
+                        if (d < closestDistance) {
+                            closestDistance = d;
+                            closest = idx;
+                        }
+                    }
+                });
+
+                if (closest !== -1) {
+                    clusters[groupIndex].push(coordinates[closest]);
+                    used[closest] = true;
+                } else {
+                    break;
+                }
+            }
+
+            groupIndex = (groupIndex + 1) % numGroups;
+        }
+
+        return clusters;
+    }
+
+    function distance(coord1, coord2) {
+        const [lat1, lng1] = coord1;
+        const [lat2, lng2] = coord2;
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLng = (lng2 - lng1) * Math.PI / 180;
+        const a = 
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+            Math.sin(dLng / 2) * Math.sin(dLng / 2); 
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
+        return R * c;
+    }
+
+    loadCSVAndPlanRoutes('Electronics_Drop_Off_Locations_in_NYC_20241020.csv');
+</script>
+</body>
+</html>

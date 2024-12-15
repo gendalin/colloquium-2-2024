@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #EBEBEB;
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 95vh; /* 원하는 높이로 설정 */
+    background-image: url('Pic/Main1.jpg'); /* 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* 세로로 쌓이도록 설정 */
+    justify-content: center;
+    align-items: center; /* 가로 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.link-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.link-section a {
+    font-size: 18px;
+    color: #0066cc; /* 기본 텍스트 색상 */
+    text-decoration: none;
+    transition: color 0.3s ease; /* 색상 전환 애니메이션 */
+    text-decoration: underline; 
+}
+
+.link-section a:visited {
+    color: #ffffff; /* 클릭 후 흰색으로 유지 */
+}
+
+.link-section a:hover {
+    color: #87ceeb; /* 호버 시 하늘색 */
+    text-decoration: underline; /* 강조 효과 */
+}
+
+h1 {
+    color: white;
+    font-size: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 제목이 배경과 잘 구분되도록 그림자 추가 */
+    margin: 0;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 제목이 배경과 잘 구분되도록 그림자 추가 */
+    margin: 0;
+    margin-top: 20px;
+}
+
+h3 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 제목이 배경과 잘 구분되도록 그림자 추가 */
+    margin: 0;
+    margin-top: 100px;
+}
+
+h4 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 제목이 배경과 잘 구분되도록 그림자 추가 */
+    margin: 0;
+}
+
