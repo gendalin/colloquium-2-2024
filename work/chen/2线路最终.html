@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mapbox Manhattan Drop-off Routes</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { width: 100%; height: 100vh; }
+        .info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="info" id="route-info"></div>
+<script>
+    // Set up Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlbmZlbmc5MjkiLCJhIjoiY20yYXBld2FmMGl5ZDJzcHk3ZHF4bjQ2NiJ9.Gr_AF5ANKXy62O-h1iiNjg';
+
+    // Initialize Mapbox map
+    const map = new mapboxgl.Map({
+        container: 'map', // Container ID
+        style: 'mapbox://styles/mapbox/light-v10', // Mapbox style
+        center: [-73.975242, 40.7706], // 地图中心点
+        zoom: 11.3
+    });
+
+    // Load CSV and plan routes in two segments
+    function loadCSVAndPlanRoutes(url) {
+        Papa.parse(url, {
+            download: true,
+            header: true,
+            complete: function(results) {
+                const data = results.data;
+                const coordinates = [];
+
+                // Extract Manhattan points
+                data.forEach(row => {
+                    if (row.Borough === "Manhattan" && row.point) {
+                        const matches = row.point.match(/POINT \(([^ ]+) ([^)]+)\)/);
+                        if (matches && matches.length === 3) {
+                            const lng = parseFloat(matches[1]);
+                            const lat = parseFloat(matches[2]);
+                            coordinates.push([lng, lat]);
+                        }
+                    }
+                });
+
+                console.log('Coordinates:', coordinates); // Log coordinates for debugging
+
+                // Divide coordinates into two groups, each with max 25 points
+                const midpoint = Math.ceil(coordinates.length / 2);
+                const group1 = [[-73.9936, 40.7701], ...coordinates.slice(0, Math.min(midpoint, 25)), [-73.9936, 40.7701]];
+                const group2 = [[-73.9936, 40.7701], ...coordinates.slice(midpoint, midpoint + 25), [-73.9936, 40.7701]];
+
+                // Draw each group as a separate route
+                if (group1.length > 1) {
+                    getDirections(group1, 'route1', '#3b9ddd', 'blue');
+                }
+                if (group2.length > 1) {
+                    getDirections(group2, 'route2', '#dd3b3b', 'red');
+                }
+            }
+        });
+    }
+
+    // Fetch directions from Mapbox Directions API for each route
+    function getDirections(coordinates, routeId, lineColor, markerColor) {
+        const waypoints = coordinates.map(coord => coord.join(',')).join(';');
+        const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${waypoints}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (!data.routes || data.routes.length === 0) {
+                    console.error('No valid route found. Please check the coordinates.');
+                    return;
+                }
+
+                const route = data.routes[0];
+                const routeDistance = route.distance / 1609.34; // Convert to miles
+                const speedMph = 10; // Assume speed is 10mph
+                const totalMinutes = (route.distance / (speedMph * 1609.34)) * 60; // Calculate total time in minutes
+                const hours = Math.floor(totalMinutes / 60);
+                const minutes = Math.round(totalMinutes % 60);
+                const pointCount = coordinates.length - 2; // Exclude start and end points
+
+                // Draw route line on the map
+                const routeLine = {
+                    type: 'geojson',
+                    data: {
+                        type: 'Feature',
+                        geometry: route.geometry
+                    }
+                };
+
+                // Add a route layer with reduced opacity and thinner line
+                map.addLayer({
+                    id: routeId,
+                    type: 'line',
+                    source: routeLine,
+                    layout: {
+                        'line-join': 'round',
+                        'line-cap': 'round'
+                    },
+                    paint: {
+                        'line-color': lineColor,
+                        'line-width': 2,
+                        'line-opacity': 0.7
+                    }
+                });
+
+                // Add numbered markers for each coordinate in the route
+                coordinates.forEach((coord, index) => {
+                    const marker = document.createElement('div');
+                    marker.className = 'marker';
+                    marker.style.backgroundColor = index === 0 || index === coordinates.length - 1 ? 'green' : lineColor;
+                    marker.style.color = 'white';
+                    marker.style.borderRadius = '50%';
+                    marker.style.width = '24px';
+                    marker.style.height = '24px';
+                    marker.style.display = 'flex';
+                    marker.style.justifyContent = 'center';
+                    marker.style.alignItems = 'center';
+                    marker.style.fontSize = '12px';
+                    marker.innerText = index === 0 ? 'S' : (index === coordinates.length - 1 ? 'E' : index.toString());
+
+                    new mapboxgl.Marker(marker)
+                        .setLngLat(coord)
+                        .addTo(map);
+                });
+
+                // Display route distance, duration in hours and minutes, number of drop-off points, and color indicator
+                document.getElementById('route-info').innerHTML += 
+                    `<span style="color:${lineColor}; font-weight:bold;">${routeId.charAt(0).toUpperCase() + routeId.slice(1)}</span> - Number of Drop-off Points: ${pointCount}<br>Total Distance: ${routeDistance.toFixed(2)} miles<br>Total Duration: ${hours} hours ${minutes} minutes<br><br>`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('route-info').innerText = 'Unable to fetch routes. Please check network and parameters.';
+            });
+    }
+
+    // Replace 'path/to/your/csvfile.csv' with the actual file URL
+    loadCSVAndPlanRoutes('Electronics_Drop_Off_Locations_in_NYC_20241020.csv');
+</script>
+</body>
+</html>
