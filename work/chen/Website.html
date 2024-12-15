@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 设置渐变背景 */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(
+                to bottom,
+                #ff9999 0%,  
+                #ffc664 20%, 
+                #fff989 40%, 
+                #c1ffd5 70%, 
+                #93fbff 100% 
+            ); /* 从上到下多次渐变 */
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column; 
+        }
+
+        #image-container {
+            width: 88%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 20px; 
+            border-radius: 10px; 
+            background: rgba(255, 255, 255, 0.7); 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 20px; 
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* 鼠标指针改为手型，提示可点击 */
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <!-- 图片将通过 JavaScript 动态加载 -->
+    </div>
+
+    <script>
+        // 图片配置
+        const totalPages = 30; // 图片总数
+        const basePath = "Data_JPEG/"; // 文件夹路径
+        const filePrefix = "Studio Final 12.10_Page_"; // 文件名前缀
+        const fileExtension = ".jpg"; // 文件扩展名
+
+        const container = document.getElementById('image-container');
+
+        for (let i = 1; i <= totalPages; i++) {
+            // 生成文件名，补齐 2 位数字
+            const pageNumber = i.toString().padStart(2, '0');
+            const filePath = `${basePath}${filePrefix}${pageNumber}${fileExtension}`;
+
+            if (i === 6) {
+                // 第6张图片增加链接
+                const link = document.createElement('a');
+                link.href = "https://projects.propublica.org/graphics/nyc-garbage";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 8) {
+                // 第8张图片更新链接
+                const link = document.createElement('a');
+                link.href = "https://www.google.com/search?q=mobility+report+-+nyc+department+of+transportation+august+2019&oq=&gs_lcrp=EgZjaHJvbWUqCQgBECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQkxMjA4ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 9) {
+                // 第9张图片增加链接
+                const link = document.createElement('a');
+                link.href = "https://www.nyc.gov/site/dsny/collection/residents.page";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 22) {
+                // 第22张图片增加链接
+                const link = document.createElement('a');
+                link.href = "Electronics_Drop_Off_Locations.html";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 23) {
+                // 第23张图片增加链接
+                const link = document.createElement('a');
+                link.href = "2线路最终.html";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 24) {
+                // 第24张图片增加链接
+                const link = document.createElement('a');
+                link.href = "5R2.html";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 28) {
+                // 第28张图片增加链接
+                const link = document.createElement('a');
+                link.href = "https://www.electronicshub.org/noise-level-decibels-chart/";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 29) {
+                // 第29张图片增加链接
+                const link = document.createElement('a');
+                link.href = "https://www.youtube.com/watch?v=1c0KfxShPMc&t=47s";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 30) {
+                // 第30张图片增加链接
+                const link = document.createElement('a');
+                link.href = "https://waymo.com/blog/2023/12/waymo-significantly-outperforms-comparable-human-benchmarks-over-7-million/";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                const img = document.createElement('img');
+                img.src = filePath;
+                img.alt = `Page ${i}`;
+                link.appendChild(img);
+                container.appendChild(link);
+            } else if (i === 7) {
+            // 第7张图片增加链接
+            const link = document.createElement('a');
+            link.href = "https://www.newyorker.com/magazine/2024/04/15/the-ex-nypd-official-trying-to-tame-new-yorks-trash";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            const img = document.createElement('img');
+            img.src = filePath;
+            img.alt = `Page ${i}`;
+            link.appendChild(img);
+            container.appendChild(link);
+            } else {
+            // 其他图片正常显示
+            const img = document.createElement('img');
+            img.src = filePath;
+            img.alt = `Page ${i}`;
+            container.appendChild(img);
+            }
+        }
+    </script>
+</body>
+</html>
