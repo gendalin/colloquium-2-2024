@@ -1,21 +1,742 @@
----
-student: Name
-layout: blank.liquid
-tags:
-- students
----
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    
-    <title>Student name</title>
 
+    <!--Page Title-->
+    <title>Are We Living in the Spectrum</title>
+
+    <!--Meta Keywords and Description-->
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-</head>
 
-<body></body>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" title="Favicon"/>
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="css/namari-color.css">
+
+    <!--Icon Fonts - Font Awesome Icons-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Animate CSS-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--End of Preloader-->
+
+<div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+    <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+    <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+    <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+</div>
+
+<div id="wrapper">
+
+    <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+            <div class="row clearfix">
+                <div class="col-1">
+
+
+
+                    <!--Main Navigation-->
+                    <nav id="nav-main">
+                        <ul>
+                            <li>
+                                <a href="#banner">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about">Description</a>
+                            </li>
+                            <li>
+                                <a href="#gallery">Data</a>
+                            </li>
+                            <li>
+                                <a href="#services">Computational Methods</a>
+                            </li>
+                            <li>
+                                <a href="#services1">Design Methods</a>
+                            </li>
+                            <li>
+                                <a href="#testimonials">Visualization</a>
+                            </li>
+                            <li>
+                                <a href="#clients">Insight</a>
+                            </li>
+                            <li>
+                                <a href="#clients2">Application</a>
+                            </li>
+                            <li>
+                                <a href="#clients3">Reference</a>
+                            </li>
+ 
+                        </ul>
+                    </nav>
+                    <!--End of Main Navigation-->
+
+                    <div id="nav-trigger"><span></span></div>
+                    <nav id="nav-mobile"></nav>
+
+                </div>
+            </div>
+        </div><!--End of Header-->
+
+        <!--Banner Content-->
+        <div id="banner-content" class="row clearfix">
+
+            <div class="col-38">
+
+                <div class="section-heading">
+                    <h1>Are We Living In The Spectrum?</h1>
+                    <h2>——Glitch in Diversity: A Comparative Study of TikTok and Douyin</h2>
+                </div>
+
+               <!--Call to Action-->
+<a href="#" class="button" id="compareButton">TikTok v.s. Douyin</a>
+<!--End Call to Action-->
+
+<!-- Modal -->
+<div id="comparisonModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; max-width: 800px; width: 90%;">
+        <div style="margin-bottom: 20px;">
+            <h3>Douyin</h3>
+            <p><strong>Features:</strong> Focused on musical creativity and life sharing, catering to users of all ages.</p>
+            <p><strong>User Goals:</strong> Provides a platform for users to share their lives, make friends, and explore interesting content.</p>
+            <p><strong>Functionality:</strong> Emphasizes localized content and elements tied to Chinese culture.</p>
+            <p><strong>Target Market:</strong> Primarily focused on the Chinese market, with content tailored to domestic users' interests and preferences.</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <h3>TikTok</h3>
+            <p><strong>Features:</strong> A global short video platform emphasizing diversity and creativity in content.</p>
+            <p><strong>User Goals:</strong> Attracts a global user base, adapting to the cultural expectations and legal frameworks of different countries.</p>
+            <p><strong>Functionality:</strong> Similar to Douyin but more focused on globalization and multicultural integration.</p>
+            <p><strong>Target Market:</strong> Serves a worldwide audience, balancing regionalization with a global strategy.</p>
+        </div>
+        <button id="closeModal" style="margin-top: 20px; padding: 10px 20px; background: #000; color: #fff; border: none; cursor: pointer; border-radius: 4px;">Close</button>
+    </div>
+</div>
+
+<!-- Inline JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the button and modal elements
+        const compareButton = document.getElementById('compareButton');
+        const modal = document.getElementById('comparisonModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Add event listener to show modal on button click
+        compareButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            modal.style.display = 'flex'; // Show the modal
+        });
+
+        // Add event listener to hide modal on close button click
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none'; // Hide the modal
+        });
+    });
+</script>
+
+            </div>
+
+        </div><!--End of Row-->
+    </header>
+
+    <!--Main Content Area-->
+    <main id="content">
+
+        <!--Introduction-->
+        <section id="about" class="introduction scrollto">
+
+            <div class="row clearfix">
+
+                <div class="col-3">
+                    <div class="section-heading">
+                        <h3>About</h3>
+                        <h2 class="section-title">Design Description</h2>
+                        <p class="section-subtitle">“All technology reflects the society that produces it, including its power structures and prejudices."
+                        ——《Glitch Feminism: A Manifesto》Legacy Russell</p>
+                        <p class="section-subtitle">Imagine scrolling through your favorite app. You think you’re exploring the world, but in reality, you’re trapped in a bubble, seeing only what the algorithm thinks you want. What if the world isn’t as narrow as your feed suggests?</p>
+                    </div>
+
+                </div>
+
+                <div class="col-2-3">
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
+                        <!--Icon-->
+                        <!-- <div class="icon">
+                            <i class="fa fa-html5 fa-2x"></i>
+                        </div> -->
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Short Video Platforms</h4>
+                            <li><strong>Younger user base</strong> with high engagement levels.</li>
+                            <li><strong>Rapid content dissemination</strong> and short trend cycles.</li>
+                            <li>Strong societal influence through <strong>algorithm-driven ecosystems</strong>.</li>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
+                        <!--Icon-->
+                        <!-- <div class="icon">
+                            <i class="fa fa-bolt fa-2x"></i>
+                        </div> -->
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Echo Chambers</h4>
+                            <li>Originally defined by <strong>political biases</strong>, now applied to ambiguous topics like beauty standards.</li>
+        <li><strong>Difficult to quantify</strong> in abstract contexts.</li>
+        <li>Amplifies <strong>misinformation</strong>, polarizes communities, and suppresses alternative views.</li>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <!--Icon-->
+                        <!-- <div class="icon">
+                            <i class="fa fa-tablet fa-2x"></i>
+                        </div> -->
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Emotional Homogenization</h4>
+                            <li><strong>Emotional responses</strong> on platforms tend to be polarized and uniform.</li>
+        <li>Intensifies <strong>group extremism</strong> and reduces exposure to diverse emotions.</li>
+        <li>Adversely affects <strong>adolescent mental health</strong> by fostering anxiety and conformity.</li>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <!--Icon-->
+                        <!-- <div class="icon">
+                            <i class="fa fa-rocket fa-2x"></i>
+                        </div> -->
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Parallel Platformization</h4>
+                            <li><strong>Douyin</strong> exhibits higher content homogeneity and stronger echo chamber effects.</li>
+                            <li><strong>TikTok</strong>’s global cultural diversity reduces echo chamber formation.</li>
+                            <li>Highlights <strong>cultural differences</strong> in algorithmic dynamics and user interactions.</li>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <!--End of Introduction-->
+
+
+<!--Gallery-->
+<aside id="gallery" class="gallery-container text-center clearfix">
+
+    <!-- 黄色边框 -->
+    <a href="images/gallery-images/gallery-image-1.jpg" data-featherlight="image" class="gallery-item"
+       style="border: 5px solid yellow;">
+        <img src="images/gallery-images/gallery-image-1.jpg" alt="Landing Page"/>
+        <div class="overlay">Contents</div>
+    </a>
+    <a href="images/gallery-images/gallery-image-2.jpg" data-featherlight="image" class="gallery-item"
+       style="border: 5px solid yellow;">
+        <img src="images/gallery-images/gallery-image-2.jpg" alt="Landing Page"/>
+        <div class="overlay">Author</div>
+    </a>
+
+    <!-- 普通边框 -->
+    <a href="images/gallery-images/gallery-image-3.jpg" data-featherlight="image" class="gallery-item">
+        <img src="images/gallery-images/gallery-image-3.jpg" alt="Landing Page"/>
+        <div class="overlay">Music</div>
+    </a>
+    <a href="images/gallery-images/gallery-image-4.jpg" data-featherlight="image" class="gallery-item">
+        <img src="images/gallery-images/gallery-image-4.jpg" alt="Landing Page"/>
+        <div class="overlay">Video</div>
+    </a>
+
+    <!-- 蓝色边框 -->
+    <a href="images/gallery-images/gallery-image-5.jpg" data-featherlight="image" class="gallery-item"
+       style="border: 5px solid blue;">
+        <img src="images/gallery-images/gallery-image-5.jpg" alt="Landing Page"/>
+        <div class="overlay">Comments</div>
+    </a>
+    <a href="images/gallery-images/gallery-image-6.jpg" data-featherlight="image" class="gallery-item"
+       style="border: 5px solid blue;">
+        <img src="images/gallery-images/gallery-image-6.jpg" alt="Landing Page"/>
+        <div class="overlay">Commenter</div>
+    </a>
+<!-- 直接替换为 Google Drive 文件链接 -->
+<a href="https://drive.google.com/drive/folders/1kZJgsmJhMW_0XDTDrF877A_JE8utFuGs?usp=sharing" class="button download link-lightbox">
+    DOWNLOAD SAMPLE DATASET <i class="fa fa-download" aria-hidden="true"></i>
+</a>
+
+</aside>
+
+<!-- 图例 -->
+<div class="legend text-center">
+    <span style="display: inline-block; border: 5px solid yellow; width: 20px; height: 20px; margin-right: 10px;"></span> Basic Data
+    <span style="display: inline-block; border: 5px solid blue; width: 20px; height: 20px; margin-left: 20px;"></span> Secondary Data
+</div>
+
+<style>
+/* 设置画廊容器为网格布局 */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 一行 3 列 */
+    gap: 10px; /* 图片间距 */
+    justify-items: center; /* 图片水平居中 */
+}
+
+/* 画廊图片 */
+.gallery-item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px; /* 每个图片的最大宽度 */
+    box-sizing: border-box; /* 确保边框包含在宽度内 */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* 悬停效果 */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* 图例样式 */
+.legend {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+</style>
+
+
+
+
+
+        <!--Content Section-->
+        <div id="services" class="scrollto clearfix">
+
+            <div class="row no-padding-bottom clearfix">
+
+
+                <!--Content Left Side-->
+                <div class="col-3">
+                    <!--User Testimonial-->
+                    <blockquote class="testimonial text-right bigtest">
+                        <q>
+                            Glitch in Beauty Standards</q>
+                        <footer>Glitch in Gender Expression</footer>
+                        <footer>Glitch in  Activism </footer>
+                        <footer>Glitch in  Cultural Aesthetics </footer>
+                        <footer>Glitch in  ... </footer>
+                    </blockquote>
+                    <!-- End of Testimonial-->
+
+                </div>
+                <!--End Content Left Side-->
+
+                <!--Content of the Right Side-->
+                <div class="col-3">
+                    <div class="section-heading">
+                        <h3>Methodology</h3>
+                        <h2 class="section-title">Same Methods, Different Topics</h2>
+
+                    </div>
+                    <p>
+                        The methodology begins with video scraping and data cleaning to collect and refine content from Douyin and TikTok, ensuring relevant datasets. Keyword analysis identifies themes, while comment scraping explores engagement dynamics through user data.
+                    </p>
+                    <p>
+                        Next, an echo chamber network is constructed to analyze selective exposure and homophily. A case study validates the findings, and insights inform applications to break echo chambers, fostering diversity and inclusive interactions on platforms.
+                    </p>
+
+                </div>
+                <!--End Content Right Side-->
+
+                <div class="col-3">
+                    <img src="images/method.png" alt="Dancer"/>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--End of Content Section-->
+
+        
+        <!--Content Section-->
+        <div id="services1" class="scrollto clearfix">
+
+            <div class="row no-padding-bottom clearfix">
+
+
+                <!--Content Left Side-->
+                <div class="col-3">
+                    <img src="images/Frame 2.png" alt="Dancer"/>
+
+                </div>
+                <!--End Content Left Side-->
+
+                <!--Content of the Right Side-->
+                <div class="col-3">
+
+                    <p>
+                        In an era dominated by short videos, platforms like Douyin and TikTok reveal differing echo chamber effects shaped by selective exposure and homophily. My project, <strong>“Are We Living in Spectrum? – Glitch in Diversity,”</strong> examines how ambiguous topics like beauty standards spread within these chambers, exposing cultural and algorithmic biases. By comparing Douyin’s localized norms that foster homogeneity with TikTok’s global user base that disrupts polarization, I explore how algorithms influence aesthetic standards and marginalize diversity. Using social network analysis and computational tools, this research challenges algorithmic conformity, advocating for more inclusive digital ecosystems.                    </p>
+
+                </div>
+                <!--End Content Right Side-->
+
+                <div class="col-3">
+                    <img src="images/Frame 3.png" alt="Dancer"/>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--End of Content Section-->
+
+        <!--Testimonials-->
+        <aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
+
+            <div class="row clearfix">
+
+                <div class="section-heading">
+                    <h3>Click Image to Link</h3>
+                    <h2 class="section-title">Data Visualization</h2>
+                </div>
+
+                <style>
+                    /* 图片容器样式 */
+                    .testimonial img {
+                        display: block;
+                        margin: 0 auto;
+                        max-width: 100%;
+                        height: auto;
+                        border-radius: 10px;
+                        transition: transform 0.3s ease; /* 动画效果 */
+                        cursor: pointer;
+                    }
+                    
+                    /* 悬停时图片放大 */
+                    .testimonial img:hover {
+                        transform: scale(1.1);
+                    }
+                    
+                    /* 图文排版样式 */
+                    .testimonial {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .testimonial q {
+                        display: block;
+                        margin: 15px 0;
+                        font-style: italic;
+                        color: #555;
+                    }
+                    
+                    .testimonial footer {
+                        font-weight: bold;
+                        margin-top: 10px;
+                        color: #333;
+                    }
+                    </style>
+                    
+                    <!-- 用户评价 -->
+                    <blockquote class="col-3 testimonial classic">
+                        <a href="fig1.html">
+                            <img src="images/user-images/user1.png" alt="User"/>
+                        </a>
+                        <q>This visualization compares keyword networks for five topics on Douyin and TikTok. Nodes represent topic keywords, sized by frequency and colored by category. Edges indicate co-occurrence between keywords, with thickness reflecting co-occurrence strength. Interactive features highlight shared keywords and reveal details on click.</q>
+                        <footer><strong>Keywords</strong></footer>
+                    </blockquote>
+                    <!-- 结束 -->
+                    
+                    <blockquote class="col-3 testimonial classic">
+                        <a href="fig2.html">
+                            <img src="images/user-images/user2.png" alt="User"/>
+                        </a>
+                        <q>This visualization compares sentiment distributions for five keywords on Douyin and TikTok. Scatter points show sentiment scores (x-axis) and post popularity (y-axis), with colors reflecting emotional intensity. Sentiment homogeneity is a weighted average, emphasizing posts with higher comment counts.</q>
+                        <footer><strong>Emotional Homogenization</strong></footer>
+                    </blockquote>
+                    <!-- 结束 -->
+                    
+                    <blockquote class="col-3 testimonial classic">
+                        <a href="fig3.html">
+                            <img src="images/user-images/user3.png" alt="User"/>
+                        </a>
+                        <q>This visualization compares echo chamber networks for five topics on Douyin and TikTok. Nodes represent user groups (ECs) commenting on multiple videos within a topic, sized by user count and colored by homogeneity (light to dark green). Edges show shared users between ECs. Interactive features reveal topic details on click.</q>
+                        <footer><strong>Echo Chambers</strong></footer>
+                    </blockquote>
+                    <!-- 结束 -->
+                    
+                    
+
+
+
+
+            </div>
+
+        </aside>
+        <!--End of Testimonials-->
+
+        <!--Clients-->
+        <section id="clients" class="scrollto clearfix">
+            <div class="row clearfix">
+
+                <div class="col-1">
+
+                    <div class="section-heading">
+                        <h3>Insight</h3>
+                        <h2 class="section-title">Analytical Conclusions</h2>
+                        <p class="section-subtitle">
+                            <strong>Keywords:</strong> Douyin and TikTok share similar primary keywords, but Douyin’s network shows higher link density, reflecting more interconnected themes. Douyin emphasizes localized aesthetics like "whitening," while TikTok displays broader, global interests.<br><br>
+                            <strong>Emotional Homogenization:</strong> Both platforms have similar emotional homogeneity, but TikTok skews more positive, driven by uplifting content, while Douyin maintains a neutral tone focused on daily life.<br><br>
+                            <strong>Echo Chambers:</strong> TikTok’s diverse user base leads to weaker echo chambers and more cross-cluster interactions. Douyin’s denser clusters amplify biases, reflecting stronger echo chamber effects.<br><br>
+                            <ul><strong>Bias:</strong> 
+                                <li><strong>IP and Cultural Context Limitations:</strong> Without accurate IP location, it’s difficult to contextualize user backgrounds. Even filtering for English content doesn’t guarantee an understanding of cultural context, especially on platforms like TikTok with diverse user bases.</li>
+                                <li><strong>Recent Posting Dates:</strong> If posts are predominantly recent, it restricts the ability to observe long-term trends, making it harder to track historical shifts in user behavior and platform dynamics over time.</li>
+                                <li><strong>Recommendation Bias Based on Account Preferences:</strong> Platform algorithms adjust recommendations based on the account’s prior interactions, which may lead to an echo chamber effect.</li>
+                            </ul><br>
+                            <strong>Conclusion:</strong> Douyin exhibits greater content homogeneity and echo chamber effects, while TikTok fosters diversity and positivity, highlighting cultural and platform design differences.
+                        </p>
+                        
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </section>
+        <!--End of Clients-->
+
+        
+        <!--Clients-->
+        <section id="clients2" class="scrollto clearfix">
+            <div class="row clearfix">
+
+                <div class="col-3">
+
+                    <div class="section-heading">
+                        <h3>Future Work</h3>
+                        <h2 class="section-title">Applications</h2>
+                        <p class="section-subtitle">We can’t dismantle echo chambers overnight, but we can start by recognizing their existence. By diversifying perspectives, we can build healthier, more informed digital spaces. So, are you ready to live in the spectrum?</p>
+                    </div>
+
+                </div>
+
+                <div class="col-2-3">
+
+                  
+                    <a href="#" class="col-3">
+                        <img src="images/company-images/1.png" alt="Company"/>
+                        <div class="client-overlay"><span>Mustache</span></div>
+                    </a>
+                    <a href="#" class="col-3">
+                        <img src="images/company-images/2.png" alt="Company"/>
+                        <div class="client-overlay"><span>Goat</span></div>
+                    </a>
+                    <a href="#" class="col-3">
+                        <img src="images/company-images/3.png" alt="Company"/>
+                        <div class="client-overlay"><span>Justice</span></div>
+                    </a>
+        
+
+                </div>
+
+            </div>
+        </section>
+        <!--End of Clients-->
+
+                <!--Clients-->
+                <section id="clients3" class="scrollto clearfix">
+                    <div class="row clearfix">
+        
+                        <div class="col-1">
+        
+                            <div class="section-heading">
+                                <h3>Reference</h3>
+                                <h2 class="section-title">Precedents and Bibliography</h2>
+                                <p class="section-subtitle">
+                                    <h3>Precedent</h3>
+                                    <!-- Entry 1 -->
+<div class="entry">
+    <strong>They Rule</strong>
+    <p>
+        <strong>Source:</strong> 
+        <a href="https://theyrule.net/" target="_blank">
+            Visit the Project
+        </a>
+    </p>
+    <p>
+        <em>They Rule</em> is an interactive visualization project that maps connections among corporate board members in major U.S. companies, revealing networks of power and influence. This project is relevant to my research as it demonstrates how relationships can create homogeneity within systems—whether corporate or digital. By highlighting hidden structures, <em>They Rule</em> parallels my investigation into how algorithms on platforms like TikTok and Douyin amplify aesthetic norms and echo chambers. My project extends this concept by exploring cultural and visual conformity in digital spaces while proposing an alternative: more inclusive algorithmic designs.
+    </p>
+    <img src="images/p2.png" alt="They Rule Project Image"> <!-- Replace with actual image link -->
+</div>
+
+<!-- Entry 2 -->
+<div class="entry">
+    <strong>The Urban History of an Algorithm</strong>
+    <p>
+        <strong>Source:</strong> 
+        <a href="https://www.e-flux.com/architecture/are-friends-electric/289193/homophily-the-urban-history-of-an-algorithm/" target="_blank">
+            Read the Article
+        </a>
+    </p>
+    <p>
+        This article traces the concept of <em>homophily</em>—“birds of a feather flock together”—and its historical role in shaping cities and digital networks. It critiques how algorithms reinforce societal segregation and echo chambers, both physically in urban planning and virtually in digital platforms. This aligns directly with my project’s focus on TikTok and Douyin, where homophily fosters localized norms and beauty standards. 
+    </p>
+    <img src="images/p1.png" alt="Homophily Project Image"> <!-- Replace with actual image link -->
+</div>
+
+                                    <h3>Annotated Bibliography</h3>
+
+                                    <!-- Entry 1 -->
+                                    <div class="entry">
+                                        <strong>Glitch Feminism: A Manifesto</strong>
+                                        <p>
+                                            <strong>Source:</strong> Legacy Russell, 2020<br>
+                                            <a href="https://www.versobooks.com/books/3165-glitch-feminism" target="_blank">
+                                                Read the Book
+                                            </a>
+                                        </p>
+                                        <p>
+                                            Russell’s work reimagines the glitch as a subversive tool to challenge societal and digital norms. This book provides a theoretical foundation for understanding how marginalized identities disrupt algorithmic conformity, aligning with my project’s focus on challenging aesthetic biases on short-video platforms.
+                                        </p>
+                                    </div>
+                                
+                                    <!-- Entry 2 -->
+                                    <div class="entry">
+                                        <strong>It’s Complicated: The Social Lives of Networked Teens</strong>
+                                        <p>
+                                            <strong>Source:</strong> danah boyd, 2014<br>
+                                            <a href="https://yalebooks.yale.edu/book/9780300166316/its-complicated/" target="_blank">
+                                                Read the Book
+                                            </a>
+                                        </p>
+                                        <p>
+                                            boyd explores how teens navigate identity, privacy, and audience dynamics in social media. This analysis of homophily and selective exposure offers valuable insights for understanding how localized norms propagate within Douyin and TikTok’s echo chambers.
+                                        </p>
+                                    </div>
+                                
+                                    <!-- Entry 3 -->
+                                    <div class="entry">
+                                        <strong>Social Media Deepens Partisan Divides, but Not Always</strong>
+                                        <p>
+                                            <strong>Source:</strong> The New York Times, 2014<br>
+                                            <a href="https://www.nytimes.com/2014/11/21/upshot/social-media-deepens-partisan-divides-but-not-always.html" target="_blank">
+                                                Read the Article
+                                            </a>
+                                        </p>
+                                        <p>
+                                            This article discusses how social media reinforces divisions while occasionally fostering diverse interactions. It is relevant as it underscores the nuanced impact of algorithms on user behavior, informing my exploration of homogeneity and diversity in digital echo chambers.
+                                        </p>
+                                    </div>
+                                
+                                    <!-- Entry 4 -->
+                                    <div class="entry">
+                                        <strong>Echo Chamber Effects of Public Opinion Propagation in Social Networks</strong>
+                                        <p>
+                                            <strong>Source:</strong> Gao, Y., Sun, Y., Liu, F., Gao, L., & Jin, M. (2022)<br>
+                                            <a href="https://publications.csiro.au/publications/publication/PIcsiro:EP2022-2076/RI11/RT47" target="_blank">
+                                                Read the Article
+                                            </a>
+                                        </p>
+                                        <p>
+                                            This study examines how public opinion spreads and intensifies within echo chambers. It contributes to my project by offering a structural understanding of information flow, particularly in localized digital environments like Douyin.
+                                        </p>
+                                    </div>
+                                
+                                     <!-- Entry 5 -->
+    <div class="entry">
+        <strong>The Impact of #Beauty and #Self-Compassion TikTok Videos</strong>
+        <p>
+            <strong>Source:</strong> Veya Seekis, Richelle Kennedy, Body Image, Volume 45, 2023, Pages 117-125<br>
+            <a href="https://doi.org/10.1016/j.bodyim.2023.02.006" target="_blank">
+                Read the Article
+            </a>
+        </p>
+        <p>
+            This study explores how TikTok content focusing on beauty and self-compassion affects young women’s appearance shame, anxiety, and comparison processes. It is highly relevant to my project as it highlights the psychological impact of beauty standards perpetuated on TikTok, reinforcing the need to critique algorithmic biases shaping aesthetic norms.
+        </p>
+    </div>
+
+    
+        
+        
+        
+                    </div>
+                </section>
+                <!--End of Clients-->
+
+       
+
+    </main>
+    <!--End Main Content Area-->
+
+</div>
+
+<!-- Include JavaScript resources -->
+<script src="js/jquery.1.8.3.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/featherlight.min.js"></script>
+<script src="js/featherlight.gallery.min.js"></script>
+<script src="js/jquery.enllax.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.stickyNavbar.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/images-loaded.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/site.js"></script>
+
+
+</body>
 </html>

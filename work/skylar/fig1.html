@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Networks</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff; /* 纯白背景 */
+            height: 100vh; /* 确保页面充满视窗高度 */
+            overflow: hidden; /* 禁用滚动条 */
+        }
+        #networks {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            width: 100vw;
+            height: 80vh; /* 调整高度为页面的80% */
+        }
+        #left-network, #right-network {
+            width: 50%;
+            height: 100%;
+            border: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #titles {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #buttons {
+            position: absolute;
+            top: 5%; /* 调整按钮的位置 */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: pink;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: white;
+        }
+        .line {
+            position: absolute;
+            height: 1px;
+            border-top: 2px dashed #999;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div id="networks">
+        <div id="left-network">
+            <iframe src="fig/chinese-keywords.html" id="left-frame"></iframe>
+        </div>
+        <div id="right-network">
+            <iframe src="fig/english-keywords.html" id="right-frame"></iframe>
+        </div>
+    </div>
+
+    <div id="titles">
+        <span>Douyin Keywords</span>
+        <span>TikTok Keywords</span>
+    </div>
+
+    <div id="buttons">
+        <button onclick="connectSameWords()">Connect Same Words</button>
+        <button onclick="highlightFirstLevel()">Highlight Keywords</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        const leftFirstLevel = ["glowup", "figure", "beautyhacks", "skincare", "share"];
+        const rightFirstLevel = ["glowup", "viral", "makeup", "skincare", "beautyhacks"];
+        const leftFrame = document.getElementById("left-frame").contentWindow;
+        const rightFrame = document.getElementById("right-frame").contentWindow;
+
+        let sameWordLines = []; // 存储虚线
+        let sameWordHighlightNodes = []; // 存储相同词汇节点
+
+        // 功能1: 连接并高亮相同的词
+        function connectSameWords() {
+            const leftNodes = leftFrame.network.body.data.nodes.get();
+            const rightNodes = rightFrame.network.body.data.nodes.get();
+
+            leftNodes.forEach(leftNode => {
+                rightNodes.forEach(rightNode => {
+                    if (leftNode.label === rightNode.label) {
+                        drawDashedLine(leftNode, rightNode);
+                        sameWordHighlightNodes.push(leftNode.id, rightNode.id);
+                    }
+                });
+            });
+
+            highlightSameWords();
+        }
+
+        function drawDashedLine(leftNode, rightNode) {
+            const leftPosition = leftFrame.network.canvasToDOM(leftFrame.network.getPositions(leftNode.id)[leftNode.id]);
+            const rightPosition = rightFrame.network.canvasToDOM(rightFrame.network.getPositions(rightNode.id)[rightNode.id]);
+
+            const line = document.createElement("div");
+            line.className = "line";
+            const dx = rightPosition.x + window.innerWidth * 0.5 - leftPosition.x;
+            const dy = rightPosition.y - leftPosition.y;
+            const length = Math.sqrt(dx * dx + dy * dy);
+
+            line.style.width = `${length}px`;
+            line.style.top = `${leftPosition.y}px`;
+            line.style.left = `${leftPosition.x}px`;
+            line.style.transformOrigin = "0 0";
+            line.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
+
+            document.body.appendChild(line);
+            sameWordLines.push(line);
+
+            // 2秒后移除虚线
+            setTimeout(() => {
+                line.remove();
+                sameWordLines = sameWordLines.filter(l => l !== line);
+            }, 2000);
+        }
+
+        function highlightSameWords() {
+            leftFrame.network.body.data.nodes.update(
+                leftFrame.network.body.data.nodes.get().map(node => ({
+                    id: node.id,
+                    color: sameWordHighlightNodes.includes(node.id) ? "orange" : node.color
+                }))
+            );
+            rightFrame.network.body.data.nodes.update(
+                rightFrame.network.body.data.nodes.get().map(node => ({
+                    id: node.id,
+                    color: sameWordHighlightNodes.includes(node.id) ? "orange" : node.color
+                }))
+            );
+        }
+
+        // 功能2: 高亮第一层级的词汇并取消相同词的高亮
+        function highlightFirstLevel() {
+            leftFrame.network.body.data.nodes.update(
+                leftFrame.network.body.data.nodes.get().map(node => ({
+                    id: node.id,
+                    color: leftFirstLevel.includes(node.label) ? "red" : "lightgrey"
+                }))
+            );
+            rightFrame.network.body.data.nodes.update(
+                rightFrame.network.body.data.nodes.get().map(node => ({
+                    id: node.id,
+                    color: rightFirstLevel.includes(node.label) ? "red" : "lightgrey"
+                }))
+            );
+        }
+
+        // 功能3: 还原所有状态
+        function reset() {
+            sameWordLines.forEach(line => line.remove()); // 移除虚线
+            sameWordLines = [];
+            sameWordHighlightNodes = [];
+
+            leftFrame.location.reload();
+            rightFrame.location.reload();
+        }
+    </script>
+</body>
+</html>
