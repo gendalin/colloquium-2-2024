@@ -1,21 +1,483 @@
 ---
-student: Name
-layout: blank.liquid
-tags:
-- students
+student: Genda Lin
+tags: students
+image: voronoi-airports-globe.png
 ---
 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    
-    <title>Student name</title>
 
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta name="description"
+  content="Student work from Colloquium 2 of the Columbia GSAPP CDP Program in 2024." />
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-2024/favicon.ico" sizes="any">
+  <link rel="icon" href="https://gsapp-cdp.github.io/colloquium-2-202$/favicon.svg" type="image/svg+xml">
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/base.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/main.css" rel="stylesheet" />
+  <link href="https://gsapp-cdp.github.io/colloquium-2-2024/colloquium1.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <title>Genda Lin</title>
+  
 </head>
 
-<body></body>
+
+<body>
+  <header class="container">
+    <div class="header-context">
+      <div class="h2">
+        <a class="fade" href="https://www.arch.columbia.edu/programs/15-m-s-computational-design-practices"
+          target="_blank">Columbia GSAPP</a>
+      </div>
+    </div>
+
+    <div class="header-title">
+      <div class="h1">
+        <a class="fade" href="/">Computational Design Practices</a>
+      </div>
+      <div class="h2">GSAPP CDP 2024-5 Colloquium I</div>
+    </div>
+
+    <div class="header-nav">
+      <div class="h2">
+        <a class="fade" href="/about">About</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="post">
+        <div class="post-header">
+          <div class="post-title">
+            <h1>Genda Lin</h1>
+            <p style="font-family: 'Open Sans', sans-serif; font-size: 8pt; color: #000;">Instructor: Laura Kurgan, Snoweria Zhang</p>
+          </div>
+        </div>
+
+        <div class="post-body project content">
+          <!-- ALL WORK SHOULD BE CONTAINED HERE. -->
+
+          <div class="toc full" style="font-size: 10pt; font-family: sans-serif; display: flex; gap: 20px;">
+            
+            <div>
+              <a href="#assignment-1">Explore</a>
+            </div>
+            <div>
+              <a href="#assignment-2">Explain</a>
+            </div>
+            <div>
+              <a href="#assignment-3">Propose</a>
+            </div>
+            <div>
+              <a href="#assignment-4">Bibliography</a>
+            </div>
+          </div>
+
+          <div class="full" style="width: 100%; text-align: center; height: 60vh; position: relative; line-height: 1.2em;">
+            <img src="image/bg_map_02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            
+            <p class="reveal-type" style="font-family: 'Open Sans', sans-serif; font-size: 72px; color: white; text-align: center; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); line-height: 1.2em; font-weight: bold;">Reimagine<span style="display: block;">Neighborhoods</span> </p>
+            <p class="reveal-type" style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: white; text-align: center; position: absolute; top: calc(40% + 90px); left: 50%; transform: translate(-50%, -50%); line-height: 1.2em; font-weight: normal; margin-top: 30px;">Can we remap the neighborhood to reflect the reality?</p>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+            <script src="https://unpkg.com/split-type"></script>
+            <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.44/lenis.min.js"></script>
+            <script>
+                gsap.registerPlugin(ScrollTrigger)
+                
+                const splitTypes = document.querySelectorAll('.reveal-type')
+
+                splitTypes.forEach((char, i) => {
+                    const splitType = new SplitType(char, {types: 'chars'})
+
+                    gsap.from(splitType.chars, {
+
+                        scrollTrigger: {
+                            trigger: char,
+                            start: 'top 52%',
+                            end: 'bottom 45%',
+                            scrub: true,
+                            markers: false
+                        },
+                        opacity: 0,
+                        stagger: 0.03,
+                    })
+                    
+                })
+
+                const lenis = new Lenis()
+
+                lenis.on('scroll', (e) => {
+                    
+                        console.log(e)
+                    })
+
+                    function raf(time) {
+                        lenis.raf(time)
+                        requestAnimationFrame(raf)
+                    }
+
+                    requestAnimationFrame(raf)
+            </script>
+          </div>
+          <div class="full">
+            <div style="display: flex; justify-content: space-between;">
+              <div style="width: 33%;">
+                <h5 style="font-size: 12pt;">CHALLENGE</h5>
+                <p style="line-height: 1.6; font-size: 12px; padding-right:50px; padding-top: 20px;">Neighborhood divisions in New York City often fail to reflect evolving realities shaped by human activities. Data and machine learning offer potential to map affinities and redefine boundaries, but thoughtful data selection and methodology are essential to ensure accurate and meaningful outcomes that align with these dynamic changes.</p>
+              </div>
+              <div style="width: 33%;">
+                <h5 style="font-size: 12pt;">PROJECT</h3>
+               <p style="line-height: 1.6; font-size: 12px; padding-right:50px; padding-top: 20px;">This project explores multidisciplinary approaches to mapping and understanding neighborhoods, integrating machine learning methods to produce dynamic cartographies based on human activity and perception. In is the pilot study, the north of Brooklyn was selected to test the design philosophy and validate key assumptions.</p>
+              </div>
+              <div style="width: 33%;">
+                <h5 style="font-size: 12pt;">HIGHLIGHTS</h3>
+               <p style="line-height: 1.6; font-size: 12px; padding-right:30px; padding-top: 20px;">
+                - Measured 16 current neighborhoods in the north of Brooklyn, NYC<br>
+                - Using datasets classified by four features: affordability, vitality, attraction, and appearance, to identify affinities across different entities.<br>
+                - Introduced five redefined neighborhoods, supported by real street views and detailed feature analyses.</p>
+                
+              </div>
+             
+            </div>
+          </div>
+          
+         
+
+          <hr>
+
+
+          <div class="full assignment">
+            <h1 id="assignment-1" style="margin-bottom:-125px;">Explore</h1>
+           
+          </div>
+
+          <div class="half">
+            <img src="/image/BK_old_map.jpg" style="width: 75%; display: block; margin: 0 auto;">
+            <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; margin: 12px auto;line-height: 1.4; font-size: 10px;">The borough's quilt of neighborhoods, (Source:The Neighborhoods of Brooklyn by Kenneth T. Jackson and John Manbeck,Yale University Press).</p>
+            
+          </div>
+
+          <div class="half">
+            <h2 style="font-family: 'Open Sans', sans-serif; padding-right: 80px; margin-right:40px; margin-bottom: 40px; font-weight: bold; color: #000000; font-size: 28px; line-height: 1.2em;">How Neighborhoods in Brooklyn Are Created</h2>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:50px;">
+              Over the last few decades, Brooklyn has transformed into one of New York City's most dynamic and sought-after boroughs. The names and boundaries of its neighborhoods often reflect factors like immigration, geography, natural landscape, or branding by real estate developers.
+            </p>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              For instance, Brooklyn Heights, once called Clover Hill, was renamed in the 19th century when it became New York City's first suburb. Its elevated position offered sweeping views of Manhattan, making it highly desirable. Bushwick's origins trace back to Dutch settlers in the 1660s, who named it “Boswijck,” meaning “town in the woods.” Over time, it became a diverse working-class neighborhood shaped by German, Italian, and Latin American influences.
+            </p>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              DUMBO (Down Under the Manhattan Bridge Overpass) received its name in the 1970s through a branding effort by artists and developers. The name sought to preserve its industrial charm while attracting interest, embodying Brooklyn's creative spirit. These neighborhood names highlight Brooklyn's dynamic history, where geography, culture, and commerce intersect.
+            </p>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              However, the influx of immigrants and gentrification rapidly reshapes Brooklyn's neighborhoods. Traditional classifications fail to capture the evolving realities of how visitors and residents experience these areas, urging the need for reimagined boundaries.
+            </p>
+          </div>
+  
+
+          <hr style="margin-top:90px;">
+
+          <div class="half">
+            <h2 style="font-family: 'Open Sans', sans-serif; padding-right: 80px; margin-right:40px; margin-bottom: 40px; font-weight: bold; color: #000000; font-size: 28px; line-height: 1.2em;">Choose datasets to reflect human activity and perception</h2>
+
+            <p style="line-height: 1.4; font-size: 11pt; padding-right:75px;">
+              I am interested in exploring data of human activity and perception within urban environments. 
+              In the speculative pilot project, I aim to redefine neighborhoods and their boundaries using insights gathered from interviews, 
+              resulting in four key impact areas: affordability (Can I afford to stay here?), 
+              vitality (Do I feel the energy of the place?), attraction (Is there something that draws me in?), 
+              and appearance (How do the building heights and aesthetics affect me?)
+
+
+            </p>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              To begin, I decided to build a data inventory and create a dataset from diverse sources, 
+              including Zillow, Google Maps, MTA NYC, and PLUTO. While bias is inevitable, forming initial 
+              assumptions serves as a critical first step in exploring and improving the accuracy of the project's goals.
+            </p>
+            
+          </div>
+          <div class="half">
+            <img src="/image/dataset.jpg">
+          </div>
+
+          <div class="full">
+            <div style="display: flex; justify-content: space-between;">
+              <div style="width: 33%;">
+                <img src="/image/data01.jpg" style="width: 100%;">
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;"> The number of  building floors in Brooklyn, (Data Source: PLUTO NYC Open Data)</p>
+              </div>
+              <div style="width: 33%;">
+                <img src="/image/data02.jpg" style="width: 100%;">
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;">Ridership of the subway lines in Brooklyn, (Data Source: MTA Open Data)</p>
+              </div>
+              <div style="width: 33%;">
+                <img src="/image/data03.jpg" style="width: 100%; ">
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;"> The restaurant rating 4.2+ in Brooklyn (Data Source: Google Place API)</p>
+              </div>
+             
+            </div>
+          </div>
+
+          <hr>
+          <div class="full assignment">
+            <h1 id="assignment-2" style="margin-bottom:-125px;">Explain</h1>
+           </div>
+          <div class="half">
+            <h2 style=" font-family: 'Open Sans', sans-serif; margin-bottom: 40px; font-weight: bold; color: #000000; font-size: 28px; line-height: 1.2em;">From data inventory to 5 new areas through machine learning</h2>
+
+            <p style="line-height: 1.4; font-size: 12pt; float:right;">
+              Starting with six datasets from the inventory, the data will be assigned to 298 polygons through spatial joins (each polygon covering 2-3 street blocks). 
+              The intensity of each feature will then be calculated and aggregated. These data points will be integrated 
+              into five new areas using K-means clustering, an unsupervised machine learning method for grouping. 
+        
+          
+            </p>
+            </div>
+            <div class="full">
+            <img src="/image/methods.jpg" >
+            <div style="display: flex; justify-content: space-between;">
+              <div style="width: 33%;">
+                <img src="/image/datadots.gif" style="width: 100%;" autoplay loop>
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;">Data points prepared to test spatial join</p>
+              </div>
+              <div style="width: 33%;">
+                <img src="image/attributes_diagram.gif" style="width: 100%;">
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;"> Scores of features in each polygon</p>
+              </div>
+              <div style="width: 33%;">
+                <img src="image/6clusters.jpg" style="width: 100%; ">
+                <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;">Experiments with different number of clusters</p>
+              </div>
+             
+            </div>
+         
+           
+          </div>
+
+
+          <div class="full">
+          
+         </div>
+         <hr>
+          
+         <div class="full assignment">
+          <h1 id="assignment-3" style="margin-bottom:-125px;">Propose</h1>
+          
+        </div>
+          <div class="full" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="width: 49%;">
+              <img src="image/5area_polygons_n5.jpg" style="width: 100%;">
+              <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;"> Five grouping areas by Kmeans clustering algorithm</p>
+            </div>
+            <div style="width: 49%;">
+              <img src="image/5area_polygons.gif" style="width: 100%;">
+              <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;">Each groups with scores in features</p>
+            </div>
+          </div>
+
+          <div class="half">
+            <h2 style="font-family: 'Open Sans', sans-serif; padding-right: 80px; margin-right:40px; margin-bottom: 40px; font-weight: bold; color: #000000; font-size: 28px; line-height: 1.2em;">The five newly defined neighborhoods in the northern region of Brooklyn</h2>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              The pilot project aims to explore how data and 
+              machine learning can reshape the boundaries and identities of neighborhoods. By generating 
+              new maps and narratives, the project provides organizations, urban developers, journalists, 
+              residents, and visitors with tools to better understand and connect with neighborhoods. 
+              Through the inclusion and exclusion of data inventory, it enables users to gain insights 
+              into the unique characteristics and dynamics of these urban spaces.
+              The project tests the following assumptions:
+            </p>
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              1. The territories and boundaries of neighborhoods are dynamic, shaped byhuman activities and perceptions.
+            </p>
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              2. Proximity does not always equate to similarity. Some neighborhoods may exhibit greater social or cultural affinities despite physical distances.
+            </p>
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              3. Mapping affinities drives better decision-making, leading to more locally grounded urban planning and development.
+            </p>
+
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              By leveraging data to rethink territorial definitions, this project encourages a nuanced 
+              understanding of urban spaces and fosters meaningful engagement with the communities they 
+              encompass. The findings aim to inspire new strategies for resource investment and 
+              policy-making, tailored to the evolving needs and identities of neighborhoods.
+            </p>
+          </div>
+
+          <div class="half">
+            <img src="image/5area_whole.jpg">
+            <p style="font-family: 'Open Sans', sans-serif; width: 75%; display: block; line-height: 1.4; font-size: 10px;">Five newly defined neighborhoods in the northern region of Brooklyn</p>
+          
+          </div>
+
+
+          <div class="full" style="background: #000000;">
+            <img class="fade-image" src="image/5area_thimbnail.jpg">
+            <hr style="border-style: dotted; width: 90%; margin: 0 auto;">
+            <img class="fade-image" src="image/feature01.jpg">
+            <hr style="border-style: dotted; width: 90%; margin: 0 auto;">
+            <img class="fade-image" src="image/feature02.jpg">
+            <hr style="border-style: dotted; width: 90%; margin: 0 auto;">
+            <img class="fade-image" src="image/feature03.jpg">
+            <hr style="border-style: dotted; width: 90%; margin: 0 auto;">
+            <img class="fade-image" src="image/feature04.jpg">
+            <hr style="border-style: dotted; width: 90%; margin: 0 auto;">
+            <img class="fade-image" src="image/feature05.jpg">
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const images = document.querySelectorAll('.fade-image');
+              const fadeDuration = 1600; // 3 seconds
+
+              function fadeIn(element) {
+                element.style.transition = `opacity ${fadeDuration}ms`;
+                element.style.opacity = 1;
+              }
+
+              function fadeOut(element) {
+                element.style.transition = `opacity ${fadeDuration}ms`;
+                element.style.opacity = 0;
+              }
+
+              function checkVisibility() {
+                const windowHeight = window.innerHeight;
+                images.forEach(image => {
+                  const rect = image.getBoundingClientRect();
+                  const imageCenter = rect.top + rect.height / 2;
+                  if (imageCenter >= 0 && imageCenter <= windowHeight) {
+                    fadeIn(image);
+                  } else {
+                    fadeOut(image);
+                  }
+                });
+              }
+
+              images.forEach(image => {
+                image.style.opacity = 0; // Initial state
+              });
+
+              window.addEventListener('scroll', checkVisibility);
+              window.addEventListener('resize', checkVisibility);
+              checkVisibility(); // Initial check
+            });
+          </script>
+
+         
+
+          <div class="half">
+            
+
+            
+          </div>
+
+          <div class="half">
+            <blockquote style="line-height: 1.2; font-size: 18pt;">
+              "AI acts as a lens through which we can identify new boundaries and 
+              uncover hidden affinity within our existing systems...Reimagining neighborhoods empowers us to create meaningful impacts for both individuals and communities."
+            </blockquote>
+          </div>
+
+         
+
+          <div class="half">
+            <h2 style="font-family: 'Open Sans', sans-serif; padding-right: 80px; margin-right:40px; margin-bottom: 40px; font-weight: bold; color: #000000; font-size: 28px; line-height: 1.2em;">Why reimagine neighborhoods?</h2>
+            <p style="line-height: 1.4; font-size: 11pt; padding-right:75px;">
+              As new technology reshape how people perceive urban environments, data-driven and AI-based 
+              practices offer both opportunities and risks, depending on the motivations and benefits driving 
+              their application. 
+            </p>
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              Efficiency and accuracy are key strengths of AI technology today. These capabilities present 
+              transformative opportunities for understanding physical environments by analyzing the data 
+              people generate daily. AI acts as a lens through which we can identify new boundaries and 
+              uncover hidden affinity within our existing systems. This project leverages these tools to 
+              explore the evolving dynamics of Brooklyn's rich cultural, ecological, institutional, and architectural diversity in neighborhoods.
+            </p>
+            <p style="line-height: 1.4; font-size: 12pt; padding-right:75px;">
+              By examining how groups of neighborhoods are interconnected through a thoughtful and 
+              systematic data inventory, we can develop a more nuanced and informed approach to urban 
+              planning. Whether this involves devising strategies for infrastructure, 
+              choosing weekend destinations, or finding an affordable and creative studio. Reimagining neighborhoods empowers us to create meaningful impacts for both individuals and communities..  
+            </p>
+          </div>
+
+          <hr>
+          <div class="full assignment">
+            <h1 id="assignment-4" style="margin-bottom:50px;">Bibliography</h1>
+           
+              
+            <ul style="list-style-type: none; padding: 0;line-height: 1.3; font-size:9pt; ">
+              <li><b>An Extremely Detailed Guide to an Extremely Detailed Map of New York City Neighborhoods</b> Larry Buchanan</li>
+              <li>https://c4sr.columbia.edu/index.php/projects/what-index</li>
+              <br>
+              <li><b>Understanding our machine-mediated perception of cities with computer vision cartography.</b> Brain Ho</li>
+              <li>https://brian-ho.io/Making-a-New-City-Image-or-an-Eye-for-AI</li>
+              <br>
+              <li><b>Five-boroughs-for-the-21st-century</b> , Topos</li>
+              <li>https://medium.com/topos-ai/five-boroughs-for-the-21st-century-8da941f53618</li>
+              <br>
+              <li><b>Desirable streets: Where do people prefer to walk?</b> MIT Sensable Lab</li>
+              <li>https://senseable.mit.edu/desirable-streets/</li>
+              <br>
+              <li><b>Models all the way down,</b> Knowingmachines.org</li>
+              <li>https://knowingmachines.org/models-all-the-way#section3</li>
+              <br>
+              <li><b>Homophily: The Urban History of an Algorithm</b> , Laura Kurgan, Dare Brawley, Brian House, Jia Zhang, and Wendy Hui Kyong Chun</li>
+              <li>https://www.e-flux.com/architecture/are-friends-electric/289193/homophily-the-urban-history-of-an-algorithm/</li>
+              <br>
+              <li><b>20 Brooklyn Neighborhoods Explained</b> , Metropolis Moving</li>
+              <li>https://metropolismoving.com/blog/brooklyn-neighborhoods/</li>
+
+              <li><b>The Neighborhoods of Brooklyn</b> John B. Manbeck, Yale University Press, 2004</li>
+              <br>
+              <li><b>Names of New York: Discovering the City's Past, Present, and Future Through Its Place-Names</b> Joshua Jelly-Schapiro , Pantheon, 2021</li>
+              <br>
+              <li><b>The Intimate City: Walking New York</b> Michael Kimmelman , Penguin Press, 2022</li>
+              <br>
+              <li><b>Cartographic Grounds: Projecting the Landscape Imaginary</b> Jill Desimini , Charles Waldheim Princeton Architectural Press, 2016</li>
+              <br>
+              <li><b>The Situationists and the City: A Reader</b> Tom McDonough Verso Books, 2010</li>
+              <br>
+              <li><b>Learning from Las Vegas</b> Robert Venturi, Steven Izenour, Denise Scott Brown, The MIT Press, 1977</li>
+              <br>
+              <li><b>All Data Are Local: Thinking Critically in a Data-Driven Society</b> Yanni Alexander Loukissas, The MIT Press, 2022</li>
+              <br>
+              <li><b>Mapping Affinities- Democratizing Data Visualization</b> Dario Rodighiero MētisPresses, 2021</li>
+              <br>
+              <li><b>A Moving Border: Alpine Cartographies of Climate Change</b> Marco Ferrari, Elisa Pasqual, Andrea Bagnato Columbia Books on Architecture and the City, 2018</li>
+              <br>
+              <li><b>Close Up at a Distance: Mapping, Technology, and Politics</b> Laura Kurgan, Zone Books, 2013</li>
+            </ul>
+       
+          </div>
+
+         
+
+        </div>
+      </div>
+
+      
+
+      <footer style="align-items: center; border-top: 1px solid #000; padding: 20px; text-align: left; margin-left:30px;height: 70px;">
+        <h5 style="font-size: 12pt;">Get in touch: <a href="mailto:gendalin@gmail.com" style="margin-left: 15px; text-decoration: underline;">email</a> <a href="https://www.linkedin.com/in/gendalin/" style="margin-left: 15px; text-decoration: underline;">LinkedIn</a></h5>
+      </footer>
+    </div>
+  </main>
+</body>
+
 </html>
