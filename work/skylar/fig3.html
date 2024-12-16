@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <title>Combined Echo Chamber Networks</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        .network {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+        }
+        svg {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Echo Chamber Networks</h1>
+    <div id="container">
+        <div class="network" id="douyin_network">
+            <h2>Douyin Echo Chamber Network</h2>
+            <svg id="douyin_svg" width="600" height="600"></svg>
+        </div>
+        <div class="network" id="tiktok_network">
+            <h2>TikTok Echo Chamber Network</h2>
+            <svg id="tiktok_svg" width="600" height="600"></svg>
+        </div>
+    </div>
+    <script>
+        const loadNetwork = (svgId, dataFile) => {
+            const svg = d3.select(svgId);
+            const width = +svg.attr("width");
+            const height = +svg.attr("height");
+
+            const tooltip = d3.select("body")
+                .append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            d3.json(dataFile).then(data => {
+                const simulation = d3.forceSimulation(data.nodes)
+                    .force("link", d3.forceLink(data.links).id(d => d.id).distance(40))
+                    .force("charge", d3.forceManyBody().strength(-100))
+                    .force("center", d3.forceCenter(width / 2, height / 2));
+
+                const link = svg.selectAll("line")
+                    .data(data.links)
+                    .enter()
+                    .append("line")
+                    .attr("stroke", "gray")
+                    .attr("stroke-width", 1);
+
+                const node = svg.selectAll("circle")
+                    .data(data.nodes)
+                    .enter()
+                    .append("circle")
+                    .attr("r", d => Math.sqrt(d.num_users) / 2) // Adjust node size by users
+                    .attr("fill", d => d3.interpolateGreens(d.homogeneity || Math.abs(d.polarity))) // Unified color scale
+                    .call(drag(simulation));
+
+                node.on("mouseover", (event, d) => {
+                    tooltip.transition().duration(200).style("opacity", .9);
+                    tooltip.html("<strong>Topic:</strong> " + d.topic + "<br>" +
+                                 "<strong>Users:</strong> " + d.num_users + "<br>" +
+                                 "<strong>Homogeneity:</strong> " + (d.homogeneity || Math.abs(d.polarity)))
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                }).on("mouseout", () => {
+                    tooltip.transition().duration(500).style("opacity", 0);
+                });
+
+                simulation.on("tick", () => {
+                    link.attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+
+                    node.attr("cx", d => d.x)
+                        .attr("cy", d => d.y);
+                });
+
+                function drag(simulation) {
+                    function dragstarted(event, d) {
+                        if (!event.active) simulation.alphaTarget(0.3).restart();
+                        d.fx = d.x;
+                        d.fy = d.y;
+                    }
+
+                    function dragged(event, d) {
+                        d.fx = event.x;
+                        d.fy = event.y;
+                    }
+
+                    function dragended(event, d) {
+                        if (!event.active) simulation.alphaTarget(0);
+                        d.fx = null;
+                        d.fy = null;
+                    }
+
+                    return d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended);
+                }
+            });
+        };
+
+        loadNetwork("#douyin_svg", "ec_data/douyin_ec_network.json");
+        loadNetwork("#tiktok_svg", "ec_data/tiktok_ec_network.json");
+    </script>
+</body>
+</html>
